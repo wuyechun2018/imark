@@ -1,2 +1,2 @@
-1.SpringMVC+SpringDataJpa+EasyUI \n
-2.H2 Database
+1. SpringMVC+SpringDataJpa+EasyUI
+2. H2 Database
