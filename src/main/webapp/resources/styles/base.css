@@ -1,0 +1,95 @@
+fieldset{
+	font-size:12px;
+	border-top:1px solid #95b8e7;
+	border-left:1px solid #95b8e7;
+	border-right:1px solid #95b8e7;
+	border-bottom:none;
+	padding-left:15px;
+	/**font-family: 'Microsoft YaHei';**/
+
+}
+
+.ifieldset{
+	font-size:12px;
+	border-top:1px solid #95b8e7;
+	border-left:1px solid #95b8e7;
+	border-right:1px solid #95b8e7;
+	border-bottom:1px solid #95b8e7;
+	padding-left:15px;
+}
+
+
+.btn_a_add {
+ 	width: 50px;
+    height: 24px;
+    display: inline-block;
+    background-color: rgb(30,144,255);
+    border: 1px rgb(30,144,255) solid;
+    text-align: center;
+    color: #fff;
+    line-height: 24px;
+    text-decoration: none;
+}
+
+.btn_a_edit{
+	display: inline-block;
+    background-color: rgb(133, 191, 167);
+    width: 50px;
+    height: 15px;
+    border: 1px #85bfa7 solid;
+    text-align: center;
+    color: #fff;
+    line-height: 18px;
+    text-decoration: none;
+}
+
+.btn_a_edit:hover {
+    color: #fff;
+    text-decoration: none;
+}
+
+
+.btn_a_delete{
+	display: inline-block;
+    background-color: #FF6347;
+    width: 50px;
+    height: 15px;
+    border: 1px #FF6347 solid;
+    text-align: center;
+    color: #fff;
+    line-height: 18px;
+    text-decoration: none;
+}
+
+
+
+.Tip{
+	margin: 5 50 2 10;
+	font-family: '仿宋_GB2312';
+}
+
+body{
+	background-color: rgb(244,251,251);
+	font-size: 14px;
+	/**font-family: 'Microsoft YaHei';
+	font-family: '仿宋_GB2312';**/
+}
+
+.welcome_body{
+ 	background-image:url('../images/welcome.jpg');
+}
+
+.tips{
+	margin-left:10px;
+	color:rgb(123,191,166);
+
+}
+
+ul{ list-style:none;
+ } 
+ 
+.bz{
+color:#0e2d5f;
+font-family: 'Microsoft YaHei';
+	
+}

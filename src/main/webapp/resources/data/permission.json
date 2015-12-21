@@ -1,0 +1,41 @@
+[{
+        "id": "1",
+        "text": "用户管理",
+        "state": "open",
+        "checked": null,
+        "attributes": {
+            "url": "/views/system/user"
+        },
+        "children": null,
+        "iconCls": "itree-accept"
+    },{
+        "id": "2",
+        "text": "系统菜单",
+        "state": "open",
+        "checked": null,
+        "attributes": {
+            "url": "/views/system/menu"
+        },
+        "children": null,
+        "iconCls": "itree-accept"
+    },{
+        "id": "3",
+        "text": "系统日志",
+        "state": "open",
+        "checked": null,
+        "attributes": {
+            "url": "/views/system/demo"
+        },
+        "children": null,
+        "iconCls": "itree-accept"
+    },{
+        "id": "3",
+        "text": "文本编辑",
+        "state": "open",
+        "checked": null,
+        "attributes": {
+            "url": "/views/system/article"
+        },
+        "children": null,
+        "iconCls": "itree-accept"
+    }]

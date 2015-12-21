@@ -1,0 +1,28 @@
+body{
+	background-color: rgb(244, 251, 251);
+}
+
+
+.datagrid-header{
+	filter: none;
+	background-color: rgb(244, 245, 249);
+}
+
+.datagrid-header-row{
+	height: 38px;
+	text-align: center;
+}
+
+
+
+.datagrid-header .datagrid-cell span {
+  /**
+  font-size: 14px;
+  font-family: '微软雅黑', 'simsun', '宋体';**/
+}
+
+.l-btn{
+	filter:none;
+	
+	
+}

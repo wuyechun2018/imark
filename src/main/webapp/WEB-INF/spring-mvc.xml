@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd">
+	
+	<context:component-scan base-package="com.imark"/>
+	
+	
+	<!-- 注意：InternalResourceViewResolver必须总是赋予最低的优先级（最大的order值），因为不管返回什么视图名称，它都将解析视图。
+	如果它的优先级高于其它解析器的优先级的话，它将使得其它具有较低优先级的解析器没有机会解析视图。 -->
+	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/WEB-INF/views/"/>
+		<property name="suffix" value=".jsp"/>
+		<property name="viewClass">
+            <value>org.springframework.web.servlet.view.InternalResourceView</value>
+         </property>
+		<property name="order" value="1"></property> 
+	</bean>
+
+	<!-- 配置freeMarker的模板路径 -->  
+    <bean class="org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer">  
+	      <property name="templateLoaderPath" value="/WEB-INF/ftl/" />  
+	      <property name="defaultEncoding" value="UTF-8" />  
+    </bean>  
+	
+	 <!-- freemarker视图解析器 -->  
+     <bean class="org.springframework.web.servlet.view.freemarker.FreeMarkerViewResolver">  
+        <property name="suffix" value=".ftl" />  
+        <property name="viewClass" value="org.springframework.web.servlet.view.freemarker.FreeMarkerView"/>
+        <property name="contentType" value="text/html;charset=UTF-8" />  
+        <property name="requestContextAttribute" value="rc" />  
+        <property name="order" value="0"></property> 
+     </bean>  
+	
+    <!-- 将静态文件指定到某个特殊的文件夹中统一处理 -->
+	<mvc:resources  mapping="/resources/**" location="/resources/" />
+
+	<mvc:annotation-driven>
+	<mvc:message-converters>
+		<bean class="org.springframework.http.converter.StringHttpMessageConverter">
+			<property name="supportedMediaTypes">
+				<list>
+					<value>text/plain;charset=UTF-8</value>
+					<value>text/html;charset=UTF-8</value>
+				</list>
+			</property>
+		</bean>
+		<bean
+			class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
+			<property name="supportedMediaTypes">
+				<list>
+					<value>application/json; charset=UTF-8</value>
+					<value>application/x-www-form-urlencoded; charset=UTF-8</value>
+				</list>
+			</property>
+		</bean>
+	</mvc:message-converters>
+ 	</mvc:annotation-driven>
+	
+	 <!--处理文件上传  100M-->
+	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<property name="maxUploadSize" value="104857600" />
+		<property name="maxInMemorySize" value="4096" />
+	</bean>
+	
+	<!--自定义统一异常处理 -->
+	<bean id="iExceptionHandler" class="com.imark.common.util.IExceptionHandler">
+	</bean>
+	
+	<aop:aspectj-autoproxy/>
+	
+</beans>
