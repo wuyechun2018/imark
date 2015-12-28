@@ -11,24 +11,4 @@
 	<!-- Imports datasource configuration -->
 	<import resource="classpath:spring/spring-data-jpa.xml" />
 	
-	<!--以下 删除 -->
-	<bean name="casFilter" class="com.iflytek.cas.filter.TicketValidationFilter">
-		<property name="appUrl">
-		<!--
-			<value>http://172.16.10.40:1433/imark</value>
-			-->
-			<value>http://59.203.153.116:8090/imark</value>
-		</property>
-		<property name="casLoginUrl">
-			<!-- <value>http://172.16.10.40:1433/cas/login</value> -->
-			<value>http://59.203.153.116/cas/login</value>
-		</property>
-		<property name="ticketValidateUrl">
-			<!--<value>http://172.16.10.40:1433/cas/validate</value> -->
-			<value>http://59.203.153.116/cas/validate</value>
-		</property>
-	</bean>
-	
-	<!--以上 删除 -->
-	
 </beans>

@@ -5,10 +5,6 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.SocketException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 import org.apache.commons.net.ftp.FTP;
 import org.apache.commons.net.ftp.FTPClient;
@@ -16,14 +12,8 @@ import org.apache.commons.net.ftp.FTPReply;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import com.imark.common.util.ExcelFmtValid;
-import com.imark.common.util.ExcelReader;
 import com.imark.common.util.IUtil;
 import com.imark.system.dao.FileDao;
-import com.imark.system.model.Xzcf;
-import com.imark.system.model.Xzxk;
-import com.imark.system.vo.XzcfVo;
-import com.imark.system.vo.XzxkVo;
 
 @Component
 public class FileService {
@@ -213,80 +203,5 @@ public class FileService {
 			
 		}
 		
-	}
-	
-	/**
-	 * 获取行政许可信息列表
-	 * @return
-	 */
-	public void saveXzxks(List<XzxkVo> voList) {
-		ExcelFmtValid valid = new ExcelFmtValid();
-		Map<String, String> map = new HashMap<String, String>();
-		ExcelReader reader = new ExcelReader();
-		List<Xzxk> xzxkList = new ArrayList<Xzxk>();
-		for(XzxkVo vo : voList) {
-			System.out.println(vo.getBiz_param());
-			String ftpPath = vo.getBiz_param();
-			InputStream in = download(ftpPath);
-			InputStream in2 = download(ftpPath);
-			if(ftpPath.endsWith(".xls")) {
-				//map = valid.validXzxkXls(in);
-				//if(map.get("flag").equals("0")) {
-					xzxkList = reader.loadXzxkXls(in2);					
-				//}
-			} else {
-				//map = valid.validXzxkXlsx(in);
-				//if(map.get("flag").equals("0")) {
-					xzxkList = reader.loadXzxkXlsx(in2);
-				//}
-			}
-			//System.out.println(map.get("message"));
-			// 文件入库状态的改变
-			fileDaoImpl.updateBizStatus(vo.getBiz_param());
-			//if(map.get("flag").equals("0")) {
-				// 行政许可数据的保存
-				for(Xzxk xzxk : xzxkList) {
-					fileDaoImpl.saveXzxk(xzxk, vo);			
-				}
-			//}
-		}
-	}
-	
-	/**
-	 * 获取行政处罚信息列表
-	 * @return
-	 */
-	public void saveXzcfs(List<XzcfVo> voList) {
-		ExcelFmtValid valid = new ExcelFmtValid();
-		ExcelReader reader = new ExcelReader();
-		List<Xzcf> xzcfList = new ArrayList<Xzcf>();
-		Map<String, String> map = new HashMap<String, String>();
-		for(XzcfVo vo : voList) {
-			System.out.println(vo.getBiz_param());
-			String ftpPath = vo.getBiz_param();
-			InputStream in = download(ftpPath);
-			InputStream in2 = download(ftpPath);
-			if(ftpPath.endsWith(".xls")) {
-				//map = valid.validXzcfXls(in);
-				//if(map.get("flag").equals("0")) {
-					xzcfList = reader.loadXzcfXls(in2);					
-				//}
-			} else {
-				//map = valid.validXzcfXlsx(in);
-				//if(map.get("flag").equals("0")) {
-					xzcfList = reader.loadXzcfXlsx(in2);					
-				//}
-			}
-		
-			// 文件入库状态的改变
-			fileDaoImpl.updateBizStatus(vo.getBiz_param());
-			//System.out.println(map.get("message"));
-			//if(map.get("flag").equals("0")) {
-				// 行政许可数据的保存
-				for(Xzcf xzcf : xzcfList) {
-					fileDaoImpl.saveXzcf(xzcf, vo);			
-				}
-			//}
-		}
 	}
 }

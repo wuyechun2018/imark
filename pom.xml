@@ -210,14 +210,6 @@
 			<version>${spring.version}</version>
 		</dependency>
 		
-		<!-- --> 
-		<dependency>
-			<groupId>com.iflytek</groupId>
-			<artifactId>cas-client</artifactId>
-			<version>2.1</version>
-		</dependency> 
-		
-		
 		<!-- POI -->
 		<dependency>
 			<groupId>org.apache.poi</groupId>

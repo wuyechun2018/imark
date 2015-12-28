@@ -9,8 +9,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.imark.system.dao.MarkLogDaoImp;
 import com.imark.system.model.SysMarkLogs;
-import com.imark.system.vo.XzcfVo;
-import com.imark.system.vo.XzxkVo;
 
 @Transactional
 @Component
@@ -43,59 +41,5 @@ public class MarkLogService {
 		return markLogDaoImp.getList(bizId,bizType);
 	}
 	
-	/**
-	 * 获取行政许可处理信息
-	 * @return
-	 */
-	public List<XzxkVo> getXzxkList() {
-		return markLogDaoImp.getXzxkList();
-	}
-	
-	/**
-	 * 获取行政处罚处理信息
-	 * @return
-	 */
-	public List<XzcfVo> getXzcfList() {
-		return markLogDaoImp.getXzcfList();
-	}
-	
-	/***
-	 * 
-	 * @Description：列表统计
-	 *
-	 * @date：2015-10-9 下午02:41:04
-	 *
-	 * @author ：liuyu
-	 * @return 
-	 */
-	public List getStatList() {
-		return markLogDaoImp.getStatList();
-	}
-	
-	/***
-	 * 
-	 * @Description：数字列表统计
-	 *
-	 * @date：2015-10-9 下午02:41:04
-	 *
-	 * @author ：liuyu
-	 * @return 
-	 */
-	public List getStatList1() {
-		return markLogDaoImp.getStatList1();
-	}
-	
-	/**
-	 * 导出报表
-	 * 
-	 * @param model
-	 * @param date
-	 * @param qxCode
-	 * @return
-	 * @throws Exception
-	 */
-	public List getGovernmentStateChart() {
-		return markLogDaoImp.getGovernmentStateChart();
-	}
 
 }

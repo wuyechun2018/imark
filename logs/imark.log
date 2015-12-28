@@ -1,207 +1,1170 @@
-2015-12-21 10:30:08,211 [main] INFO  [org.springframework.web.context.ContextLoader] - Root WebApplicationContext: initialization started
-2015-12-21 10:30:08,306 [main] INFO  [org.springframework.web.context.support.XmlWebApplicationContext] - Refreshing Root WebApplicationContext: startup date [Mon Dec 21 10:30:08 CST 2015]; root of context hierarchy
-2015-12-21 10:30:08,447 [main] INFO  [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from URL [file:/F:/workspace/rac/imark/target/classes/spring/applicationContext.xml]
-2015-12-21 10:30:09,150 [main] INFO  [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [spring/spring-data-jpa.xml]
-2015-12-21 10:30:09,532 [main] INFO  [org.springframework.context.support.PropertySourcesPlaceholderConfigurer] - Loading properties file from class path resource [database/jdbc.properties]
-2015-12-21 10:30:09,704 [main] INFO  [org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker] - Bean 'org.springframework.transaction.annotation.AnnotationTransactionAttributeSource#0' of type [class org.springframework.transaction.annotation.AnnotationTransactionAttributeSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2015-12-21 10:30:09,704 [main] INFO  [org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker] - Bean 'org.springframework.transaction.config.internalTransactionAdvisor' of type [class org.springframework.transaction.interceptor.BeanFactoryTransactionAttributeSourceAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2015-12-21 10:30:10,423 [main] INFO  [com.alibaba.druid.pool.DruidDataSource] - {dataSource-1} inited
-2015-12-21 10:30:11,453 [main] INFO  [org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean] - Building JPA container EntityManagerFactory for persistence unit 'default'
-2015-12-21 10:30:11,509 [main] INFO  [org.hibernate.jpa.internal.util.LogHelper] - HHH000204: Processing PersistenceUnitInfo [
+2015-12-24 09:58:13,031 [main] INFO  [org.springframework.web.context.ContextLoader] - Root WebApplicationContext: initialization started
+2015-12-24 09:58:13,204 [main] INFO  [org.springframework.web.context.support.XmlWebApplicationContext] - Refreshing Root WebApplicationContext: startup date [Thu Dec 24 09:58:13 CST 2015]; root of context hierarchy
+2015-12-24 09:58:13,293 [main] INFO  [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from URL [file:/F:/workspace/rac/imark/target/classes/spring/applicationContext.xml]
+2015-12-24 09:58:14,243 [main] INFO  [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [spring/spring-data-jpa.xml]
+2015-12-24 09:58:14,526 [main] INFO  [org.springframework.context.support.PropertySourcesPlaceholderConfigurer] - Loading properties file from class path resource [database/jdbc.properties]
+2015-12-24 09:58:14,619 [main] INFO  [org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker] - Bean 'org.springframework.transaction.annotation.AnnotationTransactionAttributeSource#0' of type [class org.springframework.transaction.annotation.AnnotationTransactionAttributeSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2015-12-24 09:58:14,621 [main] INFO  [org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker] - Bean 'org.springframework.transaction.config.internalTransactionAdvisor' of type [class org.springframework.transaction.interceptor.BeanFactoryTransactionAttributeSourceAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2015-12-24 09:58:15,326 [main] INFO  [com.alibaba.druid.pool.DruidDataSource] - {dataSource-1} inited
+2015-12-24 09:58:15,839 [main] INFO  [org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean] - Building JPA container EntityManagerFactory for persistence unit 'default'
+2015-12-24 09:58:15,942 [main] INFO  [org.hibernate.jpa.internal.util.LogHelper] - HHH000204: Processing PersistenceUnitInfo [
 	name: default
 	...]
-2015-12-21 10:30:11,634 [main] INFO  [org.hibernate.Version] - HHH000412: Hibernate Core {4.3.5.Final}
-2015-12-21 10:30:11,634 [main] INFO  [org.hibernate.cfg.Environment] - HHH000206: hibernate.properties not found
-2015-12-21 10:30:11,634 [main] INFO  [org.hibernate.cfg.Environment] - HHH000021: Bytecode provider name : javassist
-2015-12-21 10:30:12,072 [main] INFO  [org.hibernate.annotations.common.Version] - HCANN000001: Hibernate Commons Annotations {4.0.4.Final}
-2015-12-21 10:30:12,197 [main] INFO  [org.hibernate.dialect.Dialect] - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
-2015-12-21 10:30:12,463 [main] INFO  [org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory] - HHH000397: Using ASTQueryTranslatorFactory
-2015-12-21 10:30:12,707 [main] WARN  [org.hibernate.id.UUIDHexGenerator] - HHH000409: Using org.hibernate.id.UUIDHexGenerator which does not generate IETF RFC 4122 compliant UUID values; consider using org.hibernate.id.UUIDGenerator instead
-2015-12-21 10:30:13,489 [main] INFO  [org.springframework.web.context.ContextLoader] - Root WebApplicationContext: initialization completed in 5277 ms
-2015-12-21 10:30:13,861 [main] INFO  [org.springframework.web.servlet.DispatcherServlet] - FrameworkServlet 'springServlet': initialization started
-2015-12-21 10:30:13,861 [main] INFO  [org.springframework.web.context.support.XmlWebApplicationContext] - Refreshing WebApplicationContext for namespace 'springServlet-servlet': startup date [Mon Dec 21 10:30:13 CST 2015]; parent: Root WebApplicationContext
-2015-12-21 10:30:13,861 [main] INFO  [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from ServletContext resource [/WEB-INF/spring-mvc.xml]
-2015-12-21 10:30:14,158 [main] INFO  [org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor] - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
-2015-12-21 10:30:15,004 [main] INFO  [org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer] - ClassTemplateLoader for Spring macros added to FreeMarker configuration
-2015-12-21 10:30:15,206 [main] INFO  [org.springframework.web.servlet.handler.SimpleUrlHandlerMapping] - Mapped URL path [/resources/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
-2015-12-21 10:30:15,277 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/editor/list],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object com.imark.system.controller.EditorController.list(javax.servlet.http.HttpServletRequest)
-2015-12-21 10:30:15,277 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/editor/saveArticle],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.imark.system.controller.EditorController.saveArticle(javax.servlet.http.HttpServletRequest)
-2015-12-21 10:30:15,277 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/editor/showArticle],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object com.imark.system.controller.EditorController.showArticle(java.lang.String)
-2015-12-21 10:30:15,277 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/file/download],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public void com.imark.system.controller.FileController.download(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) throws java.io.IOException
-2015-12-21 10:30:15,277 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/file/upload],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public void com.imark.system.controller.FileController.upload(org.springframework.web.multipart.MultipartFile,javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) throws java.io.IOException
-2015-12-21 10:30:15,277 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/file/indexSubmit],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.imark.system.controller.FileController.indexSubmit(com.imark.system.vo.IformVo,javax.servlet.http.HttpServletRequest)
-2015-12-21 10:30:15,277 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/file/xzcfIntoStorage],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public void com.imark.system.controller.FileController.xzcfIntoStorage()
-2015-12-21 10:30:15,277 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/file/xzxkIntoStorage],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public void com.imark.system.controller.FileController.xzxkIntoStorage()
-2015-12-21 10:30:15,277 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/main],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.imark.system.controller.IndexController.main()
-2015-12-21 10:30:15,277 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/ || /login || /welcome],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.imark.system.controller.IndexController.index()
-2015-12-21 10:30:15,277 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/doLogin],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.web.servlet.ModelAndView com.imark.system.controller.IndexController.doLogin(java.lang.String,java.lang.String,javax.servlet.http.HttpSession)
-2015-12-21 10:30:15,277 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/webDemo],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.imark.system.controller.IndexController.webDemo()
-2015-12-21 10:30:15,277 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/views/{module}/{page}],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.imark.system.controller.IndexController.getDefinedPage(java.lang.String,java.lang.String)
-2015-12-21 10:30:15,277 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/markLog/list],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.util.Map<java.lang.String, java.lang.Object> com.imark.system.controller.MarkLogController.list(javax.servlet.http.HttpServletRequest)
-2015-12-21 10:30:15,277 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/markLog/statList],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.util.Map<java.lang.String, java.lang.Object> com.imark.system.controller.MarkLogController.statList(javax.servlet.http.HttpServletRequest)
-2015-12-21 10:30:15,277 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/markLog/statList1],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.util.Map<java.lang.String, java.lang.Object> com.imark.system.controller.MarkLogController.statList1(javax.servlet.http.HttpServletRequest)
-2015-12-21 10:30:15,277 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/markLog/statList2],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public void com.imark.system.controller.MarkLogController.getGovernmentStateExport(org.springframework.ui.Model,java.lang.String,java.lang.String,javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) throws java.lang.Exception
-2015-12-21 10:30:15,277 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/sysLoginUser/list],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object com.imark.system.controller.SysLoginUserController.list(javax.servlet.http.HttpServletRequest)
-2015-12-21 10:30:15,277 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/sysLoginUser/save],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object com.imark.system.controller.SysLoginUserController.save(com.imark.system.model.SysLoginUser)
-2015-12-21 10:30:15,292 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/sysLoginUser/delete],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object com.imark.system.controller.SysLoginUserController.delete(javax.servlet.http.HttpServletRequest)
-2015-12-21 10:30:15,292 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/sysMenu/save],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object com.imark.system.controller.SysMenuController.save()
-2015-12-21 10:30:15,292 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/address/save],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object com.imark.uaac.controller.AddressController.save(javax.servlet.http.HttpServletRequest)
-2015-12-21 10:30:15,292 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/address/getXiaoqu],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.util.List com.imark.uaac.controller.AddressController.getXiaoqu(javax.servlet.http.HttpServletRequest)
-2015-12-21 10:30:15,292 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/address/getTreeList],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.util.List<com.imark.common.vo.EasyTree> com.imark.uaac.controller.AddressController.getTreeList(javax.servlet.http.HttpServletRequest)
-2015-12-21 10:30:15,292 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/address/getJlxOrZrc],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.util.List com.imark.uaac.controller.AddressController.getJlxOrZrc(javax.servlet.http.HttpServletRequest)
-2015-12-21 10:30:15,292 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/address/getBaseInfo],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object com.imark.uaac.controller.AddressController.getBaseInfo(javax.servlet.http.HttpServletRequest)
-2015-12-21 10:30:15,292 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/address/getMph],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object com.imark.uaac.controller.AddressController.getMph(javax.servlet.http.HttpServletRequest)
-2015-12-21 10:30:15,292 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/address/xiaoQuSave],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object com.imark.uaac.controller.AddressController.xiaoQuSave(javax.servlet.http.HttpServletRequest)
-2015-12-21 10:30:15,292 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/address/jieLuXiangsave],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object com.imark.uaac.controller.AddressController.jieLuXiangsave(javax.servlet.http.HttpServletRequest)
-2015-12-21 10:30:15,292 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/address/getBaseInfoByAreaCode],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object com.imark.uaac.controller.AddressController.getBaseInfoByAreaCode(javax.servlet.http.HttpServletRequest)
-2015-12-21 10:30:15,292 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/addressHandle/save],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object com.imark.uaac.controller.AddressHandleController.save(javax.servlet.http.HttpServletRequest)
-2015-12-21 10:30:15,292 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/addressHandle/getXiaoqu],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.util.List com.imark.uaac.controller.AddressHandleController.getXiaoqu(javax.servlet.http.HttpServletRequest)
-2015-12-21 10:30:15,292 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/addressHandle/getTreeList],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.util.List<com.imark.common.vo.EasyTree> com.imark.uaac.controller.AddressHandleController.getTreeList(javax.servlet.http.HttpServletRequest)
-2015-12-21 10:30:15,292 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/addressHandle/getJlxOrZrc],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.util.List com.imark.uaac.controller.AddressHandleController.getJlxOrZrc(javax.servlet.http.HttpServletRequest)
-2015-12-21 10:30:15,292 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/addressHandle/getBaseInfo],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object com.imark.uaac.controller.AddressHandleController.getBaseInfo(javax.servlet.http.HttpServletRequest)
-2015-12-21 10:30:15,292 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/addressHandle/getMph],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object com.imark.uaac.controller.AddressHandleController.getMph(javax.servlet.http.HttpServletRequest)
-2015-12-21 10:30:15,292 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/log/getSsoChart],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.imark.uaac.controller.LogController.getSsoChart(javax.servlet.http.HttpServletRequest)
-2015-12-21 10:30:15,292 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/log/getSafeLogs],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public com.imark.common.vo.EasyGrid com.imark.uaac.controller.LogController.getSafeLoges(java.lang.String,java.lang.Integer,java.lang.Integer,java.lang.String,java.lang.String,javax.servlet.http.HttpServletResponse,javax.servlet.http.HttpServletRequest)
-2015-12-21 10:30:15,292 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/log/getSafeChart],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.imark.uaac.controller.LogController.getSafeChart(java.lang.String,java.lang.String,java.lang.String,javax.servlet.http.HttpServletRequest)
-2015-12-21 10:30:15,292 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/log/getSsoLogs],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object com.imark.uaac.controller.LogController.getSsoLogs(javax.servlet.http.HttpServletResponse,javax.servlet.http.HttpServletRequest)
-2015-12-21 10:30:16,973 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter] - Looking for @ControllerAdvice: WebApplicationContext for namespace 'springServlet-servlet': startup date [Mon Dec 21 10:30:13 CST 2015]; parent: Root WebApplicationContext
-2015-12-21 10:30:17,071 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter] - Looking for @ControllerAdvice: WebApplicationContext for namespace 'springServlet-servlet': startup date [Mon Dec 21 10:30:13 CST 2015]; parent: Root WebApplicationContext
-2015-12-21 10:30:17,243 [main] INFO  [org.springframework.web.servlet.DispatcherServlet] - FrameworkServlet 'springServlet': initialization completed in 3382 ms
-2015-12-21 10:34:41,800 [main] INFO  [org.springframework.web.context.ContextLoader] - Root WebApplicationContext: initialization started
-2015-12-21 10:34:42,036 [main] INFO  [org.springframework.web.context.support.XmlWebApplicationContext] - Refreshing Root WebApplicationContext: startup date [Mon Dec 21 10:34:41 CST 2015]; root of context hierarchy
-2015-12-21 10:34:42,145 [main] INFO  [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from URL [file:/F:/workspace/rac/imark/target/classes/spring/applicationContext.xml]
-2015-12-21 10:34:42,770 [main] INFO  [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [spring/spring-data-jpa.xml]
-2015-12-21 10:34:43,107 [main] INFO  [org.springframework.context.support.PropertySourcesPlaceholderConfigurer] - Loading properties file from class path resource [database/jdbc.properties]
-2015-12-21 10:34:43,185 [main] INFO  [org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker] - Bean 'org.springframework.transaction.annotation.AnnotationTransactionAttributeSource#0' of type [class org.springframework.transaction.annotation.AnnotationTransactionAttributeSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2015-12-21 10:34:43,185 [main] INFO  [org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker] - Bean 'org.springframework.transaction.config.internalTransactionAdvisor' of type [class org.springframework.transaction.interceptor.BeanFactoryTransactionAttributeSourceAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2015-12-21 10:34:43,825 [main] INFO  [com.alibaba.druid.pool.DruidDataSource] - {dataSource-1} inited
-2015-12-21 10:34:44,711 [main] INFO  [org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean] - Building JPA container EntityManagerFactory for persistence unit 'default'
-2015-12-21 10:34:44,774 [main] INFO  [org.hibernate.jpa.internal.util.LogHelper] - HHH000204: Processing PersistenceUnitInfo [
+2015-12-24 09:58:16,023 [main] INFO  [org.hibernate.Version] - HHH000412: Hibernate Core {4.3.5.Final}
+2015-12-24 09:58:16,027 [main] INFO  [org.hibernate.cfg.Environment] - HHH000206: hibernate.properties not found
+2015-12-24 09:58:16,037 [main] INFO  [org.hibernate.cfg.Environment] - HHH000021: Bytecode provider name : javassist
+2015-12-24 09:58:16,317 [main] INFO  [org.hibernate.annotations.common.Version] - HCANN000001: Hibernate Commons Annotations {4.0.4.Final}
+2015-12-24 09:58:16,571 [main] INFO  [org.hibernate.dialect.Dialect] - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2015-12-24 09:58:16,779 [main] INFO  [org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory] - HHH000397: Using ASTQueryTranslatorFactory
+2015-12-24 09:58:16,993 [main] WARN  [org.hibernate.id.UUIDHexGenerator] - HHH000409: Using org.hibernate.id.UUIDHexGenerator which does not generate IETF RFC 4122 compliant UUID values; consider using org.hibernate.id.UUIDGenerator instead
+2015-12-24 09:58:17,694 [main] INFO  [org.springframework.web.context.ContextLoader] - Root WebApplicationContext: initialization completed in 4660 ms
+2015-12-24 09:58:17,926 [main] INFO  [org.springframework.web.servlet.DispatcherServlet] - FrameworkServlet 'springServlet': initialization started
+2015-12-24 09:58:17,929 [main] INFO  [org.springframework.web.context.support.XmlWebApplicationContext] - Refreshing WebApplicationContext for namespace 'springServlet-servlet': startup date [Thu Dec 24 09:58:17 CST 2015]; parent: Root WebApplicationContext
+2015-12-24 09:58:17,930 [main] INFO  [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from ServletContext resource [/WEB-INF/spring-mvc.xml]
+2015-12-24 09:58:18,258 [main] INFO  [org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor] - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2015-12-24 09:58:19,068 [main] INFO  [org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer] - ClassTemplateLoader for Spring macros added to FreeMarker configuration
+2015-12-24 09:58:19,254 [main] INFO  [org.springframework.web.servlet.handler.SimpleUrlHandlerMapping] - Mapped URL path [/resources/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+2015-12-24 09:58:19,334 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/editor/list],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object com.imark.system.controller.EditorController.list(javax.servlet.http.HttpServletRequest)
+2015-12-24 09:58:19,334 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/editor/saveArticle],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.imark.system.controller.EditorController.saveArticle(javax.servlet.http.HttpServletRequest)
+2015-12-24 09:58:19,334 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/editor/showArticle],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object com.imark.system.controller.EditorController.showArticle(java.lang.String)
+2015-12-24 09:58:19,335 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/file/download],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public void com.imark.system.controller.FileController.download(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) throws java.io.IOException
+2015-12-24 09:58:19,335 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/file/upload],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public void com.imark.system.controller.FileController.upload(org.springframework.web.multipart.MultipartFile,javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) throws java.io.IOException
+2015-12-24 09:58:19,335 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/file/testParam],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.imark.system.controller.FileController.testParam(javax.servlet.http.HttpServletRequest) throws java.io.UnsupportedEncodingException
+2015-12-24 09:58:19,335 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/file/indexSubmit],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.imark.system.controller.FileController.indexSubmit(com.imark.system.vo.IformVo,javax.servlet.http.HttpServletRequest)
+2015-12-24 09:58:19,336 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/main],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.imark.system.controller.IndexController.main()
+2015-12-24 09:58:19,336 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/ || /login || /welcome],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.imark.system.controller.IndexController.index()
+2015-12-24 09:58:19,336 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/doLogin],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.web.servlet.ModelAndView com.imark.system.controller.IndexController.doLogin(java.lang.String,java.lang.String,javax.servlet.http.HttpSession)
+2015-12-24 09:58:19,336 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/webDemo],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.imark.system.controller.IndexController.webDemo()
+2015-12-24 09:58:19,336 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/views/{module}/{page}],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.imark.system.controller.IndexController.getDefinedPage(java.lang.String,java.lang.String)
+2015-12-24 09:58:19,337 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/markLog/list],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.util.Map<java.lang.String, java.lang.Object> com.imark.system.controller.MarkLogController.list(javax.servlet.http.HttpServletRequest)
+2015-12-24 09:58:19,337 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/sysLoginUser/list],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object com.imark.system.controller.SysLoginUserController.list(javax.servlet.http.HttpServletRequest)
+2015-12-24 09:58:19,337 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/sysLoginUser/save],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object com.imark.system.controller.SysLoginUserController.save(com.imark.system.model.SysLoginUser)
+2015-12-24 09:58:19,337 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/sysLoginUser/delete],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object com.imark.system.controller.SysLoginUserController.delete(javax.servlet.http.HttpServletRequest)
+2015-12-24 09:58:19,337 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/sysMenu/save],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object com.imark.system.controller.SysMenuController.save()
+2015-12-24 09:58:19,339 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/address/save],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object com.imark.uaac.controller.AddressController.save(javax.servlet.http.HttpServletRequest)
+2015-12-24 09:58:19,339 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/address/getBaseInfoByAreaCode],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object com.imark.uaac.controller.AddressController.getBaseInfoByAreaCode(javax.servlet.http.HttpServletRequest)
+2015-12-24 09:58:19,339 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/address/getMph],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object com.imark.uaac.controller.AddressController.getMph(javax.servlet.http.HttpServletRequest)
+2015-12-24 09:58:19,340 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/address/getTreeList],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.util.List<com.imark.common.vo.EasyTree> com.imark.uaac.controller.AddressController.getTreeList(javax.servlet.http.HttpServletRequest)
+2015-12-24 09:58:19,340 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/address/getBaseInfo],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object com.imark.uaac.controller.AddressController.getBaseInfo(javax.servlet.http.HttpServletRequest)
+2015-12-24 09:58:19,340 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/address/getXiaoqu],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.util.List com.imark.uaac.controller.AddressController.getXiaoqu(javax.servlet.http.HttpServletRequest)
+2015-12-24 09:58:19,340 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/address/getJlxOrZrc],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.util.List com.imark.uaac.controller.AddressController.getJlxOrZrc(javax.servlet.http.HttpServletRequest)
+2015-12-24 09:58:19,340 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/address/xiaoQuSave],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object com.imark.uaac.controller.AddressController.xiaoQuSave(javax.servlet.http.HttpServletRequest)
+2015-12-24 09:58:19,340 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/address/jieLuXiangsave],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object com.imark.uaac.controller.AddressController.jieLuXiangsave(javax.servlet.http.HttpServletRequest)
+2015-12-24 09:58:19,341 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/addressHandle/save],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object com.imark.uaac.controller.AddressHandleController.save(javax.servlet.http.HttpServletRequest)
+2015-12-24 09:58:19,341 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/addressHandle/getMph],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object com.imark.uaac.controller.AddressHandleController.getMph(javax.servlet.http.HttpServletRequest)
+2015-12-24 09:58:19,341 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/addressHandle/getTreeList],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.util.List<com.imark.common.vo.EasyTree> com.imark.uaac.controller.AddressHandleController.getTreeList(javax.servlet.http.HttpServletRequest)
+2015-12-24 09:58:19,342 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/addressHandle/getBaseInfo],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object com.imark.uaac.controller.AddressHandleController.getBaseInfo(javax.servlet.http.HttpServletRequest)
+2015-12-24 09:58:19,342 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/addressHandle/getXiaoqu],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.util.List com.imark.uaac.controller.AddressHandleController.getXiaoqu(javax.servlet.http.HttpServletRequest)
+2015-12-24 09:58:19,342 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/addressHandle/getJlxOrZrc],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.util.List com.imark.uaac.controller.AddressHandleController.getJlxOrZrc(javax.servlet.http.HttpServletRequest)
+2015-12-24 09:58:19,342 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/log/getSafeLogs],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public com.imark.common.vo.EasyGrid com.imark.uaac.controller.LogController.getSafeLoges(java.lang.String,java.lang.Integer,java.lang.Integer,java.lang.String,java.lang.String,javax.servlet.http.HttpServletResponse,javax.servlet.http.HttpServletRequest)
+2015-12-24 09:58:19,342 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/log/getSsoLogs],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object com.imark.uaac.controller.LogController.getSsoLogs(javax.servlet.http.HttpServletResponse,javax.servlet.http.HttpServletRequest)
+2015-12-24 09:58:19,343 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/log/getSafeChart],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.imark.uaac.controller.LogController.getSafeChart(java.lang.String,java.lang.String,java.lang.String,javax.servlet.http.HttpServletRequest)
+2015-12-24 09:58:19,343 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/log/getSsoChart],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.imark.uaac.controller.LogController.getSsoChart(javax.servlet.http.HttpServletRequest)
+2015-12-24 09:58:20,259 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter] - Looking for @ControllerAdvice: WebApplicationContext for namespace 'springServlet-servlet': startup date [Thu Dec 24 09:58:17 CST 2015]; parent: Root WebApplicationContext
+2015-12-24 09:58:20,346 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter] - Looking for @ControllerAdvice: WebApplicationContext for namespace 'springServlet-servlet': startup date [Thu Dec 24 09:58:17 CST 2015]; parent: Root WebApplicationContext
+2015-12-24 09:58:20,497 [main] INFO  [org.springframework.web.servlet.DispatcherServlet] - FrameworkServlet 'springServlet': initialization completed in 2571 ms
+2015-12-24 09:58:43,149 [qtp11479045-27] ERROR [com.imark.common.util.IExceptionHandler] - MultipartException:The current request is not a multipart request
+2015-12-24 10:02:40,306 [main] INFO  [org.springframework.web.context.ContextLoader] - Root WebApplicationContext: initialization started
+2015-12-24 10:02:40,378 [main] INFO  [org.springframework.web.context.support.XmlWebApplicationContext] - Refreshing Root WebApplicationContext: startup date [Thu Dec 24 10:02:40 CST 2015]; root of context hierarchy
+2015-12-24 10:02:40,416 [main] INFO  [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from URL [file:/F:/workspace/rac/imark/target/classes/spring/applicationContext.xml]
+2015-12-24 10:02:40,560 [main] INFO  [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [spring/spring-data-jpa.xml]
+2015-12-24 10:02:40,769 [main] INFO  [org.springframework.context.support.PropertySourcesPlaceholderConfigurer] - Loading properties file from class path resource [database/jdbc.properties]
+2015-12-24 10:02:40,866 [main] INFO  [org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker] - Bean 'org.springframework.transaction.annotation.AnnotationTransactionAttributeSource#0' of type [class org.springframework.transaction.annotation.AnnotationTransactionAttributeSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2015-12-24 10:02:40,869 [main] INFO  [org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker] - Bean 'org.springframework.transaction.config.internalTransactionAdvisor' of type [class org.springframework.transaction.interceptor.BeanFactoryTransactionAttributeSourceAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2015-12-24 10:02:41,390 [main] INFO  [com.alibaba.druid.pool.DruidDataSource] - {dataSource-1} inited
+2015-12-24 10:02:41,593 [main] INFO  [org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean] - Building JPA container EntityManagerFactory for persistence unit 'default'
+2015-12-24 10:02:41,630 [main] INFO  [org.hibernate.jpa.internal.util.LogHelper] - HHH000204: Processing PersistenceUnitInfo [
 	name: default
 	...]
-2015-12-21 10:34:44,852 [main] INFO  [org.hibernate.Version] - HHH000412: Hibernate Core {4.3.5.Final}
-2015-12-21 10:34:44,857 [main] INFO  [org.hibernate.cfg.Environment] - HHH000206: hibernate.properties not found
-2015-12-21 10:34:44,857 [main] INFO  [org.hibernate.cfg.Environment] - HHH000021: Bytecode provider name : javassist
-2015-12-21 10:34:45,185 [main] INFO  [org.hibernate.annotations.common.Version] - HCANN000001: Hibernate Commons Annotations {4.0.4.Final}
-2015-12-21 10:34:45,264 [main] INFO  [org.hibernate.dialect.Dialect] - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
-2015-12-21 10:34:45,451 [main] INFO  [org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory] - HHH000397: Using ASTQueryTranslatorFactory
-2015-12-21 10:34:45,623 [main] WARN  [org.hibernate.id.UUIDHexGenerator] - HHH000409: Using org.hibernate.id.UUIDHexGenerator which does not generate IETF RFC 4122 compliant UUID values; consider using org.hibernate.id.UUIDGenerator instead
-2015-12-21 10:34:46,201 [main] INFO  [org.springframework.web.context.ContextLoader] - Root WebApplicationContext: initialization completed in 4400 ms
-2015-12-21 10:34:46,398 [main] INFO  [org.springframework.web.servlet.DispatcherServlet] - FrameworkServlet 'springServlet': initialization started
-2015-12-21 10:34:46,414 [main] INFO  [org.springframework.web.context.support.XmlWebApplicationContext] - Refreshing WebApplicationContext for namespace 'springServlet-servlet': startup date [Mon Dec 21 10:34:46 CST 2015]; parent: Root WebApplicationContext
-2015-12-21 10:34:46,414 [main] INFO  [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from ServletContext resource [/WEB-INF/spring-mvc.xml]
-2015-12-21 10:34:46,648 [main] INFO  [org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor] - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
-2015-12-21 10:34:47,508 [main] INFO  [org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer] - ClassTemplateLoader for Spring macros added to FreeMarker configuration
-2015-12-21 10:34:47,663 [main] INFO  [org.springframework.web.servlet.handler.SimpleUrlHandlerMapping] - Mapped URL path [/resources/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
-2015-12-21 10:34:47,726 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/editor/list],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object com.imark.system.controller.EditorController.list(javax.servlet.http.HttpServletRequest)
-2015-12-21 10:34:47,726 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/editor/saveArticle],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.imark.system.controller.EditorController.saveArticle(javax.servlet.http.HttpServletRequest)
-2015-12-21 10:34:47,726 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/editor/showArticle],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object com.imark.system.controller.EditorController.showArticle(java.lang.String)
-2015-12-21 10:34:47,726 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/file/download],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public void com.imark.system.controller.FileController.download(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) throws java.io.IOException
-2015-12-21 10:34:47,726 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/file/upload],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public void com.imark.system.controller.FileController.upload(org.springframework.web.multipart.MultipartFile,javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) throws java.io.IOException
-2015-12-21 10:34:47,726 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/file/indexSubmit],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.imark.system.controller.FileController.indexSubmit(com.imark.system.vo.IformVo,javax.servlet.http.HttpServletRequest)
-2015-12-21 10:34:47,726 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/file/xzcfIntoStorage],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public void com.imark.system.controller.FileController.xzcfIntoStorage()
-2015-12-21 10:34:47,726 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/file/xzxkIntoStorage],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public void com.imark.system.controller.FileController.xzxkIntoStorage()
-2015-12-21 10:34:47,726 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/main],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.imark.system.controller.IndexController.main()
-2015-12-21 10:34:47,726 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/ || /login || /welcome],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.imark.system.controller.IndexController.index()
-2015-12-21 10:34:47,726 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/webDemo],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.imark.system.controller.IndexController.webDemo()
-2015-12-21 10:34:47,726 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/doLogin],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.web.servlet.ModelAndView com.imark.system.controller.IndexController.doLogin(java.lang.String,java.lang.String,javax.servlet.http.HttpSession)
-2015-12-21 10:34:47,726 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/views/{module}/{page}],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.imark.system.controller.IndexController.getDefinedPage(java.lang.String,java.lang.String)
-2015-12-21 10:34:47,726 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/markLog/list],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.util.Map<java.lang.String, java.lang.Object> com.imark.system.controller.MarkLogController.list(javax.servlet.http.HttpServletRequest)
-2015-12-21 10:34:47,726 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/markLog/statList1],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.util.Map<java.lang.String, java.lang.Object> com.imark.system.controller.MarkLogController.statList1(javax.servlet.http.HttpServletRequest)
-2015-12-21 10:34:47,726 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/markLog/statList],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.util.Map<java.lang.String, java.lang.Object> com.imark.system.controller.MarkLogController.statList(javax.servlet.http.HttpServletRequest)
-2015-12-21 10:34:47,726 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/markLog/statList2],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public void com.imark.system.controller.MarkLogController.getGovernmentStateExport(org.springframework.ui.Model,java.lang.String,java.lang.String,javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) throws java.lang.Exception
-2015-12-21 10:34:47,726 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/sysLoginUser/list],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object com.imark.system.controller.SysLoginUserController.list(javax.servlet.http.HttpServletRequest)
-2015-12-21 10:34:47,726 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/sysLoginUser/save],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object com.imark.system.controller.SysLoginUserController.save(com.imark.system.model.SysLoginUser)
-2015-12-21 10:34:47,726 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/sysLoginUser/delete],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object com.imark.system.controller.SysLoginUserController.delete(javax.servlet.http.HttpServletRequest)
-2015-12-21 10:34:47,726 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/sysMenu/save],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object com.imark.system.controller.SysMenuController.save()
-2015-12-21 10:34:47,726 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/address/save],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object com.imark.uaac.controller.AddressController.save(javax.servlet.http.HttpServletRequest)
-2015-12-21 10:34:47,726 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/address/getTreeList],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.util.List<com.imark.common.vo.EasyTree> com.imark.uaac.controller.AddressController.getTreeList(javax.servlet.http.HttpServletRequest)
-2015-12-21 10:34:47,726 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/address/getXiaoqu],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.util.List com.imark.uaac.controller.AddressController.getXiaoqu(javax.servlet.http.HttpServletRequest)
-2015-12-21 10:34:47,726 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/address/getBaseInfo],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object com.imark.uaac.controller.AddressController.getBaseInfo(javax.servlet.http.HttpServletRequest)
-2015-12-21 10:34:47,726 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/address/getJlxOrZrc],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.util.List com.imark.uaac.controller.AddressController.getJlxOrZrc(javax.servlet.http.HttpServletRequest)
-2015-12-21 10:34:47,726 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/address/xiaoQuSave],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object com.imark.uaac.controller.AddressController.xiaoQuSave(javax.servlet.http.HttpServletRequest)
-2015-12-21 10:34:47,726 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/address/getMph],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object com.imark.uaac.controller.AddressController.getMph(javax.servlet.http.HttpServletRequest)
-2015-12-21 10:34:47,726 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/address/jieLuXiangsave],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object com.imark.uaac.controller.AddressController.jieLuXiangsave(javax.servlet.http.HttpServletRequest)
-2015-12-21 10:34:47,726 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/address/getBaseInfoByAreaCode],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object com.imark.uaac.controller.AddressController.getBaseInfoByAreaCode(javax.servlet.http.HttpServletRequest)
-2015-12-21 10:34:47,726 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/addressHandle/save],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object com.imark.uaac.controller.AddressHandleController.save(javax.servlet.http.HttpServletRequest)
-2015-12-21 10:34:47,726 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/addressHandle/getTreeList],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.util.List<com.imark.common.vo.EasyTree> com.imark.uaac.controller.AddressHandleController.getTreeList(javax.servlet.http.HttpServletRequest)
-2015-12-21 10:34:47,726 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/addressHandle/getXiaoqu],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.util.List com.imark.uaac.controller.AddressHandleController.getXiaoqu(javax.servlet.http.HttpServletRequest)
-2015-12-21 10:34:47,726 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/addressHandle/getBaseInfo],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object com.imark.uaac.controller.AddressHandleController.getBaseInfo(javax.servlet.http.HttpServletRequest)
-2015-12-21 10:34:47,726 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/addressHandle/getJlxOrZrc],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.util.List com.imark.uaac.controller.AddressHandleController.getJlxOrZrc(javax.servlet.http.HttpServletRequest)
-2015-12-21 10:34:47,726 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/addressHandle/getMph],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object com.imark.uaac.controller.AddressHandleController.getMph(javax.servlet.http.HttpServletRequest)
-2015-12-21 10:34:47,726 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/log/getSafeLogs],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public com.imark.common.vo.EasyGrid com.imark.uaac.controller.LogController.getSafeLoges(java.lang.String,java.lang.Integer,java.lang.Integer,java.lang.String,java.lang.String,javax.servlet.http.HttpServletResponse,javax.servlet.http.HttpServletRequest)
-2015-12-21 10:34:47,726 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/log/getSafeChart],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.imark.uaac.controller.LogController.getSafeChart(java.lang.String,java.lang.String,java.lang.String,javax.servlet.http.HttpServletRequest)
-2015-12-21 10:34:47,726 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/log/getSsoChart],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.imark.uaac.controller.LogController.getSsoChart(javax.servlet.http.HttpServletRequest)
-2015-12-21 10:34:47,726 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/log/getSsoLogs],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object com.imark.uaac.controller.LogController.getSsoLogs(javax.servlet.http.HttpServletResponse,javax.servlet.http.HttpServletRequest)
-2015-12-21 10:34:48,710 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter] - Looking for @ControllerAdvice: WebApplicationContext for namespace 'springServlet-servlet': startup date [Mon Dec 21 10:34:46 CST 2015]; parent: Root WebApplicationContext
-2015-12-21 10:34:48,785 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter] - Looking for @ControllerAdvice: WebApplicationContext for namespace 'springServlet-servlet': startup date [Mon Dec 21 10:34:46 CST 2015]; parent: Root WebApplicationContext
-2015-12-21 10:34:48,910 [main] INFO  [org.springframework.web.servlet.DispatcherServlet] - FrameworkServlet 'springServlet': initialization completed in 2512 ms
-2015-12-21 20:26:34,703 [main] INFO  [org.springframework.web.context.ContextLoader] - Root WebApplicationContext: initialization started
-2015-12-21 20:26:34,797 [main] INFO  [org.springframework.web.context.support.XmlWebApplicationContext] - Refreshing Root WebApplicationContext: startup date [Mon Dec 21 20:26:34 CST 2015]; root of context hierarchy
-2015-12-21 20:26:34,828 [main] INFO  [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from URL [file:/F:/workspace/rac/imark/target/classes/spring/applicationContext.xml]
-2015-12-21 20:26:34,953 [main] INFO  [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [spring/spring-data-jpa.xml]
-2015-12-21 20:26:35,141 [main] INFO  [org.springframework.context.support.PropertySourcesPlaceholderConfigurer] - Loading properties file from class path resource [database/jdbc.properties]
-2015-12-21 20:26:35,219 [main] INFO  [org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker] - Bean 'org.springframework.transaction.annotation.AnnotationTransactionAttributeSource#0' of type [class org.springframework.transaction.annotation.AnnotationTransactionAttributeSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2015-12-21 20:26:35,219 [main] INFO  [org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker] - Bean 'org.springframework.transaction.config.internalTransactionAdvisor' of type [class org.springframework.transaction.interceptor.BeanFactoryTransactionAttributeSourceAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2015-12-21 20:26:35,860 [main] INFO  [com.alibaba.druid.pool.DruidDataSource] - {dataSource-1} inited
-2015-12-21 20:26:36,046 [main] INFO  [org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean] - Building JPA container EntityManagerFactory for persistence unit 'default'
-2015-12-21 20:26:36,108 [main] INFO  [org.hibernate.jpa.internal.util.LogHelper] - HHH000204: Processing PersistenceUnitInfo [
+2015-12-24 10:02:41,709 [main] INFO  [org.hibernate.Version] - HHH000412: Hibernate Core {4.3.5.Final}
+2015-12-24 10:02:41,713 [main] INFO  [org.hibernate.cfg.Environment] - HHH000206: hibernate.properties not found
+2015-12-24 10:02:41,714 [main] INFO  [org.hibernate.cfg.Environment] - HHH000021: Bytecode provider name : javassist
+2015-12-24 10:02:41,952 [main] INFO  [org.hibernate.annotations.common.Version] - HCANN000001: Hibernate Commons Annotations {4.0.4.Final}
+2015-12-24 10:02:42,035 [main] INFO  [org.hibernate.dialect.Dialect] - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2015-12-24 10:02:42,208 [main] INFO  [org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory] - HHH000397: Using ASTQueryTranslatorFactory
+2015-12-24 10:02:42,387 [main] WARN  [org.hibernate.id.UUIDHexGenerator] - HHH000409: Using org.hibernate.id.UUIDHexGenerator which does not generate IETF RFC 4122 compliant UUID values; consider using org.hibernate.id.UUIDGenerator instead
+2015-12-24 10:02:42,717 [main] WARN  [org.springframework.web.context.support.XmlWebApplicationContext] - Exception encountered during context initialization - cancelling refresh attempt
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sysLoginUserJpaDao': Injection of persistence dependencies failed; nested exception is org.springframework.beans.factory.CannotLoadBeanClassException: Cannot find class [com.iflytek.cas.filter.TicketValidationFilter] for bean with name 'casFilter' defined in URL [file:/F:/workspace/rac/imark/target/classes/spring/applicationContext.xml]; nested exception is java.lang.ClassNotFoundException: com.iflytek.cas.filter.TicketValidationFilter
+	at org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor.postProcessPropertyValues(PersistenceAnnotationBeanPostProcessor.java:357)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1202)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:537)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:476)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:298)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:193)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:743)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:757)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:480)
+	at org.springframework.web.context.ContextLoader.configureAndRefreshWebApplicationContext(ContextLoader.java:403)
+	at org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:306)
+	at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:106)
+	at org.eclipse.jetty.server.handler.ContextHandler.startContext(ContextHandler.java:740)
+	at org.eclipse.jetty.servlet.ServletContextHandler.startContext(ServletContextHandler.java:238)
+	at org.eclipse.jetty.webapp.WebAppContext.startContext(WebAppContext.java:1238)
+	at org.eclipse.jetty.server.handler.ContextHandler.doStart(ContextHandler.java:683)
+	at org.eclipse.jetty.webapp.WebAppContext.doStart(WebAppContext.java:480)
+	at org.mortbay.jetty.plugin.JettyWebAppContext.doStart(JettyWebAppContext.java:256)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at org.eclipse.jetty.server.handler.HandlerCollection.doStart(HandlerCollection.java:229)
+	at org.eclipse.jetty.server.handler.ContextHandlerCollection.doStart(ContextHandlerCollection.java:172)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at org.eclipse.jetty.server.handler.HandlerCollection.doStart(HandlerCollection.java:229)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.doStart(HandlerWrapper.java:95)
+	at org.eclipse.jetty.server.Server.doStart(Server.java:275)
+	at org.mortbay.jetty.plugin.JettyServer.doStart(JettyServer.java:65)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at org.mortbay.jetty.plugin.AbstractJettyMojo.startJetty(AbstractJettyMojo.java:511)
+	at org.mortbay.jetty.plugin.AbstractJettyMojo.execute(AbstractJettyMojo.java:364)
+	at org.mortbay.jetty.plugin.JettyRunMojo.execute(JettyRunMojo.java:516)
+	at org.apache.maven.plugin.DefaultBuildPluginManager.executeMojo(DefaultBuildPluginManager.java:101)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:209)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:153)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:145)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:84)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:59)
+	at org.apache.maven.lifecycle.internal.LifecycleStarter.singleThreadedBuild(LifecycleStarter.java:183)
+	at org.apache.maven.lifecycle.internal.LifecycleStarter.execute(LifecycleStarter.java:161)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:320)
+	at org.apache.maven.DefaultMaven.execute(DefaultMaven.java:156)
+	at org.apache.maven.cli.MavenCli.execute(MavenCli.java:537)
+	at org.apache.maven.cli.MavenCli.doMain(MavenCli.java:196)
+	at org.apache.maven.cli.MavenCli.main(MavenCli.java:141)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:601)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced(Launcher.java:290)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launch(Launcher.java:230)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode(Launcher.java:409)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.main(Launcher.java:352)
+Caused by: org.springframework.beans.factory.CannotLoadBeanClassException: Cannot find class [com.iflytek.cas.filter.TicketValidationFilter] for bean with name 'casFilter' defined in URL [file:/F:/workspace/rac/imark/target/classes/spring/applicationContext.xml]; nested exception is java.lang.ClassNotFoundException: com.iflytek.cas.filter.TicketValidationFilter
+	at org.springframework.beans.factory.support.AbstractBeanFactory.resolveBeanClass(AbstractBeanFactory.java:1317)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineTargetType(AbstractAutowireCapableBeanFactory.java:622)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.predictBeanType(AbstractAutowireCapableBeanFactory.java:591)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.isFactoryBean(AbstractBeanFactory.java:1386)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doGetBeanNamesForType(DefaultListableBeanFactory.java:434)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeanNamesForType(DefaultListableBeanFactory.java:412)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeanNamesForType(DefaultListableBeanFactory.java:398)
+	at org.springframework.beans.factory.BeanFactoryUtils.beanNamesForTypeIncludingAncestors(BeanFactoryUtils.java:144)
+	at org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor.findDefaultEntityManagerFactory(PersistenceAnnotationBeanPostProcessor.java:559)
+	at org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor.findEntityManagerFactory(PersistenceAnnotationBeanPostProcessor.java:528)
+	at org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor$PersistenceElement.resolveEntityManager(PersistenceAnnotationBeanPostProcessor.java:694)
+	at org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor$PersistenceElement.getResourceToInject(PersistenceAnnotationBeanPostProcessor.java:667)
+	at org.springframework.beans.factory.annotation.InjectionMetadata$InjectedElement.inject(InjectionMetadata.java:164)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:87)
+	at org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor.postProcessPropertyValues(PersistenceAnnotationBeanPostProcessor.java:354)
+	... 53 more
+Caused by: java.lang.ClassNotFoundException: com.iflytek.cas.filter.TicketValidationFilter
+	at org.codehaus.plexus.classworlds.strategy.SelfFirstStrategy.loadClass(SelfFirstStrategy.java:50)
+	at org.codehaus.plexus.classworlds.realm.ClassRealm.loadClass(ClassRealm.java:244)
+	at org.codehaus.plexus.classworlds.realm.ClassRealm.loadClass(ClassRealm.java:230)
+	at org.eclipse.jetty.webapp.WebAppClassLoader.loadClass(WebAppClassLoader.java:429)
+	at org.eclipse.jetty.webapp.WebAppClassLoader.loadClass(WebAppClassLoader.java:382)
+	at org.springframework.util.ClassUtils.forName(ClassUtils.java:249)
+	at org.springframework.beans.factory.support.AbstractBeanDefinition.resolveBeanClass(AbstractBeanDefinition.java:395)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doResolveBeanClass(AbstractBeanFactory.java:1338)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.resolveBeanClass(AbstractBeanFactory.java:1309)
+	... 67 more
+2015-12-24 10:02:42,722 [main] INFO  [org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean] - Closing JPA EntityManagerFactory for persistence unit 'default'
+2015-12-24 10:02:43,105 [main] INFO  [com.alibaba.druid.pool.DruidDataSource] - {dataSource-1} closed
+2015-12-24 10:02:43,106 [main] ERROR [org.springframework.web.context.ContextLoader] - Context initialization failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sysLoginUserJpaDao': Injection of persistence dependencies failed; nested exception is org.springframework.beans.factory.CannotLoadBeanClassException: Cannot find class [com.iflytek.cas.filter.TicketValidationFilter] for bean with name 'casFilter' defined in URL [file:/F:/workspace/rac/imark/target/classes/spring/applicationContext.xml]; nested exception is java.lang.ClassNotFoundException: com.iflytek.cas.filter.TicketValidationFilter
+	at org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor.postProcessPropertyValues(PersistenceAnnotationBeanPostProcessor.java:357)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1202)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:537)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:476)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:298)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:193)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:743)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:757)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:480)
+	at org.springframework.web.context.ContextLoader.configureAndRefreshWebApplicationContext(ContextLoader.java:403)
+	at org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:306)
+	at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:106)
+	at org.eclipse.jetty.server.handler.ContextHandler.startContext(ContextHandler.java:740)
+	at org.eclipse.jetty.servlet.ServletContextHandler.startContext(ServletContextHandler.java:238)
+	at org.eclipse.jetty.webapp.WebAppContext.startContext(WebAppContext.java:1238)
+	at org.eclipse.jetty.server.handler.ContextHandler.doStart(ContextHandler.java:683)
+	at org.eclipse.jetty.webapp.WebAppContext.doStart(WebAppContext.java:480)
+	at org.mortbay.jetty.plugin.JettyWebAppContext.doStart(JettyWebAppContext.java:256)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at org.eclipse.jetty.server.handler.HandlerCollection.doStart(HandlerCollection.java:229)
+	at org.eclipse.jetty.server.handler.ContextHandlerCollection.doStart(ContextHandlerCollection.java:172)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at org.eclipse.jetty.server.handler.HandlerCollection.doStart(HandlerCollection.java:229)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.doStart(HandlerWrapper.java:95)
+	at org.eclipse.jetty.server.Server.doStart(Server.java:275)
+	at org.mortbay.jetty.plugin.JettyServer.doStart(JettyServer.java:65)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at org.mortbay.jetty.plugin.AbstractJettyMojo.startJetty(AbstractJettyMojo.java:511)
+	at org.mortbay.jetty.plugin.AbstractJettyMojo.execute(AbstractJettyMojo.java:364)
+	at org.mortbay.jetty.plugin.JettyRunMojo.execute(JettyRunMojo.java:516)
+	at org.apache.maven.plugin.DefaultBuildPluginManager.executeMojo(DefaultBuildPluginManager.java:101)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:209)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:153)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:145)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:84)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:59)
+	at org.apache.maven.lifecycle.internal.LifecycleStarter.singleThreadedBuild(LifecycleStarter.java:183)
+	at org.apache.maven.lifecycle.internal.LifecycleStarter.execute(LifecycleStarter.java:161)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:320)
+	at org.apache.maven.DefaultMaven.execute(DefaultMaven.java:156)
+	at org.apache.maven.cli.MavenCli.execute(MavenCli.java:537)
+	at org.apache.maven.cli.MavenCli.doMain(MavenCli.java:196)
+	at org.apache.maven.cli.MavenCli.main(MavenCli.java:141)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:601)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced(Launcher.java:290)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launch(Launcher.java:230)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode(Launcher.java:409)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.main(Launcher.java:352)
+Caused by: org.springframework.beans.factory.CannotLoadBeanClassException: Cannot find class [com.iflytek.cas.filter.TicketValidationFilter] for bean with name 'casFilter' defined in URL [file:/F:/workspace/rac/imark/target/classes/spring/applicationContext.xml]; nested exception is java.lang.ClassNotFoundException: com.iflytek.cas.filter.TicketValidationFilter
+	at org.springframework.beans.factory.support.AbstractBeanFactory.resolveBeanClass(AbstractBeanFactory.java:1317)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineTargetType(AbstractAutowireCapableBeanFactory.java:622)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.predictBeanType(AbstractAutowireCapableBeanFactory.java:591)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.isFactoryBean(AbstractBeanFactory.java:1386)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doGetBeanNamesForType(DefaultListableBeanFactory.java:434)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeanNamesForType(DefaultListableBeanFactory.java:412)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeanNamesForType(DefaultListableBeanFactory.java:398)
+	at org.springframework.beans.factory.BeanFactoryUtils.beanNamesForTypeIncludingAncestors(BeanFactoryUtils.java:144)
+	at org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor.findDefaultEntityManagerFactory(PersistenceAnnotationBeanPostProcessor.java:559)
+	at org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor.findEntityManagerFactory(PersistenceAnnotationBeanPostProcessor.java:528)
+	at org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor$PersistenceElement.resolveEntityManager(PersistenceAnnotationBeanPostProcessor.java:694)
+	at org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor$PersistenceElement.getResourceToInject(PersistenceAnnotationBeanPostProcessor.java:667)
+	at org.springframework.beans.factory.annotation.InjectionMetadata$InjectedElement.inject(InjectionMetadata.java:164)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:87)
+	at org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor.postProcessPropertyValues(PersistenceAnnotationBeanPostProcessor.java:354)
+	... 53 more
+Caused by: java.lang.ClassNotFoundException: com.iflytek.cas.filter.TicketValidationFilter
+	at org.codehaus.plexus.classworlds.strategy.SelfFirstStrategy.loadClass(SelfFirstStrategy.java:50)
+	at org.codehaus.plexus.classworlds.realm.ClassRealm.loadClass(ClassRealm.java:244)
+	at org.codehaus.plexus.classworlds.realm.ClassRealm.loadClass(ClassRealm.java:230)
+	at org.eclipse.jetty.webapp.WebAppClassLoader.loadClass(WebAppClassLoader.java:429)
+	at org.eclipse.jetty.webapp.WebAppClassLoader.loadClass(WebAppClassLoader.java:382)
+	at org.springframework.util.ClassUtils.forName(ClassUtils.java:249)
+	at org.springframework.beans.factory.support.AbstractBeanDefinition.resolveBeanClass(AbstractBeanDefinition.java:395)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doResolveBeanClass(AbstractBeanFactory.java:1338)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.resolveBeanClass(AbstractBeanFactory.java:1309)
+	... 67 more
+2015-12-24 10:04:24,598 [main] INFO  [org.springframework.web.context.ContextLoader] - Root WebApplicationContext: initialization started
+2015-12-24 10:04:24,667 [main] INFO  [org.springframework.web.context.support.XmlWebApplicationContext] - Refreshing Root WebApplicationContext: startup date [Thu Dec 24 10:04:24 CST 2015]; root of context hierarchy
+2015-12-24 10:04:24,713 [main] INFO  [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from URL [file:/F:/workspace/rac/imark/target/classes/spring/applicationContext.xml]
+2015-12-24 10:04:24,842 [main] INFO  [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [spring/spring-data-jpa.xml]
+2015-12-24 10:04:25,047 [main] INFO  [org.springframework.context.support.PropertySourcesPlaceholderConfigurer] - Loading properties file from class path resource [database/jdbc.properties]
+2015-12-24 10:04:25,135 [main] INFO  [org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker] - Bean 'org.springframework.transaction.annotation.AnnotationTransactionAttributeSource#0' of type [class org.springframework.transaction.annotation.AnnotationTransactionAttributeSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2015-12-24 10:04:25,137 [main] INFO  [org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker] - Bean 'org.springframework.transaction.config.internalTransactionAdvisor' of type [class org.springframework.transaction.interceptor.BeanFactoryTransactionAttributeSourceAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2015-12-24 10:04:25,491 [main] INFO  [com.alibaba.druid.pool.DruidDataSource] - {dataSource-1} inited
+2015-12-24 10:04:25,608 [main] INFO  [org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean] - Building JPA container EntityManagerFactory for persistence unit 'default'
+2015-12-24 10:04:25,723 [main] INFO  [org.hibernate.jpa.internal.util.LogHelper] - HHH000204: Processing PersistenceUnitInfo [
 	name: default
 	...]
-2015-12-21 20:26:36,218 [main] INFO  [org.hibernate.Version] - HHH000412: Hibernate Core {4.3.5.Final}
-2015-12-21 20:26:36,218 [main] INFO  [org.hibernate.cfg.Environment] - HHH000206: hibernate.properties not found
-2015-12-21 20:26:36,218 [main] INFO  [org.hibernate.cfg.Environment] - HHH000021: Bytecode provider name : javassist
-2015-12-21 20:26:36,421 [main] INFO  [org.hibernate.annotations.common.Version] - HCANN000001: Hibernate Commons Annotations {4.0.4.Final}
-2015-12-21 20:26:36,483 [main] INFO  [org.hibernate.dialect.Dialect] - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
-2015-12-21 20:26:36,639 [main] INFO  [org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory] - HHH000397: Using ASTQueryTranslatorFactory
-2015-12-21 20:26:36,811 [main] WARN  [org.hibernate.id.UUIDHexGenerator] - HHH000409: Using org.hibernate.id.UUIDHexGenerator which does not generate IETF RFC 4122 compliant UUID values; consider using org.hibernate.id.UUIDGenerator instead
-2015-12-21 20:26:37,280 [main] INFO  [org.springframework.web.context.ContextLoader] - Root WebApplicationContext: initialization completed in 2545 ms
-2015-12-21 20:26:37,589 [main] INFO  [org.springframework.web.servlet.DispatcherServlet] - FrameworkServlet 'springServlet': initialization started
-2015-12-21 20:26:37,589 [main] INFO  [org.springframework.web.context.support.XmlWebApplicationContext] - Refreshing WebApplicationContext for namespace 'springServlet-servlet': startup date [Mon Dec 21 20:26:37 CST 2015]; parent: Root WebApplicationContext
-2015-12-21 20:26:37,589 [main] INFO  [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from ServletContext resource [/WEB-INF/spring-mvc.xml]
-2015-12-21 20:26:37,917 [main] INFO  [org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor] - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
-2015-12-21 20:26:38,651 [main] INFO  [org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer] - ClassTemplateLoader for Spring macros added to FreeMarker configuration
-2015-12-21 20:26:38,781 [main] INFO  [org.springframework.web.servlet.handler.SimpleUrlHandlerMapping] - Mapped URL path [/resources/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
-2015-12-21 20:26:38,827 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/editor/list],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object com.imark.system.controller.EditorController.list(javax.servlet.http.HttpServletRequest)
-2015-12-21 20:26:38,827 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/editor/showArticle],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object com.imark.system.controller.EditorController.showArticle(java.lang.String)
-2015-12-21 20:26:38,827 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/editor/saveArticle],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.imark.system.controller.EditorController.saveArticle(javax.servlet.http.HttpServletRequest)
-2015-12-21 20:26:38,827 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/file/upload],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public void com.imark.system.controller.FileController.upload(org.springframework.web.multipart.MultipartFile,javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) throws java.io.IOException
-2015-12-21 20:26:38,843 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/file/download],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public void com.imark.system.controller.FileController.download(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) throws java.io.IOException
-2015-12-21 20:26:38,843 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/file/indexSubmit],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.imark.system.controller.FileController.indexSubmit(com.imark.system.vo.IformVo,javax.servlet.http.HttpServletRequest)
-2015-12-21 20:26:38,843 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/file/xzcfIntoStorage],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public void com.imark.system.controller.FileController.xzcfIntoStorage()
-2015-12-21 20:26:38,843 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/file/xzxkIntoStorage],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public void com.imark.system.controller.FileController.xzxkIntoStorage()
-2015-12-21 20:26:38,843 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/main],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.imark.system.controller.IndexController.main()
-2015-12-21 20:26:38,843 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/ || /login || /welcome],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.imark.system.controller.IndexController.index()
-2015-12-21 20:26:38,843 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/webDemo],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.imark.system.controller.IndexController.webDemo()
-2015-12-21 20:26:38,843 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/doLogin],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.web.servlet.ModelAndView com.imark.system.controller.IndexController.doLogin(java.lang.String,java.lang.String,javax.servlet.http.HttpSession)
-2015-12-21 20:26:38,843 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/views/{module}/{page}],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.imark.system.controller.IndexController.getDefinedPage(java.lang.String,java.lang.String)
-2015-12-21 20:26:38,843 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/markLog/list],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.util.Map<java.lang.String, java.lang.Object> com.imark.system.controller.MarkLogController.list(javax.servlet.http.HttpServletRequest)
-2015-12-21 20:26:38,843 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/markLog/statList],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.util.Map<java.lang.String, java.lang.Object> com.imark.system.controller.MarkLogController.statList(javax.servlet.http.HttpServletRequest)
-2015-12-21 20:26:38,843 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/markLog/statList1],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.util.Map<java.lang.String, java.lang.Object> com.imark.system.controller.MarkLogController.statList1(javax.servlet.http.HttpServletRequest)
-2015-12-21 20:26:38,843 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/markLog/statList2],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public void com.imark.system.controller.MarkLogController.getGovernmentStateExport(org.springframework.ui.Model,java.lang.String,java.lang.String,javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) throws java.lang.Exception
-2015-12-21 20:26:38,843 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/sysLoginUser/list],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object com.imark.system.controller.SysLoginUserController.list(javax.servlet.http.HttpServletRequest)
-2015-12-21 20:26:38,843 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/sysLoginUser/save],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object com.imark.system.controller.SysLoginUserController.save(com.imark.system.model.SysLoginUser)
-2015-12-21 20:26:38,843 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/sysLoginUser/delete],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object com.imark.system.controller.SysLoginUserController.delete(javax.servlet.http.HttpServletRequest)
-2015-12-21 20:26:38,843 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/sysMenu/save],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object com.imark.system.controller.SysMenuController.save()
-2015-12-21 20:26:38,843 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/address/save],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object com.imark.uaac.controller.AddressController.save(javax.servlet.http.HttpServletRequest)
-2015-12-21 20:26:38,843 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/address/getTreeList],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.util.List<com.imark.common.vo.EasyTree> com.imark.uaac.controller.AddressController.getTreeList(javax.servlet.http.HttpServletRequest)
-2015-12-21 20:26:38,843 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/address/getXiaoqu],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.util.List com.imark.uaac.controller.AddressController.getXiaoqu(javax.servlet.http.HttpServletRequest)
-2015-12-21 20:26:38,843 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/address/getMph],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object com.imark.uaac.controller.AddressController.getMph(javax.servlet.http.HttpServletRequest)
-2015-12-21 20:26:38,843 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/address/getBaseInfo],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object com.imark.uaac.controller.AddressController.getBaseInfo(javax.servlet.http.HttpServletRequest)
-2015-12-21 20:26:38,843 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/address/getJlxOrZrc],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.util.List com.imark.uaac.controller.AddressController.getJlxOrZrc(javax.servlet.http.HttpServletRequest)
-2015-12-21 20:26:38,843 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/address/xiaoQuSave],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object com.imark.uaac.controller.AddressController.xiaoQuSave(javax.servlet.http.HttpServletRequest)
-2015-12-21 20:26:38,843 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/address/getBaseInfoByAreaCode],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object com.imark.uaac.controller.AddressController.getBaseInfoByAreaCode(javax.servlet.http.HttpServletRequest)
-2015-12-21 20:26:38,843 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/address/jieLuXiangsave],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object com.imark.uaac.controller.AddressController.jieLuXiangsave(javax.servlet.http.HttpServletRequest)
-2015-12-21 20:26:38,843 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/addressHandle/save],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object com.imark.uaac.controller.AddressHandleController.save(javax.servlet.http.HttpServletRequest)
-2015-12-21 20:26:38,843 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/addressHandle/getTreeList],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.util.List<com.imark.common.vo.EasyTree> com.imark.uaac.controller.AddressHandleController.getTreeList(javax.servlet.http.HttpServletRequest)
-2015-12-21 20:26:38,843 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/addressHandle/getXiaoqu],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.util.List com.imark.uaac.controller.AddressHandleController.getXiaoqu(javax.servlet.http.HttpServletRequest)
-2015-12-21 20:26:38,843 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/addressHandle/getMph],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object com.imark.uaac.controller.AddressHandleController.getMph(javax.servlet.http.HttpServletRequest)
-2015-12-21 20:26:38,843 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/addressHandle/getBaseInfo],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object com.imark.uaac.controller.AddressHandleController.getBaseInfo(javax.servlet.http.HttpServletRequest)
-2015-12-21 20:26:38,843 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/addressHandle/getJlxOrZrc],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.util.List com.imark.uaac.controller.AddressHandleController.getJlxOrZrc(javax.servlet.http.HttpServletRequest)
-2015-12-21 20:26:38,843 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/log/getSafeLogs],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public com.imark.common.vo.EasyGrid com.imark.uaac.controller.LogController.getSafeLoges(java.lang.String,java.lang.Integer,java.lang.Integer,java.lang.String,java.lang.String,javax.servlet.http.HttpServletResponse,javax.servlet.http.HttpServletRequest)
-2015-12-21 20:26:38,843 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/log/getSsoChart],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.imark.uaac.controller.LogController.getSsoChart(javax.servlet.http.HttpServletRequest)
-2015-12-21 20:26:38,843 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/log/getSsoLogs],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object com.imark.uaac.controller.LogController.getSsoLogs(javax.servlet.http.HttpServletResponse,javax.servlet.http.HttpServletRequest)
-2015-12-21 20:26:38,843 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/log/getSafeChart],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.imark.uaac.controller.LogController.getSafeChart(java.lang.String,java.lang.String,java.lang.String,javax.servlet.http.HttpServletRequest)
-2015-12-21 20:26:39,374 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter] - Looking for @ControllerAdvice: WebApplicationContext for namespace 'springServlet-servlet': startup date [Mon Dec 21 20:26:37 CST 2015]; parent: Root WebApplicationContext
-2015-12-21 20:26:39,468 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter] - Looking for @ControllerAdvice: WebApplicationContext for namespace 'springServlet-servlet': startup date [Mon Dec 21 20:26:37 CST 2015]; parent: Root WebApplicationContext
-2015-12-21 20:26:39,593 [main] INFO  [org.springframework.web.servlet.DispatcherServlet] - FrameworkServlet 'springServlet': initialization completed in 2004 ms
+2015-12-24 10:04:25,806 [main] INFO  [org.hibernate.Version] - HHH000412: Hibernate Core {4.3.5.Final}
+2015-12-24 10:04:25,809 [main] INFO  [org.hibernate.cfg.Environment] - HHH000206: hibernate.properties not found
+2015-12-24 10:04:25,811 [main] INFO  [org.hibernate.cfg.Environment] - HHH000021: Bytecode provider name : javassist
+2015-12-24 10:04:26,035 [main] INFO  [org.hibernate.annotations.common.Version] - HCANN000001: Hibernate Commons Annotations {4.0.4.Final}
+2015-12-24 10:04:26,116 [main] INFO  [org.hibernate.dialect.Dialect] - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2015-12-24 10:04:26,285 [main] INFO  [org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory] - HHH000397: Using ASTQueryTranslatorFactory
+2015-12-24 10:04:26,462 [main] WARN  [org.hibernate.id.UUIDHexGenerator] - HHH000409: Using org.hibernate.id.UUIDHexGenerator which does not generate IETF RFC 4122 compliant UUID values; consider using org.hibernate.id.UUIDGenerator instead
+2015-12-24 10:04:26,965 [main] INFO  [org.springframework.web.context.ContextLoader] - Root WebApplicationContext: initialization completed in 2367 ms
+2015-12-24 10:04:27,075 [main] INFO  [org.springframework.web.servlet.DispatcherServlet] - FrameworkServlet 'springServlet': initialization started
+2015-12-24 10:04:27,078 [main] INFO  [org.springframework.web.context.support.XmlWebApplicationContext] - Refreshing WebApplicationContext for namespace 'springServlet-servlet': startup date [Thu Dec 24 10:04:27 CST 2015]; parent: Root WebApplicationContext
+2015-12-24 10:04:27,079 [main] INFO  [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from ServletContext resource [/WEB-INF/spring-mvc.xml]
+2015-12-24 10:04:27,283 [main] INFO  [org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor] - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2015-12-24 10:04:28,077 [main] INFO  [org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer] - ClassTemplateLoader for Spring macros added to FreeMarker configuration
+2015-12-24 10:04:28,220 [main] INFO  [org.springframework.web.servlet.handler.SimpleUrlHandlerMapping] - Mapped URL path [/resources/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+2015-12-24 10:04:28,284 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/editor/list],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object com.imark.system.controller.EditorController.list(javax.servlet.http.HttpServletRequest)
+2015-12-24 10:04:28,284 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/editor/showArticle],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object com.imark.system.controller.EditorController.showArticle(java.lang.String)
+2015-12-24 10:04:28,284 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/editor/saveArticle],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.imark.system.controller.EditorController.saveArticle(javax.servlet.http.HttpServletRequest)
+2015-12-24 10:04:28,285 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/file/upload],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public void com.imark.system.controller.FileController.upload(org.springframework.web.multipart.MultipartFile,javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) throws java.io.IOException
+2015-12-24 10:04:28,285 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/file/download],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public void com.imark.system.controller.FileController.download(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) throws java.io.IOException
+2015-12-24 10:04:28,285 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/file/indexSubmit],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.imark.system.controller.FileController.indexSubmit(com.imark.system.vo.IformVo,javax.servlet.http.HttpServletRequest)
+2015-12-24 10:04:28,285 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/file/testParam],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.imark.system.controller.FileController.testParam(javax.servlet.http.HttpServletRequest) throws java.io.UnsupportedEncodingException
+2015-12-24 10:04:28,286 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/main],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.imark.system.controller.IndexController.main()
+2015-12-24 10:04:28,286 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/ || /login || /welcome],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.imark.system.controller.IndexController.index()
+2015-12-24 10:04:28,286 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/doLogin],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.web.servlet.ModelAndView com.imark.system.controller.IndexController.doLogin(java.lang.String,java.lang.String,javax.servlet.http.HttpSession)
+2015-12-24 10:04:28,286 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/webDemo],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.imark.system.controller.IndexController.webDemo()
+2015-12-24 10:04:28,286 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/views/{module}/{page}],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.imark.system.controller.IndexController.getDefinedPage(java.lang.String,java.lang.String)
+2015-12-24 10:04:28,287 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/markLog/list],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.util.Map<java.lang.String, java.lang.Object> com.imark.system.controller.MarkLogController.list(javax.servlet.http.HttpServletRequest)
+2015-12-24 10:04:28,287 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/sysLoginUser/list],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object com.imark.system.controller.SysLoginUserController.list(javax.servlet.http.HttpServletRequest)
+2015-12-24 10:04:28,287 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/sysLoginUser/save],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object com.imark.system.controller.SysLoginUserController.save(com.imark.system.model.SysLoginUser)
+2015-12-24 10:04:28,287 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/sysLoginUser/delete],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object com.imark.system.controller.SysLoginUserController.delete(javax.servlet.http.HttpServletRequest)
+2015-12-24 10:04:28,288 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/sysMenu/save],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object com.imark.system.controller.SysMenuController.save()
+2015-12-24 10:04:28,289 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/address/save],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object com.imark.uaac.controller.AddressController.save(javax.servlet.http.HttpServletRequest)
+2015-12-24 10:04:28,289 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/address/getTreeList],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.util.List<com.imark.common.vo.EasyTree> com.imark.uaac.controller.AddressController.getTreeList(javax.servlet.http.HttpServletRequest)
+2015-12-24 10:04:28,290 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/address/getJlxOrZrc],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.util.List com.imark.uaac.controller.AddressController.getJlxOrZrc(javax.servlet.http.HttpServletRequest)
+2015-12-24 10:04:28,290 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/address/getMph],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object com.imark.uaac.controller.AddressController.getMph(javax.servlet.http.HttpServletRequest)
+2015-12-24 10:04:28,290 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/address/getXiaoqu],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.util.List com.imark.uaac.controller.AddressController.getXiaoqu(javax.servlet.http.HttpServletRequest)
+2015-12-24 10:04:28,290 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/address/getBaseInfo],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object com.imark.uaac.controller.AddressController.getBaseInfo(javax.servlet.http.HttpServletRequest)
+2015-12-24 10:04:28,291 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/address/xiaoQuSave],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object com.imark.uaac.controller.AddressController.xiaoQuSave(javax.servlet.http.HttpServletRequest)
+2015-12-24 10:04:28,291 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/address/getBaseInfoByAreaCode],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object com.imark.uaac.controller.AddressController.getBaseInfoByAreaCode(javax.servlet.http.HttpServletRequest)
+2015-12-24 10:04:28,291 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/address/jieLuXiangsave],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object com.imark.uaac.controller.AddressController.jieLuXiangsave(javax.servlet.http.HttpServletRequest)
+2015-12-24 10:04:28,292 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/addressHandle/save],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object com.imark.uaac.controller.AddressHandleController.save(javax.servlet.http.HttpServletRequest)
+2015-12-24 10:04:28,292 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/addressHandle/getTreeList],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.util.List<com.imark.common.vo.EasyTree> com.imark.uaac.controller.AddressHandleController.getTreeList(javax.servlet.http.HttpServletRequest)
+2015-12-24 10:04:28,292 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/addressHandle/getJlxOrZrc],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.util.List com.imark.uaac.controller.AddressHandleController.getJlxOrZrc(javax.servlet.http.HttpServletRequest)
+2015-12-24 10:04:28,292 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/addressHandle/getMph],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object com.imark.uaac.controller.AddressHandleController.getMph(javax.servlet.http.HttpServletRequest)
+2015-12-24 10:04:28,292 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/addressHandle/getXiaoqu],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.util.List com.imark.uaac.controller.AddressHandleController.getXiaoqu(javax.servlet.http.HttpServletRequest)
+2015-12-24 10:04:28,292 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/addressHandle/getBaseInfo],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object com.imark.uaac.controller.AddressHandleController.getBaseInfo(javax.servlet.http.HttpServletRequest)
+2015-12-24 10:04:28,293 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/log/getSafeLogs],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public com.imark.common.vo.EasyGrid com.imark.uaac.controller.LogController.getSafeLoges(java.lang.String,java.lang.Integer,java.lang.Integer,java.lang.String,java.lang.String,javax.servlet.http.HttpServletResponse,javax.servlet.http.HttpServletRequest)
+2015-12-24 10:04:28,293 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/log/getSafeChart],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.imark.uaac.controller.LogController.getSafeChart(java.lang.String,java.lang.String,java.lang.String,javax.servlet.http.HttpServletRequest)
+2015-12-24 10:04:28,293 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/log/getSsoChart],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.imark.uaac.controller.LogController.getSsoChart(javax.servlet.http.HttpServletRequest)
+2015-12-24 10:04:28,293 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/log/getSsoLogs],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object com.imark.uaac.controller.LogController.getSsoLogs(javax.servlet.http.HttpServletResponse,javax.servlet.http.HttpServletRequest)
+2015-12-24 10:04:28,859 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter] - Looking for @ControllerAdvice: WebApplicationContext for namespace 'springServlet-servlet': startup date [Thu Dec 24 10:04:27 CST 2015]; parent: Root WebApplicationContext
+2015-12-24 10:04:28,945 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter] - Looking for @ControllerAdvice: WebApplicationContext for namespace 'springServlet-servlet': startup date [Thu Dec 24 10:04:27 CST 2015]; parent: Root WebApplicationContext
+2015-12-24 10:04:29,075 [main] INFO  [org.springframework.web.servlet.DispatcherServlet] - FrameworkServlet 'springServlet': initialization completed in 1999 ms
+2015-12-24 10:04:53,349 [qtp22820455-31] INFO  [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [org/springframework/jdbc/support/sql-error-codes.xml]
+2015-12-24 10:04:53,393 [qtp22820455-31] INFO  [org.springframework.jdbc.support.SQLErrorCodesFactory] - SQLErrorCodes loaded: [DB2, Derby, H2, HSQL, Informix, MS-SQL, MySQL, Oracle, PostgreSQL, Sybase, Hana]
+2015-12-24 10:04:53,400 [qtp22820455-27] ERROR [com.imark.common.util.IExceptionHandler] - BadSqlGrammarException:PreparedStatementCallback; bad SQL grammar [select *
+  from SYS_MARK_LOGS t
+ WHERE t.mark_type = '1' AND t.logic_status='0'
+   AND t.biz_id =?
+   AND t.biz_type =? ORDER BY t.OP_DATE DESC]; nested exception is org.h2.jdbc.JdbcSQLException: Table "SYS_MARK_LOGS" not found; SQL statement:
+select *
+  from SYS_MARK_LOGS t
+ WHERE t.mark_type = '1' AND t.logic_status='0'
+   AND t.biz_id =?
+   AND t.biz_type =? ORDER BY t.OP_DATE DESC [42102-190]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.command.Parser.readTableOrView(Parser.java:5293)
+	at org.h2.command.Parser.readTableFilter(Parser.java:1234)
+	at org.h2.command.Parser.parseSelectSimpleFromPart(Parser.java:1873)
+	at org.h2.command.Parser.parseSelectSimple(Parser.java:1982)
+	at org.h2.command.Parser.parseSelectSub(Parser.java:1867)
+	at org.h2.command.Parser.parseSelectUnion(Parser.java:1688)
+	at org.h2.command.Parser.parseSelect(Parser.java:1676)
+	at org.h2.command.Parser.parsePrepared(Parser.java:432)
+	at org.h2.command.Parser.parse(Parser.java:304)
+	at org.h2.command.Parser.parse(Parser.java:276)
+	at org.h2.command.Parser.prepareCommand(Parser.java:241)
+	at org.h2.engine.Session.prepareLocal(Session.java:460)
+	at org.h2.server.TcpServerThread.process(TcpServerThread.java:264)
+	at org.h2.server.TcpServerThread.run(TcpServerThread.java:159)
+	at java.lang.Thread.run(Thread.java:722)
+
+2015-12-24 10:04:53,400 [qtp22820455-31] ERROR [com.imark.common.util.IExceptionHandler] - BadSqlGrammarException:PreparedStatementCallback; bad SQL grammar [select *
+  from SYS_MARK_LOGS t
+ WHERE t.mark_type = '1' AND t.logic_status='0'
+   AND t.biz_id =?
+   AND t.biz_type =? ORDER BY t.OP_DATE DESC]; nested exception is org.h2.jdbc.JdbcSQLException: Table "SYS_MARK_LOGS" not found; SQL statement:
+select *
+  from SYS_MARK_LOGS t
+ WHERE t.mark_type = '1' AND t.logic_status='0'
+   AND t.biz_id =?
+   AND t.biz_type =? ORDER BY t.OP_DATE DESC [42102-190]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.command.Parser.readTableOrView(Parser.java:5293)
+	at org.h2.command.Parser.readTableFilter(Parser.java:1234)
+	at org.h2.command.Parser.parseSelectSimpleFromPart(Parser.java:1873)
+	at org.h2.command.Parser.parseSelectSimple(Parser.java:1982)
+	at org.h2.command.Parser.parseSelectSub(Parser.java:1867)
+	at org.h2.command.Parser.parseSelectUnion(Parser.java:1688)
+	at org.h2.command.Parser.parseSelect(Parser.java:1676)
+	at org.h2.command.Parser.parsePrepared(Parser.java:432)
+	at org.h2.command.Parser.parse(Parser.java:304)
+	at org.h2.command.Parser.parse(Parser.java:276)
+	at org.h2.command.Parser.prepareCommand(Parser.java:241)
+	at org.h2.engine.Session.prepareLocal(Session.java:460)
+	at org.h2.server.TcpServerThread.process(TcpServerThread.java:264)
+	at org.h2.server.TcpServerThread.run(TcpServerThread.java:159)
+	at java.lang.Thread.run(Thread.java:722)
+
+2015-12-24 10:18:59,743 [qtp22820455-29] ERROR [com.imark.common.util.IExceptionHandler] - BadSqlGrammarException:PreparedStatementCallback; bad SQL grammar [select *
+  from SYS_MARK_LOGS t
+ WHERE t.mark_type = '1' AND t.logic_status='0'
+   AND t.biz_id =?
+   AND t.biz_type =? ORDER BY t.OP_DATE DESC]; nested exception is org.h2.jdbc.JdbcSQLException: Table "SYS_MARK_LOGS" not found; SQL statement:
+select *
+  from SYS_MARK_LOGS t
+ WHERE t.mark_type = '1' AND t.logic_status='0'
+   AND t.biz_id =?
+   AND t.biz_type =? ORDER BY t.OP_DATE DESC [42102-190]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.command.Parser.readTableOrView(Parser.java:5293)
+	at org.h2.command.Parser.readTableFilter(Parser.java:1234)
+	at org.h2.command.Parser.parseSelectSimpleFromPart(Parser.java:1873)
+	at org.h2.command.Parser.parseSelectSimple(Parser.java:1982)
+	at org.h2.command.Parser.parseSelectSub(Parser.java:1867)
+	at org.h2.command.Parser.parseSelectUnion(Parser.java:1688)
+	at org.h2.command.Parser.parseSelect(Parser.java:1676)
+	at org.h2.command.Parser.parsePrepared(Parser.java:432)
+	at org.h2.command.Parser.parse(Parser.java:304)
+	at org.h2.command.Parser.parse(Parser.java:276)
+	at org.h2.command.Parser.prepareCommand(Parser.java:241)
+	at org.h2.engine.Session.prepareLocal(Session.java:460)
+	at org.h2.server.TcpServerThread.process(TcpServerThread.java:264)
+	at org.h2.server.TcpServerThread.run(TcpServerThread.java:159)
+	at java.lang.Thread.run(Thread.java:722)
+
+2015-12-24 10:18:59,754 [qtp22820455-32] ERROR [com.imark.common.util.IExceptionHandler] - BadSqlGrammarException:PreparedStatementCallback; bad SQL grammar [select *
+  from SYS_MARK_LOGS t
+ WHERE t.mark_type = '1' AND t.logic_status='0'
+   AND t.biz_id =?
+   AND t.biz_type =? ORDER BY t.OP_DATE DESC]; nested exception is org.h2.jdbc.JdbcSQLException: Table "SYS_MARK_LOGS" not found; SQL statement:
+select *
+  from SYS_MARK_LOGS t
+ WHERE t.mark_type = '1' AND t.logic_status='0'
+   AND t.biz_id =?
+   AND t.biz_type =? ORDER BY t.OP_DATE DESC [42102-190]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.command.Parser.readTableOrView(Parser.java:5293)
+	at org.h2.command.Parser.readTableFilter(Parser.java:1234)
+	at org.h2.command.Parser.parseSelectSimpleFromPart(Parser.java:1873)
+	at org.h2.command.Parser.parseSelectSimple(Parser.java:1982)
+	at org.h2.command.Parser.parseSelectSub(Parser.java:1867)
+	at org.h2.command.Parser.parseSelectUnion(Parser.java:1688)
+	at org.h2.command.Parser.parseSelect(Parser.java:1676)
+	at org.h2.command.Parser.parsePrepared(Parser.java:432)
+	at org.h2.command.Parser.parse(Parser.java:304)
+	at org.h2.command.Parser.parse(Parser.java:276)
+	at org.h2.command.Parser.prepareCommand(Parser.java:241)
+	at org.h2.engine.Session.prepareLocal(Session.java:460)
+	at org.h2.server.TcpServerThread.process(TcpServerThread.java:264)
+	at org.h2.server.TcpServerThread.run(TcpServerThread.java:159)
+	at java.lang.Thread.run(Thread.java:722)
+
+2015-12-24 16:50:13,654 [qtp22820455-30] WARN  [org.springframework.web.servlet.PageNotFound] - No mapping found for HTTP request with URI [/imark/uaac/address] in DispatcherServlet with name 'springServlet'
+2015-12-24 16:50:20,631 [qtp22820455-32] ERROR [com.imark.common.util.IExceptionHandler] - BadSqlGrammarException:PreparedStatementCallback; bad SQL grammar [SELECT * FROM loc_area s WHERE  s.area_code=?1]; nested exception is org.h2.jdbc.JdbcSQLException: Table "LOC_AREA" not found; SQL statement:
+SELECT * FROM loc_area s WHERE  s.area_code=?1 [42102-190]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.command.Parser.readTableOrView(Parser.java:5293)
+	at org.h2.command.Parser.readTableFilter(Parser.java:1234)
+	at org.h2.command.Parser.parseSelectSimpleFromPart(Parser.java:1873)
+	at org.h2.command.Parser.parseSelectSimple(Parser.java:1982)
+	at org.h2.command.Parser.parseSelectSub(Parser.java:1867)
+	at org.h2.command.Parser.parseSelectUnion(Parser.java:1688)
+	at org.h2.command.Parser.parseSelect(Parser.java:1676)
+	at org.h2.command.Parser.parsePrepared(Parser.java:432)
+	at org.h2.command.Parser.parse(Parser.java:304)
+	at org.h2.command.Parser.parse(Parser.java:276)
+	at org.h2.command.Parser.prepareCommand(Parser.java:241)
+	at org.h2.engine.Session.prepareLocal(Session.java:460)
+	at org.h2.server.TcpServerThread.process(TcpServerThread.java:264)
+	at org.h2.server.TcpServerThread.run(TcpServerThread.java:159)
+	at java.lang.Thread.run(Thread.java:722)
+
+2015-12-24 16:50:20,650 [qtp22820455-28] ERROR [com.imark.common.util.IExceptionHandler] - BadSqlGrammarException:PreparedStatementCallback; bad SQL grammar [SELECT *  FROM whsg_bzdz_jlx t WHERE t.szxzq IN(
+      select t.id from whsg_bzdz_xzq t start with t.id=? connect by prior id = szxzq
+) order by t.jc,t.id]; nested exception is org.h2.jdbc.JdbcSQLException: Table "WHSG_BZDZ_JLX" not found; SQL statement:
+SELECT *  FROM whsg_bzdz_jlx t WHERE t.szxzq IN(
+      select t.id from whsg_bzdz_xzq t start with t.id=? connect by prior id = szxzq
+) order by t.jc,t.id [42102-190]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.command.Parser.readTableOrView(Parser.java:5293)
+	at org.h2.command.Parser.readTableFilter(Parser.java:1234)
+	at org.h2.command.Parser.parseSelectSimpleFromPart(Parser.java:1873)
+	at org.h2.command.Parser.parseSelectSimple(Parser.java:1982)
+	at org.h2.command.Parser.parseSelectSub(Parser.java:1867)
+	at org.h2.command.Parser.parseSelectUnion(Parser.java:1688)
+	at org.h2.command.Parser.parseSelect(Parser.java:1676)
+	at org.h2.command.Parser.parsePrepared(Parser.java:432)
+	at org.h2.command.Parser.parse(Parser.java:304)
+	at org.h2.command.Parser.parse(Parser.java:276)
+	at org.h2.command.Parser.prepareCommand(Parser.java:241)
+	at org.h2.engine.Session.prepareLocal(Session.java:460)
+	at org.h2.server.TcpServerThread.process(TcpServerThread.java:264)
+	at org.h2.server.TcpServerThread.run(TcpServerThread.java:159)
+	at java.lang.Thread.run(Thread.java:722)
+
+2015-12-24 16:50:20,675 [qtp22820455-29] ERROR [com.imark.common.util.IExceptionHandler] - BadSqlGrammarException:PreparedStatementCallback; bad SQL grammar [SELECT *  FROM whsg_bzdz_xq t WHERE t.szxzq IN(
+      select t.id from whsg_bzdz_xzq t start with t.id=? connect by prior id = szxzq
+) order by t.jc,t.id]; nested exception is org.h2.jdbc.JdbcSQLException: Table "WHSG_BZDZ_XQ" not found; SQL statement:
+SELECT *  FROM whsg_bzdz_xq t WHERE t.szxzq IN(
+      select t.id from whsg_bzdz_xzq t start with t.id=? connect by prior id = szxzq
+) order by t.jc,t.id [42102-190]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.command.Parser.readTableOrView(Parser.java:5293)
+	at org.h2.command.Parser.readTableFilter(Parser.java:1234)
+	at org.h2.command.Parser.parseSelectSimpleFromPart(Parser.java:1873)
+	at org.h2.command.Parser.parseSelectSimple(Parser.java:1982)
+	at org.h2.command.Parser.parseSelectSub(Parser.java:1867)
+	at org.h2.command.Parser.parseSelectUnion(Parser.java:1688)
+	at org.h2.command.Parser.parseSelect(Parser.java:1676)
+	at org.h2.command.Parser.parsePrepared(Parser.java:432)
+	at org.h2.command.Parser.parse(Parser.java:304)
+	at org.h2.command.Parser.parse(Parser.java:276)
+	at org.h2.command.Parser.prepareCommand(Parser.java:241)
+	at org.h2.engine.Session.prepareLocal(Session.java:460)
+	at org.h2.server.TcpServerThread.process(TcpServerThread.java:264)
+	at org.h2.server.TcpServerThread.run(TcpServerThread.java:159)
+	at java.lang.Thread.run(Thread.java:722)
+
+2015-12-24 16:50:37,752 [qtp22820455-27] ERROR [com.imark.common.util.IExceptionHandler] - BadSqlGrammarException:PreparedStatementCallback; bad SQL grammar [SELECT * FROM loc_area s WHERE  s.area_code=?1]; nested exception is org.h2.jdbc.JdbcSQLException: Table "LOC_AREA" not found; SQL statement:
+SELECT * FROM loc_area s WHERE  s.area_code=?1 [42102-190]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.command.Parser.readTableOrView(Parser.java:5293)
+	at org.h2.command.Parser.readTableFilter(Parser.java:1234)
+	at org.h2.command.Parser.parseSelectSimpleFromPart(Parser.java:1873)
+	at org.h2.command.Parser.parseSelectSimple(Parser.java:1982)
+	at org.h2.command.Parser.parseSelectSub(Parser.java:1867)
+	at org.h2.command.Parser.parseSelectUnion(Parser.java:1688)
+	at org.h2.command.Parser.parseSelect(Parser.java:1676)
+	at org.h2.command.Parser.parsePrepared(Parser.java:432)
+	at org.h2.command.Parser.parse(Parser.java:304)
+	at org.h2.command.Parser.parse(Parser.java:276)
+	at org.h2.command.Parser.prepareCommand(Parser.java:241)
+	at org.h2.engine.Session.prepareLocal(Session.java:460)
+	at org.h2.server.TcpServerThread.process(TcpServerThread.java:264)
+	at org.h2.server.TcpServerThread.run(TcpServerThread.java:159)
+	at java.lang.Thread.run(Thread.java:722)
+
+2015-12-24 16:50:37,783 [qtp22820455-32] ERROR [com.imark.common.util.IExceptionHandler] - BadSqlGrammarException:PreparedStatementCallback; bad SQL grammar [SELECT *  FROM whsg_bzdz_jlx t WHERE t.szxzq IN(
+      select t.id from whsg_bzdz_xzq t start with t.id=? connect by prior id = szxzq
+) order by t.jc,t.id]; nested exception is org.h2.jdbc.JdbcSQLException: Table "WHSG_BZDZ_JLX" not found; SQL statement:
+SELECT *  FROM whsg_bzdz_jlx t WHERE t.szxzq IN(
+      select t.id from whsg_bzdz_xzq t start with t.id=? connect by prior id = szxzq
+) order by t.jc,t.id [42102-190]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.command.Parser.readTableOrView(Parser.java:5293)
+	at org.h2.command.Parser.readTableFilter(Parser.java:1234)
+	at org.h2.command.Parser.parseSelectSimpleFromPart(Parser.java:1873)
+	at org.h2.command.Parser.parseSelectSimple(Parser.java:1982)
+	at org.h2.command.Parser.parseSelectSub(Parser.java:1867)
+	at org.h2.command.Parser.parseSelectUnion(Parser.java:1688)
+	at org.h2.command.Parser.parseSelect(Parser.java:1676)
+	at org.h2.command.Parser.parsePrepared(Parser.java:432)
+	at org.h2.command.Parser.parse(Parser.java:304)
+	at org.h2.command.Parser.parse(Parser.java:276)
+	at org.h2.command.Parser.prepareCommand(Parser.java:241)
+	at org.h2.engine.Session.prepareLocal(Session.java:460)
+	at org.h2.server.TcpServerThread.process(TcpServerThread.java:264)
+	at org.h2.server.TcpServerThread.run(TcpServerThread.java:159)
+	at java.lang.Thread.run(Thread.java:722)
+
+2015-12-24 16:50:37,810 [qtp22820455-31] ERROR [com.imark.common.util.IExceptionHandler] - BadSqlGrammarException:PreparedStatementCallback; bad SQL grammar [SELECT *  FROM whsg_bzdz_xq t WHERE t.szxzq IN(
+      select t.id from whsg_bzdz_xzq t start with t.id=? connect by prior id = szxzq
+) order by t.jc,t.id]; nested exception is org.h2.jdbc.JdbcSQLException: Table "WHSG_BZDZ_XQ" not found; SQL statement:
+SELECT *  FROM whsg_bzdz_xq t WHERE t.szxzq IN(
+      select t.id from whsg_bzdz_xzq t start with t.id=? connect by prior id = szxzq
+) order by t.jc,t.id [42102-190]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.command.Parser.readTableOrView(Parser.java:5293)
+	at org.h2.command.Parser.readTableFilter(Parser.java:1234)
+	at org.h2.command.Parser.parseSelectSimpleFromPart(Parser.java:1873)
+	at org.h2.command.Parser.parseSelectSimple(Parser.java:1982)
+	at org.h2.command.Parser.parseSelectSub(Parser.java:1867)
+	at org.h2.command.Parser.parseSelectUnion(Parser.java:1688)
+	at org.h2.command.Parser.parseSelect(Parser.java:1676)
+	at org.h2.command.Parser.parsePrepared(Parser.java:432)
+	at org.h2.command.Parser.parse(Parser.java:304)
+	at org.h2.command.Parser.parse(Parser.java:276)
+	at org.h2.command.Parser.prepareCommand(Parser.java:241)
+	at org.h2.engine.Session.prepareLocal(Session.java:460)
+	at org.h2.server.TcpServerThread.process(TcpServerThread.java:264)
+	at org.h2.server.TcpServerThread.run(TcpServerThread.java:159)
+	at java.lang.Thread.run(Thread.java:722)
+
+2015-12-24 16:51:18,844 [qtp22820455-32] ERROR [com.imark.common.util.IExceptionHandler] - BadSqlGrammarException:PreparedStatementCallback; bad SQL grammar [SELECT * FROM loc_area s WHERE  s.area_code=?1]; nested exception is org.h2.jdbc.JdbcSQLException: Table "LOC_AREA" not found; SQL statement:
+SELECT * FROM loc_area s WHERE  s.area_code=?1 [42102-190]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.command.Parser.readTableOrView(Parser.java:5293)
+	at org.h2.command.Parser.readTableFilter(Parser.java:1234)
+	at org.h2.command.Parser.parseSelectSimpleFromPart(Parser.java:1873)
+	at org.h2.command.Parser.parseSelectSimple(Parser.java:1982)
+	at org.h2.command.Parser.parseSelectSub(Parser.java:1867)
+	at org.h2.command.Parser.parseSelectUnion(Parser.java:1688)
+	at org.h2.command.Parser.parseSelect(Parser.java:1676)
+	at org.h2.command.Parser.parsePrepared(Parser.java:432)
+	at org.h2.command.Parser.parse(Parser.java:304)
+	at org.h2.command.Parser.parse(Parser.java:276)
+	at org.h2.command.Parser.prepareCommand(Parser.java:241)
+	at org.h2.engine.Session.prepareLocal(Session.java:460)
+	at org.h2.server.TcpServerThread.process(TcpServerThread.java:264)
+	at org.h2.server.TcpServerThread.run(TcpServerThread.java:159)
+	at java.lang.Thread.run(Thread.java:722)
+
+2015-12-24 16:51:18,877 [qtp22820455-27] ERROR [com.imark.common.util.IExceptionHandler] - BadSqlGrammarException:PreparedStatementCallback; bad SQL grammar [SELECT *  FROM whsg_bzdz_jlx t WHERE t.szxzq IN(
+      select t.id from whsg_bzdz_xzq t start with t.id=? connect by prior id = szxzq
+) order by t.jc,t.id]; nested exception is org.h2.jdbc.JdbcSQLException: Table "WHSG_BZDZ_JLX" not found; SQL statement:
+SELECT *  FROM whsg_bzdz_jlx t WHERE t.szxzq IN(
+      select t.id from whsg_bzdz_xzq t start with t.id=? connect by prior id = szxzq
+) order by t.jc,t.id [42102-190]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.command.Parser.readTableOrView(Parser.java:5293)
+	at org.h2.command.Parser.readTableFilter(Parser.java:1234)
+	at org.h2.command.Parser.parseSelectSimpleFromPart(Parser.java:1873)
+	at org.h2.command.Parser.parseSelectSimple(Parser.java:1982)
+	at org.h2.command.Parser.parseSelectSub(Parser.java:1867)
+	at org.h2.command.Parser.parseSelectUnion(Parser.java:1688)
+	at org.h2.command.Parser.parseSelect(Parser.java:1676)
+	at org.h2.command.Parser.parsePrepared(Parser.java:432)
+	at org.h2.command.Parser.parse(Parser.java:304)
+	at org.h2.command.Parser.parse(Parser.java:276)
+	at org.h2.command.Parser.prepareCommand(Parser.java:241)
+	at org.h2.engine.Session.prepareLocal(Session.java:460)
+	at org.h2.server.TcpServerThread.process(TcpServerThread.java:264)
+	at org.h2.server.TcpServerThread.run(TcpServerThread.java:159)
+	at java.lang.Thread.run(Thread.java:722)
+
+2015-12-24 16:51:18,900 [qtp22820455-29] ERROR [com.imark.common.util.IExceptionHandler] - BadSqlGrammarException:PreparedStatementCallback; bad SQL grammar [SELECT *  FROM whsg_bzdz_xq t WHERE t.szxzq IN(
+      select t.id from whsg_bzdz_xzq t start with t.id=? connect by prior id = szxzq
+) order by t.jc,t.id]; nested exception is org.h2.jdbc.JdbcSQLException: Table "WHSG_BZDZ_XQ" not found; SQL statement:
+SELECT *  FROM whsg_bzdz_xq t WHERE t.szxzq IN(
+      select t.id from whsg_bzdz_xzq t start with t.id=? connect by prior id = szxzq
+) order by t.jc,t.id [42102-190]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.command.Parser.readTableOrView(Parser.java:5293)
+	at org.h2.command.Parser.readTableFilter(Parser.java:1234)
+	at org.h2.command.Parser.parseSelectSimpleFromPart(Parser.java:1873)
+	at org.h2.command.Parser.parseSelectSimple(Parser.java:1982)
+	at org.h2.command.Parser.parseSelectSub(Parser.java:1867)
+	at org.h2.command.Parser.parseSelectUnion(Parser.java:1688)
+	at org.h2.command.Parser.parseSelect(Parser.java:1676)
+	at org.h2.command.Parser.parsePrepared(Parser.java:432)
+	at org.h2.command.Parser.parse(Parser.java:304)
+	at org.h2.command.Parser.parse(Parser.java:276)
+	at org.h2.command.Parser.prepareCommand(Parser.java:241)
+	at org.h2.engine.Session.prepareLocal(Session.java:460)
+	at org.h2.server.TcpServerThread.process(TcpServerThread.java:264)
+	at org.h2.server.TcpServerThread.run(TcpServerThread.java:159)
+	at java.lang.Thread.run(Thread.java:722)
+
+2015-12-24 16:51:34,212 [qtp22820455-28] ERROR [com.imark.common.util.IExceptionHandler] - BadSqlGrammarException:PreparedStatementCallback; bad SQL grammar [SELECT * FROM loc_area s WHERE  s.area_code=?1]; nested exception is org.h2.jdbc.JdbcSQLException: Table "LOC_AREA" not found; SQL statement:
+SELECT * FROM loc_area s WHERE  s.area_code=?1 [42102-190]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.command.Parser.readTableOrView(Parser.java:5293)
+	at org.h2.command.Parser.readTableFilter(Parser.java:1234)
+	at org.h2.command.Parser.parseSelectSimpleFromPart(Parser.java:1873)
+	at org.h2.command.Parser.parseSelectSimple(Parser.java:1982)
+	at org.h2.command.Parser.parseSelectSub(Parser.java:1867)
+	at org.h2.command.Parser.parseSelectUnion(Parser.java:1688)
+	at org.h2.command.Parser.parseSelect(Parser.java:1676)
+	at org.h2.command.Parser.parsePrepared(Parser.java:432)
+	at org.h2.command.Parser.parse(Parser.java:304)
+	at org.h2.command.Parser.parse(Parser.java:276)
+	at org.h2.command.Parser.prepareCommand(Parser.java:241)
+	at org.h2.engine.Session.prepareLocal(Session.java:460)
+	at org.h2.server.TcpServerThread.process(TcpServerThread.java:264)
+	at org.h2.server.TcpServerThread.run(TcpServerThread.java:159)
+	at java.lang.Thread.run(Thread.java:722)
+
+2015-12-24 16:51:34,265 [qtp22820455-32] ERROR [com.imark.common.util.IExceptionHandler] - BadSqlGrammarException:PreparedStatementCallback; bad SQL grammar [SELECT *  FROM whsg_bzdz_jlx t WHERE t.szxzq IN(
+      select t.id from whsg_bzdz_xzq t start with t.id=? connect by prior id = szxzq
+) order by t.jc,t.id]; nested exception is org.h2.jdbc.JdbcSQLException: Table "WHSG_BZDZ_JLX" not found; SQL statement:
+SELECT *  FROM whsg_bzdz_jlx t WHERE t.szxzq IN(
+      select t.id from whsg_bzdz_xzq t start with t.id=? connect by prior id = szxzq
+) order by t.jc,t.id [42102-190]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.command.Parser.readTableOrView(Parser.java:5293)
+	at org.h2.command.Parser.readTableFilter(Parser.java:1234)
+	at org.h2.command.Parser.parseSelectSimpleFromPart(Parser.java:1873)
+	at org.h2.command.Parser.parseSelectSimple(Parser.java:1982)
+	at org.h2.command.Parser.parseSelectSub(Parser.java:1867)
+	at org.h2.command.Parser.parseSelectUnion(Parser.java:1688)
+	at org.h2.command.Parser.parseSelect(Parser.java:1676)
+	at org.h2.command.Parser.parsePrepared(Parser.java:432)
+	at org.h2.command.Parser.parse(Parser.java:304)
+	at org.h2.command.Parser.parse(Parser.java:276)
+	at org.h2.command.Parser.prepareCommand(Parser.java:241)
+	at org.h2.engine.Session.prepareLocal(Session.java:460)
+	at org.h2.server.TcpServerThread.process(TcpServerThread.java:264)
+	at org.h2.server.TcpServerThread.run(TcpServerThread.java:159)
+	at java.lang.Thread.run(Thread.java:722)
+
+2015-12-24 16:51:34,318 [qtp22820455-27] ERROR [com.imark.common.util.IExceptionHandler] - BadSqlGrammarException:PreparedStatementCallback; bad SQL grammar [SELECT *  FROM whsg_bzdz_xq t WHERE t.szxzq IN(
+      select t.id from whsg_bzdz_xzq t start with t.id=? connect by prior id = szxzq
+) order by t.jc,t.id]; nested exception is org.h2.jdbc.JdbcSQLException: Table "WHSG_BZDZ_XQ" not found; SQL statement:
+SELECT *  FROM whsg_bzdz_xq t WHERE t.szxzq IN(
+      select t.id from whsg_bzdz_xzq t start with t.id=? connect by prior id = szxzq
+) order by t.jc,t.id [42102-190]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.command.Parser.readTableOrView(Parser.java:5293)
+	at org.h2.command.Parser.readTableFilter(Parser.java:1234)
+	at org.h2.command.Parser.parseSelectSimpleFromPart(Parser.java:1873)
+	at org.h2.command.Parser.parseSelectSimple(Parser.java:1982)
+	at org.h2.command.Parser.parseSelectSub(Parser.java:1867)
+	at org.h2.command.Parser.parseSelectUnion(Parser.java:1688)
+	at org.h2.command.Parser.parseSelect(Parser.java:1676)
+	at org.h2.command.Parser.parsePrepared(Parser.java:432)
+	at org.h2.command.Parser.parse(Parser.java:304)
+	at org.h2.command.Parser.parse(Parser.java:276)
+	at org.h2.command.Parser.prepareCommand(Parser.java:241)
+	at org.h2.engine.Session.prepareLocal(Session.java:460)
+	at org.h2.server.TcpServerThread.process(TcpServerThread.java:264)
+	at org.h2.server.TcpServerThread.run(TcpServerThread.java:159)
+	at java.lang.Thread.run(Thread.java:722)
+
+2015-12-24 16:52:36,513 [qtp22820455-28] ERROR [com.imark.common.util.IExceptionHandler] - BadSqlGrammarException:PreparedStatementCallback; bad SQL grammar [SELECT * FROM loc_area s WHERE  s.area_code=?1]; nested exception is org.h2.jdbc.JdbcSQLException: Table "LOC_AREA" not found; SQL statement:
+SELECT * FROM loc_area s WHERE  s.area_code=?1 [42102-190]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.command.Parser.readTableOrView(Parser.java:5293)
+	at org.h2.command.Parser.readTableFilter(Parser.java:1234)
+	at org.h2.command.Parser.parseSelectSimpleFromPart(Parser.java:1873)
+	at org.h2.command.Parser.parseSelectSimple(Parser.java:1982)
+	at org.h2.command.Parser.parseSelectSub(Parser.java:1867)
+	at org.h2.command.Parser.parseSelectUnion(Parser.java:1688)
+	at org.h2.command.Parser.parseSelect(Parser.java:1676)
+	at org.h2.command.Parser.parsePrepared(Parser.java:432)
+	at org.h2.command.Parser.parse(Parser.java:304)
+	at org.h2.command.Parser.parse(Parser.java:276)
+	at org.h2.command.Parser.prepareCommand(Parser.java:241)
+	at org.h2.engine.Session.prepareLocal(Session.java:460)
+	at org.h2.server.TcpServerThread.process(TcpServerThread.java:264)
+	at org.h2.server.TcpServerThread.run(TcpServerThread.java:159)
+	at java.lang.Thread.run(Thread.java:722)
+
+2015-12-24 16:52:58,434 [qtp22820455-29] ERROR [com.imark.common.util.IExceptionHandler] - BadSqlGrammarException:PreparedStatementCallback; bad SQL grammar [SELECT * FROM loc_area s WHERE  s.area_code=?1]; nested exception is org.h2.jdbc.JdbcSQLException: Table "LOC_AREA" not found; SQL statement:
+SELECT * FROM loc_area s WHERE  s.area_code=?1 [42102-190]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.command.Parser.readTableOrView(Parser.java:5293)
+	at org.h2.command.Parser.readTableFilter(Parser.java:1234)
+	at org.h2.command.Parser.parseSelectSimpleFromPart(Parser.java:1873)
+	at org.h2.command.Parser.parseSelectSimple(Parser.java:1982)
+	at org.h2.command.Parser.parseSelectSub(Parser.java:1867)
+	at org.h2.command.Parser.parseSelectUnion(Parser.java:1688)
+	at org.h2.command.Parser.parseSelect(Parser.java:1676)
+	at org.h2.command.Parser.parsePrepared(Parser.java:432)
+	at org.h2.command.Parser.parse(Parser.java:304)
+	at org.h2.command.Parser.parse(Parser.java:276)
+	at org.h2.command.Parser.prepareCommand(Parser.java:241)
+	at org.h2.engine.Session.prepareLocal(Session.java:460)
+	at org.h2.server.TcpServerThread.process(TcpServerThread.java:264)
+	at org.h2.server.TcpServerThread.run(TcpServerThread.java:159)
+	at java.lang.Thread.run(Thread.java:722)
+
+2015-12-24 16:52:58,462 [qtp22820455-32] ERROR [com.imark.common.util.IExceptionHandler] - BadSqlGrammarException:PreparedStatementCallback; bad SQL grammar [SELECT *  FROM whsg_bzdz_jlx t WHERE t.szxzq IN(
+      select t.id from whsg_bzdz_xzq t start with t.id=? connect by prior id = szxzq
+) order by t.jc,t.id]; nested exception is org.h2.jdbc.JdbcSQLException: Table "WHSG_BZDZ_JLX" not found; SQL statement:
+SELECT *  FROM whsg_bzdz_jlx t WHERE t.szxzq IN(
+      select t.id from whsg_bzdz_xzq t start with t.id=? connect by prior id = szxzq
+) order by t.jc,t.id [42102-190]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.command.Parser.readTableOrView(Parser.java:5293)
+	at org.h2.command.Parser.readTableFilter(Parser.java:1234)
+	at org.h2.command.Parser.parseSelectSimpleFromPart(Parser.java:1873)
+	at org.h2.command.Parser.parseSelectSimple(Parser.java:1982)
+	at org.h2.command.Parser.parseSelectSub(Parser.java:1867)
+	at org.h2.command.Parser.parseSelectUnion(Parser.java:1688)
+	at org.h2.command.Parser.parseSelect(Parser.java:1676)
+	at org.h2.command.Parser.parsePrepared(Parser.java:432)
+	at org.h2.command.Parser.parse(Parser.java:304)
+	at org.h2.command.Parser.parse(Parser.java:276)
+	at org.h2.command.Parser.prepareCommand(Parser.java:241)
+	at org.h2.engine.Session.prepareLocal(Session.java:460)
+	at org.h2.server.TcpServerThread.process(TcpServerThread.java:264)
+	at org.h2.server.TcpServerThread.run(TcpServerThread.java:159)
+	at java.lang.Thread.run(Thread.java:722)
+
+2015-12-24 16:52:58,484 [qtp22820455-30] ERROR [com.imark.common.util.IExceptionHandler] - BadSqlGrammarException:PreparedStatementCallback; bad SQL grammar [SELECT *  FROM whsg_bzdz_xq t WHERE t.szxzq IN(
+      select t.id from whsg_bzdz_xzq t start with t.id=? connect by prior id = szxzq
+) order by t.jc,t.id]; nested exception is org.h2.jdbc.JdbcSQLException: Table "WHSG_BZDZ_XQ" not found; SQL statement:
+SELECT *  FROM whsg_bzdz_xq t WHERE t.szxzq IN(
+      select t.id from whsg_bzdz_xzq t start with t.id=? connect by prior id = szxzq
+) order by t.jc,t.id [42102-190]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.command.Parser.readTableOrView(Parser.java:5293)
+	at org.h2.command.Parser.readTableFilter(Parser.java:1234)
+	at org.h2.command.Parser.parseSelectSimpleFromPart(Parser.java:1873)
+	at org.h2.command.Parser.parseSelectSimple(Parser.java:1982)
+	at org.h2.command.Parser.parseSelectSub(Parser.java:1867)
+	at org.h2.command.Parser.parseSelectUnion(Parser.java:1688)
+	at org.h2.command.Parser.parseSelect(Parser.java:1676)
+	at org.h2.command.Parser.parsePrepared(Parser.java:432)
+	at org.h2.command.Parser.parse(Parser.java:304)
+	at org.h2.command.Parser.parse(Parser.java:276)
+	at org.h2.command.Parser.prepareCommand(Parser.java:241)
+	at org.h2.engine.Session.prepareLocal(Session.java:460)
+	at org.h2.server.TcpServerThread.process(TcpServerThread.java:264)
+	at org.h2.server.TcpServerThread.run(TcpServerThread.java:159)
+	at java.lang.Thread.run(Thread.java:722)
+
+2015-12-24 16:52:59,354 [qtp22820455-30] ERROR [com.imark.common.util.IExceptionHandler] - BadSqlGrammarException:PreparedStatementCallback; bad SQL grammar [SELECT * FROM loc_area s WHERE  s.area_code=?1]; nested exception is org.h2.jdbc.JdbcSQLException: Table "LOC_AREA" not found; SQL statement:
+SELECT * FROM loc_area s WHERE  s.area_code=?1 [42102-190]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.command.Parser.readTableOrView(Parser.java:5293)
+	at org.h2.command.Parser.readTableFilter(Parser.java:1234)
+	at org.h2.command.Parser.parseSelectSimpleFromPart(Parser.java:1873)
+	at org.h2.command.Parser.parseSelectSimple(Parser.java:1982)
+	at org.h2.command.Parser.parseSelectSub(Parser.java:1867)
+	at org.h2.command.Parser.parseSelectUnion(Parser.java:1688)
+	at org.h2.command.Parser.parseSelect(Parser.java:1676)
+	at org.h2.command.Parser.parsePrepared(Parser.java:432)
+	at org.h2.command.Parser.parse(Parser.java:304)
+	at org.h2.command.Parser.parse(Parser.java:276)
+	at org.h2.command.Parser.prepareCommand(Parser.java:241)
+	at org.h2.engine.Session.prepareLocal(Session.java:460)
+	at org.h2.server.TcpServerThread.process(TcpServerThread.java:264)
+	at org.h2.server.TcpServerThread.run(TcpServerThread.java:159)
+	at java.lang.Thread.run(Thread.java:722)
+
+2015-12-24 16:52:59,380 [qtp22820455-31] ERROR [com.imark.common.util.IExceptionHandler] - BadSqlGrammarException:PreparedStatementCallback; bad SQL grammar [SELECT *  FROM whsg_bzdz_jlx t WHERE t.szxzq IN(
+      select t.id from whsg_bzdz_xzq t start with t.id=? connect by prior id = szxzq
+) order by t.jc,t.id]; nested exception is org.h2.jdbc.JdbcSQLException: Table "WHSG_BZDZ_JLX" not found; SQL statement:
+SELECT *  FROM whsg_bzdz_jlx t WHERE t.szxzq IN(
+      select t.id from whsg_bzdz_xzq t start with t.id=? connect by prior id = szxzq
+) order by t.jc,t.id [42102-190]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.command.Parser.readTableOrView(Parser.java:5293)
+	at org.h2.command.Parser.readTableFilter(Parser.java:1234)
+	at org.h2.command.Parser.parseSelectSimpleFromPart(Parser.java:1873)
+	at org.h2.command.Parser.parseSelectSimple(Parser.java:1982)
+	at org.h2.command.Parser.parseSelectSub(Parser.java:1867)
+	at org.h2.command.Parser.parseSelectUnion(Parser.java:1688)
+	at org.h2.command.Parser.parseSelect(Parser.java:1676)
+	at org.h2.command.Parser.parsePrepared(Parser.java:432)
+	at org.h2.command.Parser.parse(Parser.java:304)
+	at org.h2.command.Parser.parse(Parser.java:276)
+	at org.h2.command.Parser.prepareCommand(Parser.java:241)
+	at org.h2.engine.Session.prepareLocal(Session.java:460)
+	at org.h2.server.TcpServerThread.process(TcpServerThread.java:264)
+	at org.h2.server.TcpServerThread.run(TcpServerThread.java:159)
+	at java.lang.Thread.run(Thread.java:722)
+
+2015-12-24 16:52:59,402 [qtp22820455-32] ERROR [com.imark.common.util.IExceptionHandler] - BadSqlGrammarException:PreparedStatementCallback; bad SQL grammar [SELECT *  FROM whsg_bzdz_xq t WHERE t.szxzq IN(
+      select t.id from whsg_bzdz_xzq t start with t.id=? connect by prior id = szxzq
+) order by t.jc,t.id]; nested exception is org.h2.jdbc.JdbcSQLException: Table "WHSG_BZDZ_XQ" not found; SQL statement:
+SELECT *  FROM whsg_bzdz_xq t WHERE t.szxzq IN(
+      select t.id from whsg_bzdz_xzq t start with t.id=? connect by prior id = szxzq
+) order by t.jc,t.id [42102-190]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.command.Parser.readTableOrView(Parser.java:5293)
+	at org.h2.command.Parser.readTableFilter(Parser.java:1234)
+	at org.h2.command.Parser.parseSelectSimpleFromPart(Parser.java:1873)
+	at org.h2.command.Parser.parseSelectSimple(Parser.java:1982)
+	at org.h2.command.Parser.parseSelectSub(Parser.java:1867)
+	at org.h2.command.Parser.parseSelectUnion(Parser.java:1688)
+	at org.h2.command.Parser.parseSelect(Parser.java:1676)
+	at org.h2.command.Parser.parsePrepared(Parser.java:432)
+	at org.h2.command.Parser.parse(Parser.java:304)
+	at org.h2.command.Parser.parse(Parser.java:276)
+	at org.h2.command.Parser.prepareCommand(Parser.java:241)
+	at org.h2.engine.Session.prepareLocal(Session.java:460)
+	at org.h2.server.TcpServerThread.process(TcpServerThread.java:264)
+	at org.h2.server.TcpServerThread.run(TcpServerThread.java:159)
+	at java.lang.Thread.run(Thread.java:722)
+
+2015-12-24 16:53:00,270 [qtp22820455-31] ERROR [com.imark.common.util.IExceptionHandler] - BadSqlGrammarException:PreparedStatementCallback; bad SQL grammar [SELECT * FROM loc_area s WHERE  s.area_code=?1]; nested exception is org.h2.jdbc.JdbcSQLException: Table "LOC_AREA" not found; SQL statement:
+SELECT * FROM loc_area s WHERE  s.area_code=?1 [42102-190]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.command.Parser.readTableOrView(Parser.java:5293)
+	at org.h2.command.Parser.readTableFilter(Parser.java:1234)
+	at org.h2.command.Parser.parseSelectSimpleFromPart(Parser.java:1873)
+	at org.h2.command.Parser.parseSelectSimple(Parser.java:1982)
+	at org.h2.command.Parser.parseSelectSub(Parser.java:1867)
+	at org.h2.command.Parser.parseSelectUnion(Parser.java:1688)
+	at org.h2.command.Parser.parseSelect(Parser.java:1676)
+	at org.h2.command.Parser.parsePrepared(Parser.java:432)
+	at org.h2.command.Parser.parse(Parser.java:304)
+	at org.h2.command.Parser.parse(Parser.java:276)
+	at org.h2.command.Parser.prepareCommand(Parser.java:241)
+	at org.h2.engine.Session.prepareLocal(Session.java:460)
+	at org.h2.server.TcpServerThread.process(TcpServerThread.java:264)
+	at org.h2.server.TcpServerThread.run(TcpServerThread.java:159)
+	at java.lang.Thread.run(Thread.java:722)
+
+2015-12-24 16:53:00,293 [qtp22820455-28] ERROR [com.imark.common.util.IExceptionHandler] - BadSqlGrammarException:PreparedStatementCallback; bad SQL grammar [SELECT *  FROM whsg_bzdz_jlx t WHERE t.szxzq IN(
+      select t.id from whsg_bzdz_xzq t start with t.id=? connect by prior id = szxzq
+) order by t.jc,t.id]; nested exception is org.h2.jdbc.JdbcSQLException: Table "WHSG_BZDZ_JLX" not found; SQL statement:
+SELECT *  FROM whsg_bzdz_jlx t WHERE t.szxzq IN(
+      select t.id from whsg_bzdz_xzq t start with t.id=? connect by prior id = szxzq
+) order by t.jc,t.id [42102-190]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.command.Parser.readTableOrView(Parser.java:5293)
+	at org.h2.command.Parser.readTableFilter(Parser.java:1234)
+	at org.h2.command.Parser.parseSelectSimpleFromPart(Parser.java:1873)
+	at org.h2.command.Parser.parseSelectSimple(Parser.java:1982)
+	at org.h2.command.Parser.parseSelectSub(Parser.java:1867)
+	at org.h2.command.Parser.parseSelectUnion(Parser.java:1688)
+	at org.h2.command.Parser.parseSelect(Parser.java:1676)
+	at org.h2.command.Parser.parsePrepared(Parser.java:432)
+	at org.h2.command.Parser.parse(Parser.java:304)
+	at org.h2.command.Parser.parse(Parser.java:276)
+	at org.h2.command.Parser.prepareCommand(Parser.java:241)
+	at org.h2.engine.Session.prepareLocal(Session.java:460)
+	at org.h2.server.TcpServerThread.process(TcpServerThread.java:264)
+	at org.h2.server.TcpServerThread.run(TcpServerThread.java:159)
+	at java.lang.Thread.run(Thread.java:722)
+
+2015-12-24 16:53:00,315 [qtp22820455-29] ERROR [com.imark.common.util.IExceptionHandler] - BadSqlGrammarException:PreparedStatementCallback; bad SQL grammar [SELECT *  FROM whsg_bzdz_xq t WHERE t.szxzq IN(
+      select t.id from whsg_bzdz_xzq t start with t.id=? connect by prior id = szxzq
+) order by t.jc,t.id]; nested exception is org.h2.jdbc.JdbcSQLException: Table "WHSG_BZDZ_XQ" not found; SQL statement:
+SELECT *  FROM whsg_bzdz_xq t WHERE t.szxzq IN(
+      select t.id from whsg_bzdz_xzq t start with t.id=? connect by prior id = szxzq
+) order by t.jc,t.id [42102-190]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.command.Parser.readTableOrView(Parser.java:5293)
+	at org.h2.command.Parser.readTableFilter(Parser.java:1234)
+	at org.h2.command.Parser.parseSelectSimpleFromPart(Parser.java:1873)
+	at org.h2.command.Parser.parseSelectSimple(Parser.java:1982)
+	at org.h2.command.Parser.parseSelectSub(Parser.java:1867)
+	at org.h2.command.Parser.parseSelectUnion(Parser.java:1688)
+	at org.h2.command.Parser.parseSelect(Parser.java:1676)
+	at org.h2.command.Parser.parsePrepared(Parser.java:432)
+	at org.h2.command.Parser.parse(Parser.java:304)
+	at org.h2.command.Parser.parse(Parser.java:276)
+	at org.h2.command.Parser.prepareCommand(Parser.java:241)
+	at org.h2.engine.Session.prepareLocal(Session.java:460)
+	at org.h2.server.TcpServerThread.process(TcpServerThread.java:264)
+	at org.h2.server.TcpServerThread.run(TcpServerThread.java:159)
+	at java.lang.Thread.run(Thread.java:722)
+
+2015-12-24 16:53:03,755 [qtp22820455-29] ERROR [com.imark.common.util.IExceptionHandler] - BadSqlGrammarException:PreparedStatementCallback; bad SQL grammar [SELECT * FROM loc_area s WHERE  s.area_code=?1]; nested exception is org.h2.jdbc.JdbcSQLException: Table "LOC_AREA" not found; SQL statement:
+SELECT * FROM loc_area s WHERE  s.area_code=?1 [42102-190]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.command.Parser.readTableOrView(Parser.java:5293)
+	at org.h2.command.Parser.readTableFilter(Parser.java:1234)
+	at org.h2.command.Parser.parseSelectSimpleFromPart(Parser.java:1873)
+	at org.h2.command.Parser.parseSelectSimple(Parser.java:1982)
+	at org.h2.command.Parser.parseSelectSub(Parser.java:1867)
+	at org.h2.command.Parser.parseSelectUnion(Parser.java:1688)
+	at org.h2.command.Parser.parseSelect(Parser.java:1676)
+	at org.h2.command.Parser.parsePrepared(Parser.java:432)
+	at org.h2.command.Parser.parse(Parser.java:304)
+	at org.h2.command.Parser.parse(Parser.java:276)
+	at org.h2.command.Parser.prepareCommand(Parser.java:241)
+	at org.h2.engine.Session.prepareLocal(Session.java:460)
+	at org.h2.server.TcpServerThread.process(TcpServerThread.java:264)
+	at org.h2.server.TcpServerThread.run(TcpServerThread.java:159)
+	at java.lang.Thread.run(Thread.java:722)
+
+2015-12-24 16:53:03,768 [qtp22820455-30] ERROR [com.imark.common.util.IExceptionHandler] - BadSqlGrammarException:PreparedStatementCallback; bad SQL grammar [SELECT *  FROM whsg_bzdz_jlx t WHERE t.szxzq IN(
+      select t.id from whsg_bzdz_xzq t start with t.id=? connect by prior id = szxzq
+) order by t.jc,t.id]; nested exception is org.h2.jdbc.JdbcSQLException: Table "WHSG_BZDZ_JLX" not found; SQL statement:
+SELECT *  FROM whsg_bzdz_jlx t WHERE t.szxzq IN(
+      select t.id from whsg_bzdz_xzq t start with t.id=? connect by prior id = szxzq
+) order by t.jc,t.id [42102-190]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.command.Parser.readTableOrView(Parser.java:5293)
+	at org.h2.command.Parser.readTableFilter(Parser.java:1234)
+	at org.h2.command.Parser.parseSelectSimpleFromPart(Parser.java:1873)
+	at org.h2.command.Parser.parseSelectSimple(Parser.java:1982)
+	at org.h2.command.Parser.parseSelectSub(Parser.java:1867)
+	at org.h2.command.Parser.parseSelectUnion(Parser.java:1688)
+	at org.h2.command.Parser.parseSelect(Parser.java:1676)
+	at org.h2.command.Parser.parsePrepared(Parser.java:432)
+	at org.h2.command.Parser.parse(Parser.java:304)
+	at org.h2.command.Parser.parse(Parser.java:276)
+	at org.h2.command.Parser.prepareCommand(Parser.java:241)
+	at org.h2.engine.Session.prepareLocal(Session.java:460)
+	at org.h2.server.TcpServerThread.process(TcpServerThread.java:264)
+	at org.h2.server.TcpServerThread.run(TcpServerThread.java:159)
+	at java.lang.Thread.run(Thread.java:722)
+
+2015-12-24 16:53:03,790 [qtp22820455-32] ERROR [com.imark.common.util.IExceptionHandler] - BadSqlGrammarException:PreparedStatementCallback; bad SQL grammar [SELECT *  FROM whsg_bzdz_xq t WHERE t.szxzq IN(
+      select t.id from whsg_bzdz_xzq t start with t.id=? connect by prior id = szxzq
+) order by t.jc,t.id]; nested exception is org.h2.jdbc.JdbcSQLException: Table "WHSG_BZDZ_XQ" not found; SQL statement:
+SELECT *  FROM whsg_bzdz_xq t WHERE t.szxzq IN(
+      select t.id from whsg_bzdz_xzq t start with t.id=? connect by prior id = szxzq
+) order by t.jc,t.id [42102-190]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.command.Parser.readTableOrView(Parser.java:5293)
+	at org.h2.command.Parser.readTableFilter(Parser.java:1234)
+	at org.h2.command.Parser.parseSelectSimpleFromPart(Parser.java:1873)
+	at org.h2.command.Parser.parseSelectSimple(Parser.java:1982)
+	at org.h2.command.Parser.parseSelectSub(Parser.java:1867)
+	at org.h2.command.Parser.parseSelectUnion(Parser.java:1688)
+	at org.h2.command.Parser.parseSelect(Parser.java:1676)
+	at org.h2.command.Parser.parsePrepared(Parser.java:432)
+	at org.h2.command.Parser.parse(Parser.java:304)
+	at org.h2.command.Parser.parse(Parser.java:276)
+	at org.h2.command.Parser.prepareCommand(Parser.java:241)
+	at org.h2.engine.Session.prepareLocal(Session.java:460)
+	at org.h2.server.TcpServerThread.process(TcpServerThread.java:264)
+	at org.h2.server.TcpServerThread.run(TcpServerThread.java:159)
+	at java.lang.Thread.run(Thread.java:722)
+
+2015-12-24 16:53:30,925 [qtp22820455-30] ERROR [com.imark.common.util.IExceptionHandler] - BadSqlGrammarException:PreparedStatementCallback; bad SQL grammar [SELECT * FROM loc_area s WHERE  s.area_code=?1]; nested exception is org.h2.jdbc.JdbcSQLException: Table "LOC_AREA" not found; SQL statement:
+SELECT * FROM loc_area s WHERE  s.area_code=?1 [42102-190]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.command.Parser.readTableOrView(Parser.java:5293)
+	at org.h2.command.Parser.readTableFilter(Parser.java:1234)
+	at org.h2.command.Parser.parseSelectSimpleFromPart(Parser.java:1873)
+	at org.h2.command.Parser.parseSelectSimple(Parser.java:1982)
+	at org.h2.command.Parser.parseSelectSub(Parser.java:1867)
+	at org.h2.command.Parser.parseSelectUnion(Parser.java:1688)
+	at org.h2.command.Parser.parseSelect(Parser.java:1676)
+	at org.h2.command.Parser.parsePrepared(Parser.java:432)
+	at org.h2.command.Parser.parse(Parser.java:304)
+	at org.h2.command.Parser.parse(Parser.java:276)
+	at org.h2.command.Parser.prepareCommand(Parser.java:241)
+	at org.h2.engine.Session.prepareLocal(Session.java:460)
+	at org.h2.server.TcpServerThread.process(TcpServerThread.java:264)
+	at org.h2.server.TcpServerThread.run(TcpServerThread.java:159)
+	at java.lang.Thread.run(Thread.java:722)
+
+2015-12-24 16:53:30,949 [qtp22820455-28] ERROR [com.imark.common.util.IExceptionHandler] - BadSqlGrammarException:PreparedStatementCallback; bad SQL grammar [SELECT *  FROM whsg_bzdz_jlx t WHERE t.szxzq IN(
+      select t.id from whsg_bzdz_xzq t start with t.id=? connect by prior id = szxzq
+) order by t.jc,t.id]; nested exception is org.h2.jdbc.JdbcSQLException: Table "WHSG_BZDZ_JLX" not found; SQL statement:
+SELECT *  FROM whsg_bzdz_jlx t WHERE t.szxzq IN(
+      select t.id from whsg_bzdz_xzq t start with t.id=? connect by prior id = szxzq
+) order by t.jc,t.id [42102-190]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.command.Parser.readTableOrView(Parser.java:5293)
+	at org.h2.command.Parser.readTableFilter(Parser.java:1234)
+	at org.h2.command.Parser.parseSelectSimpleFromPart(Parser.java:1873)
+	at org.h2.command.Parser.parseSelectSimple(Parser.java:1982)
+	at org.h2.command.Parser.parseSelectSub(Parser.java:1867)
+	at org.h2.command.Parser.parseSelectUnion(Parser.java:1688)
+	at org.h2.command.Parser.parseSelect(Parser.java:1676)
+	at org.h2.command.Parser.parsePrepared(Parser.java:432)
+	at org.h2.command.Parser.parse(Parser.java:304)
+	at org.h2.command.Parser.parse(Parser.java:276)
+	at org.h2.command.Parser.prepareCommand(Parser.java:241)
+	at org.h2.engine.Session.prepareLocal(Session.java:460)
+	at org.h2.server.TcpServerThread.process(TcpServerThread.java:264)
+	at org.h2.server.TcpServerThread.run(TcpServerThread.java:159)
+	at java.lang.Thread.run(Thread.java:722)
+
+2015-12-24 16:53:30,972 [qtp22820455-32] ERROR [com.imark.common.util.IExceptionHandler] - BadSqlGrammarException:PreparedStatementCallback; bad SQL grammar [SELECT *  FROM whsg_bzdz_xq t WHERE t.szxzq IN(
+      select t.id from whsg_bzdz_xzq t start with t.id=? connect by prior id = szxzq
+) order by t.jc,t.id]; nested exception is org.h2.jdbc.JdbcSQLException: Table "WHSG_BZDZ_XQ" not found; SQL statement:
+SELECT *  FROM whsg_bzdz_xq t WHERE t.szxzq IN(
+      select t.id from whsg_bzdz_xzq t start with t.id=? connect by prior id = szxzq
+) order by t.jc,t.id [42102-190]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.command.Parser.readTableOrView(Parser.java:5293)
+	at org.h2.command.Parser.readTableFilter(Parser.java:1234)
+	at org.h2.command.Parser.parseSelectSimpleFromPart(Parser.java:1873)
+	at org.h2.command.Parser.parseSelectSimple(Parser.java:1982)
+	at org.h2.command.Parser.parseSelectSub(Parser.java:1867)
+	at org.h2.command.Parser.parseSelectUnion(Parser.java:1688)
+	at org.h2.command.Parser.parseSelect(Parser.java:1676)
+	at org.h2.command.Parser.parsePrepared(Parser.java:432)
+	at org.h2.command.Parser.parse(Parser.java:304)
+	at org.h2.command.Parser.parse(Parser.java:276)
+	at org.h2.command.Parser.prepareCommand(Parser.java:241)
+	at org.h2.engine.Session.prepareLocal(Session.java:460)
+	at org.h2.server.TcpServerThread.process(TcpServerThread.java:264)
+	at org.h2.server.TcpServerThread.run(TcpServerThread.java:159)
+	at java.lang.Thread.run(Thread.java:722)
+
+2015-12-24 16:53:32,333 [qtp22820455-29] ERROR [com.imark.common.util.IExceptionHandler] - BadSqlGrammarException:PreparedStatementCallback; bad SQL grammar [SELECT * FROM loc_area s WHERE  s.area_code=?1]; nested exception is org.h2.jdbc.JdbcSQLException: Table "LOC_AREA" not found; SQL statement:
+SELECT * FROM loc_area s WHERE  s.area_code=?1 [42102-190]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.command.Parser.readTableOrView(Parser.java:5293)
+	at org.h2.command.Parser.readTableFilter(Parser.java:1234)
+	at org.h2.command.Parser.parseSelectSimpleFromPart(Parser.java:1873)
+	at org.h2.command.Parser.parseSelectSimple(Parser.java:1982)
+	at org.h2.command.Parser.parseSelectSub(Parser.java:1867)
+	at org.h2.command.Parser.parseSelectUnion(Parser.java:1688)
+	at org.h2.command.Parser.parseSelect(Parser.java:1676)
+	at org.h2.command.Parser.parsePrepared(Parser.java:432)
+	at org.h2.command.Parser.parse(Parser.java:304)
+	at org.h2.command.Parser.parse(Parser.java:276)
+	at org.h2.command.Parser.prepareCommand(Parser.java:241)
+	at org.h2.engine.Session.prepareLocal(Session.java:460)
+	at org.h2.server.TcpServerThread.process(TcpServerThread.java:264)
+	at org.h2.server.TcpServerThread.run(TcpServerThread.java:159)
+	at java.lang.Thread.run(Thread.java:722)
+
+2015-12-24 16:53:32,369 [qtp22820455-31] ERROR [com.imark.common.util.IExceptionHandler] - BadSqlGrammarException:PreparedStatementCallback; bad SQL grammar [SELECT *  FROM whsg_bzdz_jlx t WHERE t.szxzq IN(
+      select t.id from whsg_bzdz_xzq t start with t.id=? connect by prior id = szxzq
+) order by t.jc,t.id]; nested exception is org.h2.jdbc.JdbcSQLException: Table "WHSG_BZDZ_JLX" not found; SQL statement:
+SELECT *  FROM whsg_bzdz_jlx t WHERE t.szxzq IN(
+      select t.id from whsg_bzdz_xzq t start with t.id=? connect by prior id = szxzq
+) order by t.jc,t.id [42102-190]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.command.Parser.readTableOrView(Parser.java:5293)
+	at org.h2.command.Parser.readTableFilter(Parser.java:1234)
+	at org.h2.command.Parser.parseSelectSimpleFromPart(Parser.java:1873)
+	at org.h2.command.Parser.parseSelectSimple(Parser.java:1982)
+	at org.h2.command.Parser.parseSelectSub(Parser.java:1867)
+	at org.h2.command.Parser.parseSelectUnion(Parser.java:1688)
+	at org.h2.command.Parser.parseSelect(Parser.java:1676)
+	at org.h2.command.Parser.parsePrepared(Parser.java:432)
+	at org.h2.command.Parser.parse(Parser.java:304)
+	at org.h2.command.Parser.parse(Parser.java:276)
+	at org.h2.command.Parser.prepareCommand(Parser.java:241)
+	at org.h2.engine.Session.prepareLocal(Session.java:460)
+	at org.h2.server.TcpServerThread.process(TcpServerThread.java:264)
+	at org.h2.server.TcpServerThread.run(TcpServerThread.java:159)
+	at java.lang.Thread.run(Thread.java:722)
+
+2015-12-24 16:53:32,392 [qtp22820455-30] ERROR [com.imark.common.util.IExceptionHandler] - BadSqlGrammarException:PreparedStatementCallback; bad SQL grammar [SELECT *  FROM whsg_bzdz_xq t WHERE t.szxzq IN(
+      select t.id from whsg_bzdz_xzq t start with t.id=? connect by prior id = szxzq
+) order by t.jc,t.id]; nested exception is org.h2.jdbc.JdbcSQLException: Table "WHSG_BZDZ_XQ" not found; SQL statement:
+SELECT *  FROM whsg_bzdz_xq t WHERE t.szxzq IN(
+      select t.id from whsg_bzdz_xzq t start with t.id=? connect by prior id = szxzq
+) order by t.jc,t.id [42102-190]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.command.Parser.readTableOrView(Parser.java:5293)
+	at org.h2.command.Parser.readTableFilter(Parser.java:1234)
+	at org.h2.command.Parser.parseSelectSimpleFromPart(Parser.java:1873)
+	at org.h2.command.Parser.parseSelectSimple(Parser.java:1982)
+	at org.h2.command.Parser.parseSelectSub(Parser.java:1867)
+	at org.h2.command.Parser.parseSelectUnion(Parser.java:1688)
+	at org.h2.command.Parser.parseSelect(Parser.java:1676)
+	at org.h2.command.Parser.parsePrepared(Parser.java:432)
+	at org.h2.command.Parser.parse(Parser.java:304)
+	at org.h2.command.Parser.parse(Parser.java:276)
+	at org.h2.command.Parser.prepareCommand(Parser.java:241)
+	at org.h2.engine.Session.prepareLocal(Session.java:460)
+	at org.h2.server.TcpServerThread.process(TcpServerThread.java:264)
+	at org.h2.server.TcpServerThread.run(TcpServerThread.java:159)
+	at java.lang.Thread.run(Thread.java:722)
+

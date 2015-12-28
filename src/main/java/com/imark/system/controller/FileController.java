@@ -2,8 +2,8 @@ package com.imark.system.controller;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.UnsupportedEncodingException;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
@@ -22,8 +22,6 @@ import com.imark.system.service.FileService;
 import com.imark.system.service.MarkLogService;
 import com.imark.system.vo.Iform;
 import com.imark.system.vo.IformVo;
-import com.imark.system.vo.XzcfVo;
-import com.imark.system.vo.XzxkVo;
 
 @Controller
 @RequestMapping("/file")
@@ -108,26 +106,7 @@ public class FileController extends BaseController {
 	private Map<String, String> fmtValid(MultipartFile file, String fileName, String bizType) {
 		ExcelFmtValid valid = new ExcelFmtValid();
 		Map<String, String> map = new HashMap<String, String>();
-		try {
-			if(bizType.equals("xzxk") && fileName.endsWith(".xls")) {
-				map = valid.validXzxkXls(file.getInputStream());
-				return map;
-			}
-			if(bizType.equals("xzxk") && fileName.endsWith(".xlsx")) {
-				map = valid.validXzxkXlsx(file.getInputStream());
-				return map;
-			}
-			if(bizType.equals("xzcf") && fileName.endsWith(".xls")) {
-				map = valid.validXzcfXls(file.getInputStream());
-				return map;
-			} 
-			if(bizType.equals("xzcf") && fileName.endsWith(".xlsx")) {
-				map = valid.validXzcfXlsx(file.getInputStream());
-				return map;
-			}
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+		
 		
 		return null;
 	}
@@ -175,25 +154,6 @@ public class FileController extends BaseController {
 		
 	}
 	
-	/**
-	 * 行政许可文件入库
-	 */
-	@RequestMapping("/xzxkIntoStorage")
-	public void xzxkIntoStorage() {
-		List<XzxkVo> voList = markLogService.getXzxkList();
-		fileService.saveXzxks(voList);
-	}
-	
-	/**
-	 * 行政处罚文件入库
-	 */
-	@RequestMapping("/xzcfIntoStorage")
-	public void xzcfIntoStorage() {
-		List<XzcfVo> voList = markLogService.getXzcfList();
-		fileService.saveXzcfs(voList);
-	}
-	
-	
 	
 	/**
 	 * 
@@ -211,6 +171,25 @@ public class FileController extends BaseController {
 			System.out.println(iform.getBeizhu());
 		}
 		return "成功";
+	}
+	
+	/**
+	 * 一次编码
+	 * http://localhost:5678/imark/file/testParam?keyword=%E6%96%B0%E5%BB%BA
+	 * 二次编码
+	 * http://localhost:5678/imark/file/testParam?keyword=%25E6%2596%25B0%25E5%25BB%25BA
+	 * 测试参数获取
+	 * @param request
+	 * @throws UnsupportedEncodingException 
+	 */
+	@RequestMapping(value = "/testParam")
+	@ResponseBody
+	public String testParam(HttpServletRequest request) throws UnsupportedEncodingException{
+		//request.setCharacterEncoding("utf-8");
+		System.out.println("value1:"+java.net.URLDecoder.decode(request.getParameter("keyword"),"UTF-8"));
+		String keyword=new String(request.getParameter("keyword").getBytes("ISO-8859-1"), "utf-8");
+		System.out.println("value2:"+keyword);
+		return keyword;
 	}
 	
 

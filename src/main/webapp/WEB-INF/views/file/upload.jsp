@@ -475,30 +475,6 @@
 				</div>
 				--%>
 				
-				<%--七天双公开考核公示数据统计1 --%>
-				<!-- <div title="&nbsp;信用芜湖—7天双公示考核统计1" style="width: 1020px;"
-					data-options="iconCls:'icon-print'">
-					<div id="toolbar">
-						单位名称：<input id="unitName" type="text" name="unitName"
-							style="width: 120px;" value="" maxlength="120" /> <a
-							href="javascript:void(0);" class="easyui-linkbutton"
-							data-options="iconCls:'icon-search'" onclick="searchByUserName()"
-							title="条件查询">查询</a>
-					</div>
-					<table id="stat_bb"></table>
-					</table>
-				</div> -->
-				<%--七天双公开考核公示数据统计 --%>
-				<div title="&nbsp;信用芜湖—7天双公示考核统计" style="width: 1020px;"
-					data-options="iconCls:'icon-print'">
-					<div  style=" text-align:center; height:25px;" >
-						<a href="javascript:void(0);" 
-							onclick='exportExcel();' style="text-decoration:none;"><h3>《信用芜湖—7天双公示考核统计》导出</h3></a>
-					</div>
-					
-					<table id="stat_tj"></table>
-					</table>
-				</div>
 			</div>
 		</div>
 	</div>

@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>imark</title>
+
+<script type="text/javascript">
+ 
+ 
+  window.onload = function () {
+			//var iput=document.getElementById('iput').value
+			//document.getElementById('output1').value=encodeURIComponent("新建");
+			//document.getElementById('output2').value=encodeURIComponent(encodeURIComponent("新建"));
+        };
+
+ function gent(){
+	var ival=document.getElementById('iput').value
+	document.getElementById('output1').value=encodeURIComponent(ival);
+	document.getElementById('output2').value=encodeURIComponent(encodeURIComponent(ival));
+ }
+ 
+ 
+</script>
+
+</head>
+<body>
+输入：
+<input id="iput" type="text"  />
+<input  onclick="gent()" type="button" value="生成" />
+输出：
+<textarea  id="output1" name="output1"  style="height:65px"></textarea>
+<textarea  id="output2" name="output2"  style="height:65px"></textarea>
+
+
+</body>
+</html>

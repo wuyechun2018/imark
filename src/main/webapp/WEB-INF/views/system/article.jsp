@@ -35,16 +35,16 @@ $(function(){
 		rownumbers: true,  
 		columns:[[
 		          {field:'ARTICLE_ID',title: 'ARTICLE_ID',align: 'center',width: 100,hidden:true},
-		          {field:'ARTICLE_TITLE',title: 'ARTICLE_TITLE',align: 'center',width: 100,formatter:function(value,row,index){
+		          {field:'ARTICLE_TITLE',title: '文章标题',align: 'center',width: 100,formatter:function(value,row,index){
 		          		 //return "<span ><a onclick=showArticle('"+row.ARTICLE_ID+"') href='javascript:void(0)'"+value+"</a></span>";
 		          		 return "<a onclick=showArticle('"+row.ARTICLE_ID+"') href='javascript:void(0)'>"+value+"</a>";
 		           }
 		          }, 
-		          {field:'ARTICLE_TYPE',title: 'ARTICLE_TYPE',align: 'center',width: 100}, 
-		          {field:'ARTICLE_DESC',title: 'ARTICLE_DESC',align: 'center',width: 100}, 
-		          {field:'KEY_WORD',title: 'KEY_WORD',align: 'center',width: 100}, 
-		          {field:'UPDATE_USER_ID',title: 'UPDATE_USER_ID',align: 'center',width: 100}, 
-		          {field:'UPDATE_DATE',title: 'UPDATE_DATE',align: 'center',width: 100}
+		          {field:'ARTICLE_TYPE',title: '文章类型',align: 'center',width: 100}, 
+		          {field:'ARTICLE_DESC',title: '简介',align: 'center',width: 100}, 
+		          {field:'KEY_WORD',title: '关键字',align: 'center',width: 100}, 
+		          {field:'UPDATE_USER_ID',title: '更新人',align: 'center',width: 100}, 
+		          {field:'UPDATE_DATE',title: '更新时间',align: 'center',width: 100}
 		]],
 		toolbar:[{
 						text : '增加',
@@ -96,30 +96,20 @@ $(function(){
             <legend>信息查询</legend>
             <form id="ffSearch" method="post">
 		        <div style="margin-bottom:5px">
-                    <label for="txtSystemType_ID">系统编号：</label>
-                    <input class="easyui-combobox" type="text" ID="txtSystemType_ID" name="txtSystemType_ID" style="width:100px"  />&nbsp;&nbsp;&nbsp;
+                    <label for="txtSystemType_ID">文章类型：</label>
+                    <input class="easyui-combobox" type="text" ID="articleType" name="articleType" style="width:150px"  />&nbsp;&nbsp;&nbsp;
 
-                    <label for="txtLoginName">登录名称：</label>
-                    <input type="text" ID="txtLoginName" name="txtLoginName" style="width:100px"  />&nbsp;&nbsp;&nbsp;
+                    <label for="txtLoginName">关键字：</label>
+                    <input type="text" ID="keyword" name="keyword" style="width:150px"  />&nbsp;&nbsp;&nbsp;
 
-                    <label for="txtFullName">真实名称：</label>
-                    <input type="text" ID="txtFullName" name="txtFullName" style="width:100px"  />&nbsp;&nbsp;&nbsp;
-
-                    <label for="txtNote">日志描述：</label>
-                    <input type="text" ID="txtNote" name="txtNote" style="width:100px"  />&nbsp;&nbsp;&nbsp;
+                   
                 </div>
 		        <div>
-                    <label for="txtIPAddress"> I P 地 址：</label>
-                    <input type="text" ID="txtIPAddress" name="txtIPAddress" style="width:100px"  />&nbsp;&nbsp;&nbsp;
-
-                    <label for="txtMacAddress">Mac地址：</label>
-                    <input type="text" ID="txtMacAddress" name="txtMacAddress" style="width:100px"  />&nbsp;&nbsp;&nbsp;
-
                     <label for="txtLastUpdated">开始时间：</label>
-                    <input class="easyui-datebox" type="text" ID="txtLastUpdated" name="txtLastUpdated" style="width:100px"  />&nbsp;&nbsp;&nbsp;
+                    <input class="easyui-datebox" type="text" ID="updateDate_start" name="updateDate_start" style="width:150px"  />&nbsp;&nbsp;&nbsp;
 
                     <label for="txtLastUpdated2">结束时间：</label>
-                    <input class="easyui-datebox" type="text" ID="txtLastUpdated2" name="txtLastUpdated2" style="width:100px"  />&nbsp;&nbsp;&nbsp;
+                    <input class="easyui-datebox" type="text" ID="updateDate_end" name="updateDate_end" style="width:150px"  />&nbsp;&nbsp;&nbsp;
 
                     <a href="#" class="easyui-linkbutton" iconcls="icon-search" id="btnSearch">查询</a>
                 </div>

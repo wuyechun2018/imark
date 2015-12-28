@@ -19,7 +19,6 @@ import com.imark.common.util.IUtil;
 import com.imark.common.vo.EasyTree;
 import com.imark.common.vo.JsonMsg;
 import com.imark.uaac.service.AddressHandleService;
-import com.imark.uaac.service.AddressService;
 
 @Controller
 @RequestMapping("/addressHandle")
