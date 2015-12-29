@@ -72,7 +72,7 @@ public class EditorController extends BaseController {
 	@RequestMapping("/showArticle")
 	public Object showArticle(String articleId){
 		Article article=articleService.getArticle(articleId);
-		ModelAndView mv=new ModelAndView("/index");
+		ModelAndView mv=new ModelAndView("/showArticle");
 		mv.addObject("article",article);
 		return mv;
 	}
