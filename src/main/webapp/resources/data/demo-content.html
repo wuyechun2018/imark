@@ -3,7 +3,9 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>讯飞开放平台</title>
-
+<link rel="stylesheet" href="http://localhost:5678/imark/resources/ztree/css/zTreeStyle/zTreeStyle.css" type="text/css">
+<script type="text/javascript" src="http://localhost:5678/imark/resources/jquery/jquery-1.9.1.js"></script>
+<script type="text/javascript" src="http://localhost:5678/imark/resources/ztree/jquery.ztree.core-3.5.js"></script>
 <!-- http://localhost:5678/imark/resources/data/demo.html -->
 
 <style type="text/css">
@@ -46,11 +48,15 @@ li {list-style-type:none;}
 .imenu_content_title{
 	font-size: 20px;
 	color:#171717;
+	line-height:51px;
+	font-family: Microsoft YaHei;
+	padding-left: 5px;
+	background-color: RGB(247,247,247);
+	width: 100%;
 }
 
 .icontent{
-	width:100%;
-	text-align: center;
+	width: 100%;
 }
 
 .ibottom{
@@ -80,6 +86,51 @@ margin-top: 5px;
 }
 
 </style>
+
+<script type="text/javascript">
+var setting = {
+		view: {
+			showIcon: showIconForTree,
+			showLine:true
+		},
+		data: {
+			simpleData: {
+				enable: true
+			}
+		}
+	};
+
+	var zNodes =[
+		{ id:1, pId:0, name:"平台概述", open:true},
+		{ id:11, pId:1, name:"平台介绍",url:"http://localhost:5678/imark/editor/showArticle?articleId=40286f8151e8f03e0151ece7eb150001", target:"showFrame"},
+		{ id:12, pId:1, name:"服务协议",url:"http://localhost:5678/imark/editor/showArticle?articleId=40286f8151e8f03e0151eceb203a0003", target:"showFrame"},
+		{ id:2, pId:0, name:"开发集成"},
+		{ id:21, pId:2, name:"Android平台", open:true},
+		{ id:22, pId:2, name:"IOS平台"},
+		{ id:23, pId:2, name:"Windows平台"},
+		{ id:231, pId:2, name:"Linux平台"},
+		{ id:232, pId:2, name:"Java平台"},
+		{ id:3, pId:0, name:"新手指南", isParent:false},
+		{ id:4, pId:0, name:"语音服务", isParent:true},
+		{ id:5, pId:0, name:"硬件服务", isParent:true}
+	];
+
+	function showIconForTree(treeId, treeNode) {
+		//return !treeNode.isParent;
+		return false;
+	};
+
+	$(document).ready(function(){
+		$.fn.zTree.init($("#imenuTree"), setting, zNodes);
+	});
+
+
+
+
+</script>
+
+
+
 </head>
 <body>
 
@@ -107,27 +158,27 @@ margin-top: 5px;
 
 
 <div class="icontent">
-<table width="90%">
-	<tr>
-		<td width="200px;">
-			<div class="imenu_content_title">资料库</div>
-			<ul>
-				<li>平台概述</li>
-				<li>开发集成</li>
-				<li>新手指南</li>
-				<li>语音服务</li>
-			</ul>
-		</td>
-		
-		<td>
-			<iframe name="show_frame" style="border-left:#ccc 1px solid;"  src="" width="966px;" height="500px;" frameborder="0" ></iframe>
-		</td>
+	<div style="width:1200px;margin:0 auto;border: 1px solid #ccc;">
+		<table>
+			<tr>
+				<td width="200px;" style="padding:5px 0px " valign="top">
+					<h2 class="imenu_content_title">关于讯飞</h2>
+					<div>
+						<ul id="imenuTree" class="ztree"></ul>
+					</div>
+					
+					
+				</td>
+				
+				<td>
+					<iframe name="showFrame" style="border-left:#ccc 1px solid;"  src="http://localhost:5678/imark/editor/showArticle?articleId=40286f8151e8f03e0151ece7eb150001" width="966px;" height="500px;" frameborder="0" ></iframe>
+				</td>
+			
+			</tr>
+		</table>
 		
 	
-	</tr>
-
-
-</table>
+	</div>
 
 
 </div>
