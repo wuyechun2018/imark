@@ -21,6 +21,10 @@ a:VISITED{
 	text-decoration: none;
 }
 
+a:HOVER{
+	color: RGB(0,149,226);
+}
+
 li {list-style-type:none;}
 
 .ihead{
@@ -34,6 +38,12 @@ li {list-style-type:none;}
 	color: #FFF;
 	line-height: 35px;
 	font-size: 12px;
+}
+
+.isystem{
+	float:right;
+	margin-right: 40px;
+	
 }
 
 .imenu{
@@ -137,7 +147,14 @@ margin-top: 5px;
 <body>
 
 <div class="ihead">
-	<div class="ititle">我们致力于为开发者打造最优的智能交互服务平台！</div>
+	<div class="ititle">
+		<span>我们致力于为开发者打造最优的智能交互服务平台！</span>
+		<div class="isystem">
+				<a>登录</a>
+				&nbsp; &nbsp;&nbsp;
+				<a>注册</a>
+		</<div>
+	</div>
 </div>
 
 
@@ -146,7 +163,7 @@ margin-top: 5px;
 <div class="imenu">
 	<img  src="http://www.xfyun.cn/img/default/logo.gif?version=20150325">
 	<div class="iul">
-			<a href="http://localhost:5678/imark/resources/data/demo-content.html">关于讯飞</a>
+			<a href="./demo-content.html">关于讯飞</a>
 			<a>自主产品</a>
 			<a>解决方案</a>
 			<a>互联网+</a>

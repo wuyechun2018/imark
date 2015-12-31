@@ -82,6 +82,22 @@ create table SYS_MENU
   PRIMARY KEY (ID)
 )
 
+
+create table ARTICLE
+(
+  ARTICLE_ID        VARCHAR2(32)  NOT NULL,
+  ARTICLE_TYPE      VARCHAR2(20),
+  ARTICLE_TITLE     VARCHAR2(200),
+  ARTICLE_DESC     VARCHAR2(1000) ,
+  KEY_WORD 			VARCHAR2(100),
+  ARTICLE_CONTENT    CLOB,
+  CREATE_USER_ID     VARCHAR2(32),
+  CREATE_DATE        DATE,
+  UPDATE_USER_ID     VARCHAR2(32),
+  UPDATE_DATE      DATE,
+  DISP_ORDER     NUMBER(10) default 0,
+  PRIMARY KEY (ARTICLE_ID)
+)
 -----------------------------------------------------------------------------------
 ----3、初始化数据----
 -----------------------------------------------------------------------------------

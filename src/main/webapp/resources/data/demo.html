@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>讯飞开放平台</title>
-
+<script type="text/javascript" src="http://localhost:5678/imark/resources/jquery/jquery-1.9.1.js"></script>
 <!-- http://localhost:5678/imark/resources/data/demo.html -->
 
 <style type="text/css">
@@ -21,6 +21,10 @@ a:VISITED{
 	text-decoration: none;
 }
 
+a:HOVER{
+	color: RGB(0,149,226);
+}
+
 li {list-style-type:none;}
 
 .ihead{
@@ -34,6 +38,12 @@ li {list-style-type:none;}
 	color: #FFF;
 	line-height: 35px;
 	font-size: 12px;
+}
+
+.isystem{
+	float:right;
+	margin-right: 40px;
+	
 }
 
 .imenu{
@@ -131,13 +141,55 @@ margin-top: 5px;
 	height: 76px;
 }
 
+.hid_table{
+	background-color: #ffffff;
+	display:none;
+	position:absolute;
+	z-index:101；
+	
+}
+
+.hid_table td{
+	font-size:12px;
+}
 
 </style>
+
+<script type="text/javascript">
+$(function(){
+	
+	$(".alink").bind({
+		mouseenter: function(){
+			$('#hid_table').slideDown();			
+	},
+	mouseleave: function(){
+		//$('#hid_table').hide();
+		$('#hid_table').slideUp();
+	}
+	
+	
+	})
+	
+	
+})
+
+
+
+</script>
+
+
 </head>
 <body>
 
 <div class="ihead">
-	<div class="ititle">我们致力于为开发者打造最优的智能交互服务平台！</div>
+	<div class="ititle">
+		<span>我们致力于为开发者打造最优的智能交互服务平台！</span>
+		<div class="isystem">
+				<a>登录</a>
+				&nbsp; &nbsp;&nbsp;
+				<a>注册</a>
+		</<div>
+	</div>
 </div>
 
 
@@ -146,7 +198,17 @@ margin-top: 5px;
 <div class="imenu">
 	<img  src="http://www.xfyun.cn/img/default/logo.gif?version=20150325">
 	<div class="iul">
-			<a href="./demo-content.html">关于讯飞</a>
+			<a href="./demo-content.html" class="alink" >
+				关于讯飞
+				<table id="hid_table" class="hid_table">
+					<tr>
+						<td>语音服务</td>
+					</tr>
+				
+				</table>
+			
+			
+			</a>
 			<a>自主产品</a>
 			<a>解决方案</a>
 			<a>互联网+</a>

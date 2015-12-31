@@ -14,6 +14,19 @@ margin: 0px;
 padding: 0px;
 
 }
+
+a{
+text-decoration: none;
+}
+
+a:VISITED{
+	text-decoration: none;
+}
+
+a:HOVER{
+	color: RGB(0,149,226);
+}
+
 li {list-style-type:none;}
 
 .ihead{
@@ -27,6 +40,12 @@ li {list-style-type:none;}
 	color: #FFF;
 	line-height: 35px;
 	font-size: 12px;
+}
+
+.isystem{
+	float:right;
+	margin-right: 40px;
+	
 }
 
 .imenu{
@@ -135,7 +154,14 @@ var setting = {
 <body>
 
 <div class="ihead">
-	<div class="ititle">我们致力于为开发者打造最优的智能交互服务平台！</div>
+	<div class="ititle">
+		<span>我们致力于为开发者打造最优的智能交互服务平台！</span>
+		<div class="isystem">
+				<a>登录</a>
+				&nbsp; &nbsp;&nbsp;
+				<a>注册</a>
+		</<div>
+	</div>
 </div>
 
 
