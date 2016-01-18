@@ -1,16 +1,12 @@
 package com.imark.system.controller;
-
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
 import javax.servlet.http.HttpServletRequest;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
-
 import com.imark.common.util.UserCredentialsMatcher;
 import com.imark.common.vo.EasyGrid;
 import com.imark.common.vo.EasyPager;
@@ -18,6 +14,16 @@ import com.imark.common.vo.JsonMsg;
 import com.imark.system.model.SysLoginUser;
 import com.imark.system.service.h2.SysLoginUserService;
 
+/*******************************************************************************
+ *  功能说明: Imark-系统维护-用户管理 控制层
+  
+ *  2014-10-15 下午3:33:02 ycwu 创建文件
+ * 
+ *  修改说明: 创建文件
+
+ *  2016-01-18 下午3:33:02 ycwu 创建文件
+ * 
+ ******************************************************************************/
 @Controller
 @RequestMapping("/sysLoginUser")
 public class SysLoginUserController extends BaseController{
@@ -57,12 +63,15 @@ public class SysLoginUserController extends BaseController{
 		return grid;
 	}
 	
+	
 	/**
 	 * 
-	 * 方法描述：保存用户
-	 * @return 
-	 * @exception 
-	 * @author wuyechun
+	 * 功能 :保存用户
+	
+	 * 开发：wuyechun 2016-1-18
+	
+	 * @param sysLoginUser
+	 * @return
 	 */
 	@RequestMapping("/save")
 	@ResponseBody
@@ -76,6 +85,15 @@ public class SysLoginUserController extends BaseController{
 	}
 	
 	
+	/***
+	 * 
+	 * 功能 :删除登录用户
+	
+	 * 开发：wuyechun 2016-1-18
+	
+	 * @param request
+	 * @return
+	 */
 	@RequestMapping("/delete")
 	@ResponseBody
 	public Object delete(HttpServletRequest request){
