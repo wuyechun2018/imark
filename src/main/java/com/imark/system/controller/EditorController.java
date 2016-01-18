@@ -15,7 +15,6 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.imark.common.vo.EasyGrid;
 import com.imark.common.vo.EasyPager;
-import com.imark.common.vo.JsonMsg;
 import com.imark.system.model.Article;
 import com.imark.system.service.h2.ArticleService;
 import com.imark.system.service.h2.SysLoginUserService;

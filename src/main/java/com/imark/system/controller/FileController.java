@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.imark.common.util.ExcelFmtValid;
 import com.imark.common.util.IUtil;
 import com.imark.system.model.SysMarkLogs;
 import com.imark.system.service.FileService;
@@ -47,14 +46,7 @@ public class FileController extends BaseController {
 			String fileName = file.getOriginalFilename();
 			String curDate=IUtil.getCurDateStr();
 			fileName=fileService.combineFileName(fileName,curDate);
-			//上传文件格式验证 
-			map = fmtValid(file, fileName, bizType);
-			// flag == 1  表格格式有错
-			if(map.get("flag").equals("1")) {
-				writeMsg(response,"true",map.get("message"));
-				return ;
-				
-			}
+			
 			
 			/** 存储到本地
 			String realPath = request.getSession().getServletContext().getRealPath("/updload/");
@@ -96,21 +88,7 @@ public class FileController extends BaseController {
 
 	}
 	
-	/***
-	 * 上传文件格式验证
-	 * @param file
-	 * @param fileName
-	 * @param bizType
-	 * @return
-	 */
-	private Map<String, String> fmtValid(MultipartFile file, String fileName, String bizType) {
-		ExcelFmtValid valid = new ExcelFmtValid();
-		Map<String, String> map = new HashMap<String, String>();
-		
-		
-		return null;
-	}
-
+	
 
 	/**
 	 * 

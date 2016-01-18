@@ -8,13 +8,6 @@ import java.util.Arrays;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-/**
- * base64
- * 
- * @author hdyin
- *
- * @createTime 2015年4月30日 下午1:45:01
- */
 public class Base64Util {
 
 	private static final boolean devLineSep = true;
@@ -650,10 +643,9 @@ public class Base64Util {
 		// Reuse char[] since we can't create a String incrementally anyway and
 
 		// StringBuffer/Builder would be slower.
-		
 
-		//return replaceBlank(new String(encodeToChar(sArr, devLineSep)));
-		//去除空格、tab和回车的操作很耗时，测试了下去掉该方法也可以正常使用，待以后发现是否有问题
+		// return replaceBlank(new String(encodeToChar(sArr, devLineSep)));
+		// 去除空格、tab和回车的操作很耗时，测试了下去掉该方法也可以正常使用，待以后发现是否有问题
 		return new String(encodeToChar(sArr, devLineSep));
 
 	}
@@ -867,12 +859,13 @@ public class Base64Util {
 	}
 
 	// 图片转化成base64字符串，根據byte
-	public static String GetImageStr(byte[] imgByte) throws Exception { 
+	public static String GetImageStr(byte[] imgByte) throws Exception {
 		return encodeToString(imgByte);
 	}
 
 	/**
 	 * 返回圖片
+	 * 
 	 * @param imgStr
 	 * @param imagPath
 	 * @throws Exception
@@ -894,8 +887,8 @@ public class Base64Util {
 			out.close();
 		}
 	}
-	
-	private static  String replaceBlank(String str) {
+
+	private static String replaceBlank(String str) {
 		String dest = "";
 		if (str != null) {
 			Pattern p = Pattern.compile("\\s*|\t|\r|\n");
@@ -904,5 +897,5 @@ public class Base64Util {
 		}
 		return dest;
 	}
-	 
+
 }

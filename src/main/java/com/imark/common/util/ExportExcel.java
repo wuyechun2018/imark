@@ -23,7 +23,6 @@ import org.apache.poi.hssf.usermodel.HSSFRow;
 import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.hssf.util.HSSFColor;
-import org.apache.poi.ss.util.Region;
 
 /**
  * 利用开源组件POI3.0.2动态导出EXCEL文档 转载时请保留以下信息，注明出处！

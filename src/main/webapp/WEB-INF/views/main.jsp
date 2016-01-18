@@ -28,8 +28,49 @@ function addTab(params) {
 	}
 }
 
+function closeTab(menu, type) {
+    var allTabs = $("#mainTabs").tabs("tabs");
+    var len = allTabs.length;
+    var index = $(menu).data("index");
+    if ("cur" == type) {
+        $("#mainTabs").tabs("close", index);
+    } else if ("all" == type) {
+        for (var i = 0; i < len; i++) {
+            $("#mainTabs").tabs("close", 0);
+        }
+    } else if ("oth" == type) {
+        for (var i = 0; i < len; i++) {
+            if (index > i) {
+                $("#mainTabs").tabs("close", 0);
+            } else {
+                $("#mainTabs").tabs("close", 1);
+            }
+        }
+    }
+}
+
 
 $(function(){
+	
+	   $('#mainTabs').tabs({
+		      onContextMenu: function(e, title, index){
+		    	  e.preventDefault();
+
+		    	  
+		             $('#mm').menu('show', {
+		                 left: e.pageX,
+		                 top: e.pageY
+		             }).data("index", index);
+		             $("#mm").menu({
+		                    onClick : function (item) {
+		                        closeTab(this, item.name);
+		                    }
+		                });
+		      }
+		     });
+	
+	
+	
 	//权限树
 	$('#permission_tree').tree({      
       url: "${ctx}/resources/data/permission.json?date="+new Date().getTime(),  
@@ -51,6 +92,13 @@ $(function(){
 
 </head>
 <body class="welcome_body">
+
+
+<div id="mm" class="easyui-menu" style="display: none;">
+  <div id="mm-tabclose" data-options="iconCls:'icon_cancle'" name="cur">关闭当前</div>
+        <div id="mm-tabcloseall" data-options="iconCls:'icon_cross'" name="all">关闭全部</div>
+        <div id="mm-tabcloseother" data-options="iconCls:'icon_no'" name="oth">关闭其他</div>
+ </div>
 
 <div class="easyui-layout" fit="true">
 		<div data-options="region:'north'" style="height:50px">
@@ -111,7 +159,7 @@ $(function(){
 			</div>
 		</div>
 		<div data-options="region:'center',title:'Main Title',iconCls:'icon-ok'">
-			<div id="mainTabs" class="easyui-tabs" data-options="fit:true,border:false,plain:true">
+			<div id="mainTabs"  data-options="fit:true,border:false,plain:true">
 				
 				<div title="主页" data-options="href:'${ctx}/resources/data/_content.html'" style="padding:10px"></div>
 				

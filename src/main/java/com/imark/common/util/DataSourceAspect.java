@@ -1,11 +1,7 @@
 package com.imark.common.util;
 
 import org.aspectj.lang.JoinPoint;
-import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.After;
-import org.aspectj.lang.annotation.AfterReturning;
-import org.aspectj.lang.annotation.AfterThrowing;
-import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
@@ -13,13 +9,11 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
-import com.imark.uaac.controller.AddressController;
-
 @Component
 @Aspect
 public class DataSourceAspect {
 
-	private static final Logger log = LoggerFactory.getLogger(AddressController.class);
+	private static final Logger log = LoggerFactory.getLogger(DataSourceAspect.class);
 
 	@Pointcut("execution(* com.imark.*.service.h2..*(..))")
 	public void aspect() {

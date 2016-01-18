@@ -163,7 +163,7 @@ margin-top: 5px;
 <div class="imenu">
 	<img  src="http://www.xfyun.cn/img/default/logo.gif?version=20150325">
 	<div class="iul">
-			<a href="./demo-content.html">关于讯飞</a>
+			<a href="/imark/html/content">关于讯飞</a>
 			<a>自主产品</a>
 			<a>解决方案</a>
 			<a>互联网+</a>
