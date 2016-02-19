@@ -15,6 +15,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.imark.common.vo.EasyGrid;
 import com.imark.common.vo.EasyPager;
+import com.imark.common.vo.JsonMsg;
 import com.imark.system.model.Article;
 import com.imark.system.service.h2.ArticleService;
 import com.imark.system.service.h2.SysLoginUserService;
@@ -99,6 +100,24 @@ public class EditorController extends BaseController {
 		grid.setTotal(total);
 		grid.setRows(list);
 		return grid;
+	}
+	
+	
+	/***
+	 * 
+	 * 功能 :删除登录用户
+	
+	 * 开发：wuyechun 2016-1-18
+	
+	 * @param request
+	 * @return
+	 */
+	@RequestMapping("/delete")
+	@ResponseBody
+	public Object delete(HttpServletRequest request){
+		String ids=request.getParameter("ids");
+		articleService.delete(ids);
+		return new JsonMsg();
 	}
 	
 	

@@ -1,0 +1,470 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>活出滋味~南陵520</title>
+<style type="text/css">
+
+
+
+a {
+	text-decoration: none;
+	margin: 0px 16px 0px 0px;
+}
+a:link {color: #3A5FCD}		/* 未访问的链接 */
+a:visited {color: #3A5FCD}	/* 已访问的链接   #8B4789*/
+a:hover {color: #FF00FF}	/* 鼠标移动到链接上 */
+a:active {color: #0000FF}	/* 选定的链接 */
+
+
+.DivHead{
+	color: green;
+
+}
+.DivTitle{
+	
+	font-size:18px;
+	color:#108410
+
+}
+.line{
+	border-top:  1px dashed #cccccc;
+	margin-top:1px;
+	margin-bottom: 10px;
+	
+}
+
+.lineSolid{
+	border-top:  1px solid #cccccc;
+	margin-top:1px;
+	margin-bottom: 10px;
+
+}	
+
+.setFirstPage{
+	font-family:微软雅黑;
+	position: absolute;
+	right: 10px;
+	
+	
+}
+.logo{
+	font-size:25px;
+	font-family:STKaiti;
+	/*color: chocolate;*/
+	font-weight: bolder;
+}
+
+.showTime{
+	float:right;
+	margin-right:30px;
+	font-family:微软雅黑;
+}
+
+.DivContent{
+	font-family:微软雅黑;
+}
+.pastTime{
+	color:red;
+	font-family:微软雅黑;
+
+}
+.wel{
+	font-family:微软雅黑;
+}
+.dayFromBirth{
+	margin-left: 100px;
+}
+.DivContent a:hover{
+	font-size: 14px;
+	font-weight: bold;
+}
+
+.selectColor{
+	position:absolute;
+	right:150px;
+	font-family:微软雅黑;
+	
+
+}
+.bottom{
+	color:#989898;
+	position: relative;
+	text-align: center;
+
+}
+
+.spanItem{
+	margin-left: 5px;
+}
+
+</style>
+
+
+
+<script type="text/javascript">
+
+function setBgColor(color){
+	document.bgColor=color;
+	
+}
+
+function setPastDay(){
+
+	var pastTime=DayPast("april 01,1988");
+	pastTime="<span class='pastTime'>"+pastTime+"</span>";
+	var welcome="<span class='wel'>**，今天是你生命中的 </span>";
+	var welcome2="<span class='wel'> 天,请善待！</span>";
+	//document.getElementById("dayFromBirth").innerHTML=welcome+pastTime+welcome2;
+}
+
+function DayPast(birthday){
+	var birthday=new Date(birthday);
+	var today=new Date();
+	var timePast=(today.getTime()-birthday.getTime());
+	var msPerDay=24*60*60*1000;
+	var pastDay=timePast/msPerDay
+	pastDay=Math.ceil(pastDay);
+	return pastDay;
+
+	/*
+	january
+	february
+	march
+	april
+	October
+	
+	*/
+
+}
+
+
+function startTime() {
+	var today = new Date();
+
+	/*年月日 */
+	var year = today.getYear();
+		if (year<1900) {
+			year = year + 1900;
+		}
+	//if (navigator.appName = "NetScape") {
+	//	year = year + 1900;
+	//}
+	var month = today.getMonth() + 1;
+	month = checkTime(month);
+	var day = today.getDate();
+	day = checkTime(day);
+
+	/*星期 */
+	var week = today.getDay();
+	var weeks = new Array("星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六");
+	week = weeks[week];
+
+	/*时分秒 */
+	var h = today.getHours();
+	var m = today.getMinutes();
+	var s = today.getSeconds();
+	m = checkTime(m);
+	s = checkTime(s);
+	setTimeout(startTime, 1000);
+
+	//var timeString=year+"年"+month+"月"+day+"日"+" ☆ "+week+" ☆ "+h+":"+m+":"+s;
+	var timeString=year+"/"+month+"/"+day+""+"&nbsp;&nbsp;&nbsp;&nbsp;"+week+"&nbsp;&nbsp;&nbsp;&nbsp;"+h+":"+m+":"+s;
+	document.getElementById("showTime").innerHTML=timeString;
+}
+
+function checkTime(i) {
+	if (i < 10) {
+		i = "0" + i
+	}
+	return i;
+}
+
+function SetHome(obj,vrl){ 
+    try{ 
+            obj.style.behavior='url(#default#homepage)';
+            obj.setHomePage(vrl); 
+    } 
+    catch(e){ 
+            if(window.netscape) { 
+                    try { 
+                            netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect"); 
+                    } 
+                    catch (e) { 
+                            alert("此操作被浏览器拒绝！\n请在浏览器地址栏输入“about:config”并回车\n然后将 [signed.applets.codebase_principal_support]的值设置为'true',双击即可。"); 
+                    } 
+                    var prefs = Components.classes['@mozilla.org/preferences-service;1'].getService(Components.interfaces.nsIPrefBranch); 
+                    prefs.setCharPref('browser.startup.homepage',vrl); 
+             } 
+    } 
+}
+
+
+
+
+	
+	</script>
+	<script type="text/javascript">
+var fireworks = function(){
+this.size = 20;
+this.rise();
+}
+fireworks.prototype = {
+color:function(){
+var c = ['0','3','6','9','c','f'];
+var t = [c[Math.floor(Math.random()*100)%6],'0','f'];
+t.sort(function(){return Math.random()>0.5?-1:1;});
+return '#'+t.join('');
+},
+aheight:function(){
+var h = document.documentElement.clientHeight-250;
+return Math.abs(Math.floor(Math.random()*h-200))+201;
+},
+firecracker:function(){
+var b = document.createElement('div');
+var w = document.documentElement.clientWidth;
+b.style.position = 'absolute';
+b.style.color = this.color();
+b.style.bottom = 0;
+b.style.left = Math.floor(Math.random()*w)+1+'px';
+document.body.appendChild(b);
+return b;
+},
+rise:function(){
+var o = this.firecracker();
+var n = this.aheight();
+var c = this.color;
+var e = this.expl;
+var s = this.size;
+var k = n;
+var m = function(){
+o.style.bottom = parseFloat(o.style.bottom)+k*0.1+'px';
+k-=k*0.1;
+if(k<2){
+clearInterval(clear);
+e(o,n,s,c);
+}
+}
+o.innerHTML = '.';
+if(parseInt(o.style.bottom)<n){
+var clear = setInterval(m,20);
+}
+},
+expl:function(o,n,s,c){
+var R=n/3,Ri=n/6,Rii=n/9;
+var r=0,ri=0,rii=0;
+for(var i=0;i<s;i++){
+var span = document.createElement('span');
+var p = document.createElement('i');
+var a = document.createElement('a');
+span.style.position = 'absolute';
+span.style.fontSize = n/10+'px';
+span.style.left = 0;
+span.style.top = 0;
+span.innerHTML = '*';
+p.style.position = 'absolute';
+p.style.left = 0;
+p.style.top = 0;
+p.innerHTML = '*';
+a.style.position = 'absolute';
+a.style.left = 0;
+a.style.top = 0;
+a.innerHTML = '*';
+o.appendChild(span);
+o.appendChild(p);
+o.appendChild(a);
+}
+function spr(){
+r += R*0.1;
+ri+= Ri*0.06;
+rii+= Rii*0.06;
+sp = o.getElementsByTagName('span');
+p = o.getElementsByTagName('i');
+a = o.getElementsByTagName('a');
+for(var i=0; i<sp.length;i++){
+sp[i].style.color = c();
+p[i].style.color = c();
+a[i].style.color = c();
+sp[i].style.left=r*Math.cos(360/s*i)+'px';
+sp[i].style.top=r*Math.sin(360/s*i)+'px';
+sp[i].style.fontSize=parseFloat(sp[i].style.fontSize)*0.96+'px';
+p[i].style.left=ri*Math.cos(360/s*i)+'px';
+p[i].style.top=ri*Math.sin(360/s*i)+'px';
+p[i].style.fontSize=parseFloat(sp[i].style.fontSize)*0.96+'px';
+a[i].style.left=rii*Math.cos(360/s*i)+'px';
+a[i].style.top=rii*Math.sin(360/s*i)+'px';
+a[i].style.fontSize=parseFloat(sp[i].style.fontSize)*0.96+'px';
+}
+R-=R*0.1;
+if(R<2){
+o.innerHTML = '';
+o.parentNode.removeChild(o);
+clearInterval(clearI);
+}
+}
+var clearI = setInterval(spr,20);
+}
+}
+ function ifire(){
+function happyNewYear(){
+	//new fireworks();
+}
+setInterval(happyNewYear,1000);
+}
+</script>
+
+</head>
+<body style="width: 100%; height: 100%;" onload="startTime();setPastDay();setBgColor('lightblue');ifire();">
+<div>
+<div class="DivHead">
+	<span id="logo" class="logo" >有时候，简单，也是一种快乐！</span>
+	<span id="showTime" class="showTime"></span>
+	
+	<!--  
+	<span id="dayFromBirth" class="dayFromBirth"></span>
+	-->
+	
+	<!--
+	<span id="selectColor" class="selectColor">
+		
+		<span>风格：</span>
+		<input type="radio" class="colorItem" name="colorItem"  checked="checked" onclick="setBgColor('lightblue')"></input>
+		<input type="radio" class="colorItem" name="colorItem" onclick="setBgColor('silver')"></input>
+		<input type="radio" class="colorItem" name="colorItem" onclick="setBgColor('wheat')"></input>
+		<input type="radio" class="colorItem" name="colorItem" onclick="setBgColor('lightpink')"></input>
+	</span>
+	
+	<span id="setFirstPage" class="setFirstPage" ><a href="#" onclick="SetHome(this,window.location)">设为首页</a></span>
+	-->
+	<div>&nbsp;</div>
+</div>
+
+<div class="lineSolid"></div>
+
+
+<div>
+<div class="DivTitle">我爱南陵</div>
+	<div class="DivContent">
+	<p>
+		<span><a href="./nanling-index.html" target="_blank">南陵印象</a></span>
+		<span><a href="./news.html">小城大事</a></span>  
+		<span><a href="./chi.html" target="_blank">吃货</a></span> 
+		<span><a href="./wan.html">疯玩</a></span>
+		<span><a href="./gouwu.html">购物</a></span> 
+	</p>
+	</div>
+</div>
+
+<div class="line"></div>
+<div>
+<div class="DivTitle">综合</div>
+	<div class="DivContent">
+	<p>
+		<span><a href="http://www.baidu.com" target="_blank">百度</a></span> 
+		<span><a href="http://www.google.com.hk/">Google</a></span> 
+	    <span><a href="http://weibo.com">新浪微博</a></span>
+		<span><a href="http://mail.163.com">网易邮箱</a></span>
+		<span><a href="http://www.ifeng.com">凤凰网</a></span>
+		<span><a href="http://www.douban.com">豆瓣</a></span>
+		<span><a href="http://qzone.qq.com">QQ空间</a></span>
+	</p>
+	</div>
+</div>
+
+<div class="line"></div>
+
+<div>
+<div class="DivTitle">生活</div>
+<div class="DivContent">
+<p>
+<span><a href="http://www.icbc.com.cn">工商银行</a></span>
+<span><a href="http://www.bankcomm.com/BankCommSite/cn/index.html">交通银行</a></span>
+<span><a href="http://www.cmbchina.com/">招商银行</a></span>
+<span><a href="http://www.zhaopin.com/">前程无忧</a></span>
+<span><a href="http://www.58.com">58同城</a></span>
+
+
+
+</p>
+
+</div>
+</div>
+<div>
+<div class="line"></div>
+<div class="DivTitle">音乐</div>
+<div class="DivContent">
+<p>
+<span><a href="http://mp3.sogou.com/">搜狗音乐(MP3)</a></span> 
+<span><a href="http://www.yinyuetai.com/">音悦台(MV)</a></span>
+	
+</p>
+</div>
+</div>
+<div class="line"></div>
+<div>
+<div class="DivTitle">视频</div>
+<div class="DivContent">
+<p>
+<span><a href="http://www.tudou.com">土豆</a></span>
+<span><a href="http://www.iqiyi.com">奇艺</a></span>
+<span><a href="http://www.youku.com">优酷</a></span>
+<span><a href="http://tv.sohu.com">搜狐视频</a></span>
+
+
+</p>
+
+
+</div>
+</div>
+<div class="line"></div>
+<div>
+<div class="DivTitle">购物</div>
+<div class="DivContent">
+<p>
+<span><a href="http://www.jd.com" target="_blank">京东商城</a></span>
+<span><a href="http://www.tmall.com" target="_blank" >淘宝商城</a></span>
+<span><a href="http://www.dangdang.com" target="_blank">当当网</a></span>
+<span><a href="http://www.amazon.cn" target="_blank">亚马逊</a></span>
+<span><a href="http://www.mogujie.com/" target="_blank">蘑菇街</a></span>
+</p>
+
+</div>
+</div>
+<div class="line"></div>
+<div>
+<div class="DivTitle">论坛</div>
+<div class="DivContent">
+<p>
+<span><a href="http://www.tianya.cn">天涯</a></span>
+<span><a href="http://www.mop.com">猫扑</a></span>
+<span><a href="http://www.xici.net">西祠</a></span>
+<span><a href="http://bbs.hefei.cc">合肥论坛</a></span>
+</p>
+
+</div>
+</div>
+<div class="line"></div>
+<div>
+<div class="DivTitle">其它</div>
+<div class="DivContent">
+	<p>
+<span><a href="http://www.meilishuo.com">美丽说</a></span>
+<span><a href="http://www.qidian.com">起点</a></span>
+<span><a href="./xiaobao.html">我爱小宝</a></span>
+</p>
+
+</div>
+</div>
+<div class="lineSolid"></div>
+	<div id="bottom" class="bottom" >
+		<span class="spanItem">IMark 1.0 </span>
+		<span class="spanItem">© Copyright</span>
+		<span class="spanItem">2016-2099</span>
+		
+	</div>
+
+</div>
+
+
+</body>
+</html>

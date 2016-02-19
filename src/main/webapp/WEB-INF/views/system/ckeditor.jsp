@@ -14,7 +14,7 @@
 }
 
 .l_td{
-	width:5%;
+	width:8%;
 }
 
 .w_td{
@@ -54,7 +54,6 @@ function formSumbit(){
 }
 
 
-
 </script>
 
 
@@ -64,6 +63,8 @@ function formSumbit(){
 </head>
 <body>
 		<fieldset class="ifieldset">
+			
+			<br>
             <legend>文本编辑</legend>
 		 		<form id="ckForm" action="${ctx}/editor/saveArticle" method="post">
 					<table style="width: 100%" class="itable">
@@ -104,6 +105,14 @@ function formSumbit(){
 								<a style="float:right;margin-right:10px;" href="javascript:void(0)"  onclick="formSumbit()" class="btn_a_add">提交</a>
 								
 							</td>
+							
+							<td>
+								<a style="font-size:14px;" href="../system/article">返回</a>
+							</td>
+							
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							
 						</tr>
 					</table>
 		        </form>

@@ -69,4 +69,20 @@ public class ArticleService {
 		return articleJpaDao.findOne(articleId);
 	}
 
+	
+	/**
+	 * 
+	 * 功能 :删除
+	
+	 * 开发：wuyechun 2016-2-16
+	
+	 * @param id
+	 */
+	public void delete(String ids) {
+		String[] idArray=ids.split(",");
+		for(int i=0;i<idArray.length;i++){
+			articleJpaDao.delete(idArray[i]);
+		}
+	}
+
 }

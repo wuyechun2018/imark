@@ -158,7 +158,7 @@ $(function(){
 				</div>
 			</div>
 		</div>
-		<div data-options="region:'center',title:'Main Title',iconCls:'icon-ok'">
+		<div data-options="region:'center',title:'工作区',iconCls:'icon-ok'">
 			<div id="mainTabs"  data-options="fit:true,border:false,plain:true">
 				
 				<div title="主页" data-options="href:'${ctx}/resources/data/_content.html'" style="padding:10px"></div>

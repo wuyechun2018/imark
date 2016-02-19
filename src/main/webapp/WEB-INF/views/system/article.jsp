@@ -28,12 +28,13 @@ $(function(){
 		fit:false,
 		fitColumns:true,
 		striped: true,//奇偶行是否区分
-		singleSelect:true,
+		singleSelect:false,
 		pageSize: 10,
         pageList: [10,20,30],
 		pagination: true,  
 		rownumbers: true,  
 		columns:[[
+				  { field: 'ck', checkbox: true, width: '30' },  //复选框
 		          {field:'ARTICLE_ID',title: 'ARTICLE_ID',align: 'center',width: 100,hidden:true},
 		          {field:'ARTICLE_TITLE',title: '文章标题',align: 'center',width: 100,formatter:function(value,row,index){
 		          		 //return "<span ><a onclick=showArticle('"+row.ARTICLE_ID+"') href='javascript:void(0)'"+value+"</a></span>";
@@ -56,17 +57,47 @@ $(function(){
 						text : '删除',
 						iconCls : 'icon-remove',
 						handler : function() {
-
+							var rows = $("#grid").datagrid('getSelections');
+							if (rows.length > 0) {
+								 //提示是否删除
+								 $.messager.confirm("删除确认", "您确认删除选定的记录吗？", function (action) {
+							            if (action) {
+							            	
+							            	var codes=new Array();
+			                                for (var i = 0; i < rows.length; i++) {
+			                                    codes.push(rows[i].ARTICLE_ID);
+			                                }
+			                                //alert(codes.join(','));
+			                                
+			                                $.ajax({
+			                        			cache: true,
+			                        			type: "POST",
+			                        			url:'${ctx}/editor/delete',
+			                        			data:{
+			                        				ids:codes.join(',')
+			                        			},
+			                        			async: false,
+			                        		    error: function(request) {
+			                        		        alert("Connection error");
+			                        		    },
+			                        		    success: function(data) {
+			                        		    	$.messager.alert('提示信息',data.msg);
+			                        		    	$("#grid").datagrid('reload');
+			                        		    }
+			                        		
+			                        		})
+			                                
+							            }
+							            })
+								
+							}else{
+								 $.messager.alert("操作提示", "操作失败！","error");  
+							}
+							
 						}
 					},'-', {
 						text : '修改',
 						iconCls : 'icon-edit',
-						handler : function() {
-
-						}
-					}, '-',{
-						text : '查询',
-						iconCls : 'icon-search',
 						handler : function() {
 
 						}

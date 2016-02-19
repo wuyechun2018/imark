@@ -20,16 +20,18 @@ body{
 <h4 class="text-info">IMark</h4>
 </div>
 
-<div style="margin-left:20px;">
+<div style="margin-left:20px;"> 
+
+
 <form action="${ctx}/doLogin" method="post">
-	<div >
 	<label>用户名：</label><input type="text" value="admin" name="loginAccount"/> <br>
 	<label>密码：</label><input type="password" value="123" name="loginPwd" /><br>
 	<button class="btn  btn-info" type="submit">提交</button>
 	<button class="btn  btn-info" type="reset">取消</button>
-	</div>
 </form>
 <p class="text-error">${ERROR_MSG}</p>
+
+
 </div>
 
 <%-- 

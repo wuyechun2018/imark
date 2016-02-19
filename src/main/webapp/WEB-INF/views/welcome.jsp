@@ -29,9 +29,11 @@ direction="up" scrollamount="2" onmouseover="this.stop()" onmouseout="this.start
 				<em>IMark</em>，使用<strong>Maven</strong>构建的web项目，使用Spring+SpringMvc+SpringJdbcTemplate。
 			</p>
 			<ul>
+				<%--
 				<li>
 					<a href="${ctx}/webDemo" >Web示例</a>
 				</li>
+				 --%>
 				<li>
 					<a href="${ctx}/main" >管理系统</a>
 				</li>
