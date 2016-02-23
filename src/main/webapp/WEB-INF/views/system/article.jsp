@@ -41,7 +41,13 @@ $(function(){
 		          		 return "<a onclick=showArticle('"+row.ARTICLE_ID+"') href='javascript:void(0)'>"+value+"</a>";
 		           }
 		          }, 
-		          {field:'ARTICLE_TYPE',title: '文章类型',align: 'center',width: 100}, 
+		          {field:'ARTICLE_TYPE',title: '文章类型',align: 'center',width: 100,formatter:function(value,row,index){
+		          		 if(value=="1"){
+		          			 return "个人随想";
+		          		 }else{
+		          			 return "网上摘录";
+		          		 }
+		           }}, 
 		          {field:'ARTICLE_DESC',title: '简介',align: 'center',width: 100}, 
 		          {field:'KEY_WORD',title: '关键字',align: 'center',width: 100}, 
 		          {field:'UPDATE_USER_ID',title: '更新人',align: 'center',width: 100}, 
@@ -99,7 +105,18 @@ $(function(){
 						text : '修改',
 						iconCls : 'icon-edit',
 						handler : function() {
-
+							var rows = $("#grid").datagrid('getSelections');
+							if (rows.length==1) {
+								var articleId=rows[0].ARTICLE_ID
+								//location.href=ctx+"/views/system/ckeditor?articleId="+articleId;
+								location.href=ctx+"/editor/editArticle?articleId="+articleId;
+							}else{
+								 $.messager.alert("操作提示", "操作失败！","error");  
+							}
+							
+							
+							
+							
 						}
 					} ]
 			

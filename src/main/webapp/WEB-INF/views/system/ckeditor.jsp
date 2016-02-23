@@ -7,6 +7,15 @@
 <%@ include file="/WEB-INF/views/easyui.jsp" %>
 <script type="text/javascript" src="${ctx}/resources/ckeditor-4.5.6/ckeditor.js"></script>
 
+ <%
+ 	//接收传入该页面的参数
+ 	//文章Id
+ 	String articleId=request.getParameter("articleId");
+ %>
+ 
+ 
+
+
 <style type="text/css">
 .itable label{
 	font-size: 12px;
@@ -40,6 +49,7 @@ width:40%;
 $(function(){
 	$('#articleTitle').focus();
 	
+	
 })
 
 
@@ -70,13 +80,17 @@ function formSumbit(){
 					<table style="width: 100%" class="itable">
 						
 						<tr>
-							<td class="l_td"><label>文章标题：</label></td>
-							<td class="w_td"><input name="articleTitle" id="articleTitle"/></td>
+							<td class="l_td">
+								<INPUT TYPE="hidden" NAME="articleId" VALUE="${article.articleId}">
+								<label>文章标题：</label>
+							</td>
+							<td class="w_td"><input name="articleTitle" id="articleTitle" value="${article.articleTitle}"></td>
 							<td class="l_td"><label>类别：</label></td>
 							<td class="w_td">
 								<select name="articleType" id="articleType">
-									<option value="1">个人随想</option> 
-									<option value="2">网上摘录</option>   
+									 <option value="1" <c:if test="${article.articleType == '1'}">selected</c:if>>个人随想</option>  
+									 <option value="2" <c:if test="${article.articleType == '2'}">selected</c:if>>网上摘录</option> 
+									
 								</select>
 							
 							</td>
@@ -84,9 +98,9 @@ function formSumbit(){
 						
 						<tr>
 							<td class="l_td"><label>描述信息：</label></td>
-							<td class="w_td"><input name="articleDesc" /></td>
+							<td class="w_td"><input name="articleDesc" value="${article.articleDesc}" /></td>
 							<td class="l_td"><label>关键字：</label></td>
-							<td class="w_td"><input name="keyWord" /></td>
+							<td class="w_td"><input name="keyWord" value="${article.keyWord}"/></td>
 						</tr>
 						
 						<tr>
@@ -96,7 +110,7 @@ function formSumbit(){
 						<tr>
 							<td colspan="4">	
 									<textarea name="articleContent" id="editor" rows="10" cols="80">
-				               			
+				               			${article.articleContent}
 				           			 </textarea>
 				           	</td>
 						</tr>
@@ -107,7 +121,7 @@ function formSumbit(){
 							</td>
 							
 							<td>
-								<a style="font-size:14px;" href="../system/article">返回</a>
+								<a style="font-size:14px;" href="${ctx}/views/system/article">返回</a>
 							</td>
 							
 							<td>&nbsp;</td>
