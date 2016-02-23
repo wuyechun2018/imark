@@ -44,7 +44,9 @@ border-bottom:1px #dcdcdc solid;
 </style>
 </head>
 <body>
+<!--
 <a href="../views/system/article">返回</a>
+-->
 <div style="TEXT-ALIGN:center" class="title">${article.articleTitle!''}</div>
 <br>
 <div style="TEXT-ALIGN:center" class="info" >
@@ -56,14 +58,7 @@ border-bottom:1px #dcdcdc solid;
 <div class="info_content">${article.articleContent!''}</div>
 <div class="info_sep"></div>
 
-<#if attachList?exists>
-	附件：
-   <#list attachList as item>
-   		<br/>
-   		${item_index?if_exists+1}、 
-   		<a href="/imark/editor/downloadAttach?id=${item.id?if_exists}">${item.attachName?if_exists}</a>
-   </#list> 
-</#if>
- 
+
+
 </body>
 </html>

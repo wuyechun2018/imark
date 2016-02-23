@@ -61,6 +61,21 @@ function formSumbit(){
 	//设置值
 	//CKEDITOR.instances.editor.setData(data+"<h1>hello</h1>");
 	
+	//保存附件方法
+	/*****/
+	$('#attachForm').form('submit',{
+		url:'${ctx}/editor/saveAttach',
+        onSubmit:function(op){
+        	//return $(this).form('validate');
+        	return true;
+        },
+        success:function(data){
+        	var obj=eval('('+ data+ ')');
+        	$.messager.alert('提示',obj.msg);
+        }
+      });
+	
+	
 }
 
 
@@ -109,12 +124,27 @@ function formSumbit(){
 						
 						<tr>
 							<td colspan="4">	
-									<textarea name="articleContent" id="editor" rows="10" cols="80">
+									<textarea name="articleContent" id="editor" rows="8" cols="80">
 				               			${article.articleContent}
 				           			 </textarea>
 				           	</td>
 						</tr>
-						<tr>
+							<tr>
+					</tr>
+					</table>
+		        </form>
+		        
+		        <form id="attachForm" method="post" enctype="multipart/form-data" method="post" action="">
+		        	<table>
+		        		<tr>
+		        		<td>
+		        		<INPUT TYPE="hidden" NAME="articleId" VALUE="${article.articleId}">
+		        		<span style="font-family:宋体；">添加附件：</span>
+		        		</td>
+						<td><input class="easyui-filebox " name="file" id="filebox"
+							data-options="buttonText:'选择文件'" style="width: 100%"></td>
+		        		</tr>
+		        		<tr>
 							<td>
 								<a style="float:right;margin-right:10px;" href="javascript:void(0)"  onclick="formSumbit()" class="btn_a_add">提交</a>
 								
@@ -123,18 +153,21 @@ function formSumbit(){
 							<td>
 								<a style="font-size:14px;" href="${ctx}/views/system/article">返回</a>
 							</td>
-							
-							<td>&nbsp;</td>
-							<td>&nbsp;</td>
-							
 						</tr>
-					</table>
+		        	</table>
+		        
 		        </form>
-		</fieldset>
+		        
+
+	</fieldset>
 		 <script>
-              CKEDITOR.replace( 'editor', {
-                    customConfig: '${ctx}/resources/ckeditor-4.5.6/config.js?v='+Math.random()
-               });
-		 </script>
+				CKEDITOR
+						.replace(
+								'editor',
+								{
+									customConfig : '${ctx}/resources/ckeditor-4.5.6/config.js?v='
+											+ Math.random()
+								});
+			</script>
 </body>
 </html>

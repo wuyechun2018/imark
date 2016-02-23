@@ -98,6 +98,23 @@ create table ARTICLE
   DISP_ORDER     NUMBER(10) default 0,
   PRIMARY KEY (ARTICLE_ID)
 )
+
+create table ATTACH
+(
+  ID        VARCHAR2(32)  NOT NULL,
+  ATTACH_NAME      VARCHAR2(200),
+  BIZ_TYPE     VARCHAR2(20),
+  BIZ_ID     VARCHAR2(32) ,
+  FILE_PATH 			VARCHAR2(100),
+  FILE_CONTENT    CLOB,
+  CREATE_USER_ID     VARCHAR2(32),
+  CREATE_DATE        DATE,
+  UPDATE_USER_ID     VARCHAR2(32),
+  UPDATE_DATE      DATE,
+  PRIMARY KEY (ID)
+)
+
+
 -----------------------------------------------------------------------------------
 ----3、初始化数据----
 -----------------------------------------------------------------------------------

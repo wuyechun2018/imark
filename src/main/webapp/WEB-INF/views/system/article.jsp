@@ -57,7 +57,8 @@ $(function(){
 						text : '增加',
 						iconCls : 'icon-add',
 						handler : function() {
-							location.href=ctx+"/views/system/ckeditor";
+							//location.href=ctx+"/views/system/ckeditor";
+							location.href=ctx+"/editor/addArticle";
 						}
 					}, '-',{
 						text : '删除',

@@ -39,5 +39,20 @@ public class HtmlController {
 		ModelAndView mv=new ModelAndView("/content");
 		return mv;
 	}
+	
+	/**
+	 * 
+	 * 方法描述：显示
+	 * @param articleId
+	 * @return 
+	 * @exception 
+	 * @author wuyechun
+	 */
+	@RequestMapping("/nanling")
+	public Object nanling(String articleId){
+		ModelAndView mv=new ModelAndView("/nanling");
+		return mv;
+	}
+	
 
 }
