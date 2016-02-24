@@ -106,7 +106,7 @@ public class SysLoginUserDao extends JdbcSupportDao{
 			sqlBuff.append(" AND SEX = '" + param.get("sex") + "'");
 		}
 		
-		String sql="SELECT * FROM ("+sqlBuff.toString()+") WHERE ROWNUM>=? AND ROWNUM<?";
+		String sql="SELECT * FROM ("+sqlBuff.toString()+") WHERE RN>=? AND RN<?";
 		
 		List<SysLoginUser> userList =getJdbcTemplate().query(
 		        sql,

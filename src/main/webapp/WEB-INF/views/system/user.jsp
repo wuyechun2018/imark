@@ -77,7 +77,7 @@ $(function(){
 		var options = $("#dgMenu").datagrid("options");
 		//设置参数
 		options.queryParams.loginAccount= $("#account").val();
-	    options.queryParams.sex =$('#sex').combobox('getValue');;
+	    options.queryParams.sex =$('#sex').combobox('getValue');
 	    $("#dgMenu").datagrid(options);
 	}
 	

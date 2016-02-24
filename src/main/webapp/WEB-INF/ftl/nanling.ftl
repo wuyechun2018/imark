@@ -30,16 +30,16 @@ a:HOVER{
 li {list-style-type:none;}
 
 .ihead{
-	background: #fff;
 	height: 55px;
 
 }
 
 .ititle{
-	margin-left:10px;
+	margin-left:0px;
 	color: #FFF;
 	line-height: 35px;
 	font-size: 12px;
+	background: #7ACFD7;
 }
 
 .isystem{
@@ -107,6 +107,38 @@ margin-top: 5px;
 </style>
 
 <script type="text/javascript">
+
+	var listSize="${list?size}";
+
+	function  node(id,pId,name,url,open,target){
+		this.id = id;
+		this.pId = pId;
+		this.name = name;
+		this.url = url;
+		this.open=open;
+		this.target=target;
+	}
+	
+	var nodeArray=[];
+	nodeArray.push(new node("1","0","我爱南陵","","true",""));
+	
+	<#list list as item>
+   		var obj= new node("${item_index?if_exists+2}","1","${item.ARTICLE_TITLE?if_exists}","/imark/editor/dispArticle?articleId="+"${item.ARTICLE_ID?if_exists}","false","showFrame");
+   		nodeArray.push(obj);
+   </#list> 
+	
+	//alert(JSON.stringify(nodeArray));
+	
+
+  var  data=[];
+  <#list list as item>
+   		 var  obj = new Object();  
+   		 obj.title="${item.ARTICLE_TITLE?if_exists}";
+   		 data.push(obj);
+   </#list> 
+
+
+
 var setting = {
 		view: {
 			showIcon: showIconForTree,
@@ -126,6 +158,9 @@ var setting = {
 		{ id:12, pId:1, name:"疯玩地图",url:"/imark/editor/dispArticle?articleId=40286f8151e8f03e0151eceb203a0003", target:"showFrame"},
 		{ id:12, pId:1, name:"购物指南",url:"/imark/editor/dispArticle?articleId=40286f8151e8f03e0151eceb203a0003", target:"showFrame"},
 	];
+	
+	zNodes=nodeArray;
+	
 
 	function showIconForTree(treeId, treeNode) {
 		//return !treeNode.isParent;
@@ -134,7 +169,15 @@ var setting = {
 
 	$(document).ready(function(){
 		$.fn.zTree.init($("#imenuTree"), setting, zNodes);
+		var zTree = $.fn.zTree.getZTreeObj("imenuTree");
+		
+		var node = zTree.getNodeByParam("id",2);
+		zTree.selectNode(node);
+		//$("#imenuTree_2_a").click(); 
+		document.getElementById("showFrame").src=node.url;
 	});
+
+
 
 
 
@@ -146,10 +189,10 @@ var setting = {
 </head>
 <body>
 
-<div style="width:100%;height:2px;margin:0px auto;padding:0px;background-color:#555555;overflow:hidden;"></div>
+<div style="width:100%;height:2px;margin:0px auto;padding:0px;background-color:#7ACFD7;overflow:hidden;"></div>
 <div class="ihead">
 	<div class="ititle">
-		<span><img  src="/imark/resources/images/nanling-logo.jpg?version=20150325"></span>
+		<span><img  src="/imark/resources/images/nanling-logo.png?version=20150325"></span>
 		<div class="isystem">
 				<a>登录</a>
 				&nbsp; &nbsp;&nbsp;
@@ -159,7 +202,7 @@ var setting = {
 </div>
 
 
-<div style="width:100%;height:1px;margin:0px auto;padding:0px;background-color:#555555;overflow:hidden;"></div>
+<div style="width:100%;height:3px;margin:0px auto;padding:0px;background-color:#fff;overflow:hidden;"></div>
 
 <!--
 <div class="imenu">
@@ -196,7 +239,7 @@ var setting = {
 				</td>
 				
 				<td>
-					<iframe name="showFrame" style="border-left:#ccc 1px solid;"  src="http://localhost:5678/imark/editor/dispArticle?articleId=40286f8151e8f03e0151ece7eb150001" width="1160px;" height="525px;" frameborder="0" ></iframe>
+					<iframe id="showFrame" name="showFrame" style="border-left:#ccc 1px solid;"  src="http://localhost:5678/imark/editor/dispArticle?articleId=40286f8151e8f03e0151ece7eb150001" width="1160px;" height="525px;" frameborder="0" ></iframe>
 				</td>
 			
 			</tr>

@@ -16,14 +16,47 @@ function showArticle(id){
 	location.href=ctx+"/editor/showArticle?articleId="+id;
 }
 
-
+function doQuery(){
+	var options = $("#grid").datagrid("options");
+	//设置参数
+	options.queryParams.articleType=$('#articleType').combobox('getValue');
+    options.queryParams.keyWord =$('#keyword').val();
+    options.queryParams.startDate =$('#updateDate_start').datebox("getValue");
+    options.queryParams.endDate =$('#updateDate_end').datebox("getValue");
+    $("#grid").datagrid(options);
+}
 
 $(function(){
+	//加载文章类型
+	$('#articleType').combobox({ 
+		url : '${ctx}/resources/data/article-type.json',
+		method : 'get',
+		valueField : 'id',
+		textField : 'text',
+		filter : function(q, row) {
+			var opts = $(this).combobox('options');
+			return row[opts.textField].toLowerCase()
+					.indexOf(q.toLowerCase()) > -1;
+			}
+		});
+	
+	//监听查询按钮点击事件
+	$("#btnSearch").click(function(){
+		doQuery();
+	});
+	
+	
 	$('#grid').datagrid({  
 		url:ctx+'/editor/list',
 		method:'post',
 		title:"管理",
 		height: 380,
+		queryParams: {
+				articleType:'',
+				keyWord:'',
+				startDate:'',
+				endDate:''
+			},
         //width: function () { return document.body.clientWidth * 0.8 -50},
 		fit:false,
 		fitColumns:true,
@@ -44,8 +77,10 @@ $(function(){
 		          {field:'ARTICLE_TYPE',title: '文章类型',align: 'center',width: 100,formatter:function(value,row,index){
 		          		 if(value=="1"){
 		          			 return "个人随想";
-		          		 }else{
-		          			 return "网上摘录";
+		          		 }else if(value=="2"){
+		          			return "网上摘录";
+		          		 } else{
+		          			return "我爱南陵";
 		          		 }
 		           }}, 
 		          {field:'ARTICLE_DESC',title: '简介',align: 'center',width: 100}, 
@@ -146,7 +181,11 @@ $(function(){
             <form id="ffSearch" method="post">
 		        <div style="margin-bottom:5px">
                     <label for="txtSystemType_ID">文章类型：</label>
+                    <%--
                     <input class="easyui-combobox" type="text" ID="articleType" name="articleType" style="width:150px"  />&nbsp;&nbsp;&nbsp;
+					 --%>
+					 
+					<input id="articleType" name="articleType" data-options="editable:false,panelHeight:'auto'"  > 
 
                     <label for="txtLoginName">关键字：</label>
                     <input type="text" ID="keyword" name="keyword" style="width:150px"  />&nbsp;&nbsp;&nbsp;

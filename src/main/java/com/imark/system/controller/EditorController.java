@@ -291,6 +291,15 @@ public class EditorController extends BaseController {
 	@ResponseBody
 	public Object list(HttpServletRequest request){
 		Map param=new HashMap();
+		String articleType=request.getParameter("articleType");
+		String keyWord=request.getParameter("keyWord");
+		String startDate=request.getParameter("startDate");
+		String endDate=request.getParameter("endDate");
+		param.put("articleType", articleType);
+		param.put("keyWord", keyWord);
+		param.put("startDate", startDate);
+		param.put("endDate", endDate);
+		
 		
 		//获取分页信息
 		EasyPager pager=getPager(request);
