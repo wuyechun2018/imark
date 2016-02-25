@@ -1,0 +1,11 @@
+[{
+        "id": "1",
+        "text": "系统信息",
+        "state": "open",
+        "checked": null,
+        "attributes": {
+            "url": "/sysinfo"
+        },
+        "children": null,
+        "iconCls": "itree-accept"
+    }]

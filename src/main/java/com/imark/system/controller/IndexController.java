@@ -1,6 +1,12 @@
 package com.imark.system.controller;
+import java.net.InetAddress;
+import java.net.UnknownHostException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
+import java.util.Properties;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,6 +26,8 @@ public class IndexController {
 	
 	@Autowired
 	private SysLoginUserService sysLoginUserService;
+	
+	private Date serverStartTime = new Date();
 	
 	/***
 	 * @author wuyechun
@@ -95,6 +103,122 @@ public class IndexController {
 		return "webDemo";
 	}
 	
+	
+	
+	@RequestMapping(value = "/sysinfo")
+	public ModelAndView getSysInfo(HttpServletRequest request){
+		/*//版本号
+		System.out.println(System.getProperty("java.version"));   
+        System.out.println(System.getProperty("java.vendor"));   
+        System.out.println(System.getProperty("java.vendor.url")); 
+        //Java 安装目录  
+        System.out.println(System.getProperty("java.home"));   
+        System.out.println(System.getProperty("java.vm.specification.version"));   
+        System.out.println(System.getProperty("java.vm.specification.vendor"));   
+        System.out.println(System.getProperty("java.vm.specification.name"));   
+        System.out.println(System.getProperty("java.vm.version"));   
+        System.out.println(System.getProperty("java.vm.vendor"));   
+        System.out.println(System.getProperty("java.vm.name"));   
+        System.out.println(System.getProperty("java.specification.version"));   
+        System.out.println(System.getProperty("java.specification.vendor"));   
+        System.out.println(System.getProperty("java.specification.name"));   
+        System.out.println(System.getProperty("java.class.version"));   
+        System.out.println(System.getProperty("java.class.path"));   
+        System.out.println(System.getProperty("java.library.path"));   
+        System.out.println(System.getProperty("java.io.tmpdir"));   
+        System.out.println(System.getProperty("java.compiler"));   
+        System.out.println(System.getProperty("java.ext.dirs")); 
+        
+        System.out.println(System.getProperty("os.name"));
+        System.out.println(System.getProperty("os.arch"));
+        System.out.println(System.getProperty("os.version"));
+        //用户的账户名称  
+        System.out.println(System.getProperty("user.name"));
+        //用户的主目录  
+        System.out.println(System.getProperty("user.home"));
+        //用户的当前工作目录 
+        System.out.println(System.getProperty(" user.dir"));*/
+        
+        Properties props = System.getProperties();
+		long maxMemory = Runtime.getRuntime().maxMemory();
+		long totalMemory = Runtime.getRuntime().totalMemory();
+
+		ModelAndView mv = new ModelAndView("/sysinfo");
+
+		mv.addObject("serverUrl", getServerUrl(request));
+		mv.addObject("host", getHostName());
+		mv.addObject("serverStartTime", getServerStartTime());
+
+		mv.addObject("osName", props.get("os.name"));
+		mv.addObject("osVersion", props.get("os.version"));
+		mv.addObject("javaHome", props.get("java.home"));
+		mv.addObject("javaRuntimeName", props.get("java.runtime.name"));
+		mv.addObject("javaVersion", props.get("java.version"));
+		mv.addObject("javaVendor", props.get("java.vendor"));
+		mv.addObject("javaVmVersion", props.get("java.vm.version"));
+		mv.addObject("maxMemory", maxMemory / 1024 / 1024);
+		mv.addObject("totalMemory", totalMemory / 1024 / 1024);
+
+		return mv;
+        
+        
+	}
+	
+	/**
+	 * 
+	 * 功能 :服务地址
+	
+	 * 开发：wuyechun 2016-2-25
+	
+	 * @param request
+	 * @return
+	 */
+	private String getServerUrl(HttpServletRequest request) {
+		String schema = request.getScheme();
+		String server = request.getServerName();
+		int port = request.getServerPort();
+		String context = request.getContextPath();
+
+		String serverUrl = schema + "://" + server + (port == 80 ? "" : (":" + port)) + context;
+		return serverUrl;
+	}
+	
+	
+	/**
+	 * 
+	 * 功能 :主机名
+	
+	 * 开发：wuyechun 2016-2-25
+	
+	 * @return
+	 */
+	private String getHostName() {
+		try {
+			InetAddress inetAddress = InetAddress.getLocalHost();
+			String name = inetAddress.getHostName();
+			return name;
+		}
+		catch (UnknownHostException e) {
+			return "";
+		}
+
+	}
+	
+	/**
+	 * 
+	 * 功能 :系统启动时间
+	
+	 * 开发：wuyechun 2016-2-25
+	
+	 * @return
+	 */
+	private String getServerStartTime() {
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		return sdf.format(serverStartTime);
+	}
+	
+	
+	
 	/**
 	 * 
 	 * 功能 :系统跳转页面公用方法
@@ -109,6 +233,8 @@ public class IndexController {
 	public String getDefinedPage(@PathVariable("module") String module,@PathVariable("page") String page) {
 		return module+"/"+page;
 	}
+	
+
 	
 	
 	

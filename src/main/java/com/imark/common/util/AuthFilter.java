@@ -12,6 +12,8 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.imark.system.model.SysLoginUser;
+
 public class AuthFilter implements Filter{
 
 	@Override
@@ -27,9 +29,30 @@ public class AuthFilter implements Filter{
 		HttpServletRequest request = (HttpServletRequest) req;
 		HttpServletResponse response = (HttpServletResponse) res;
 		String servletPath = request.getServletPath();
+		String uri = request.getRequestURI(); 
+		
+		System.out.println("servletPath:"+servletPath);
+		System.out.println("uri:"+uri);
+		
+		 String[] notFilter = new String[] {"/login","/resources","/welcome","/doLogin","/html","/dispArticle"};  
+		 boolean doFilter=true;
+		 for (String s : notFilter) {  
+	        	if (servletPath.indexOf(s) != -1) {  
+	        		doFilter = false;  
+	        		break;  
+	        	}  
+	     }
+		 
+		 if(doFilter){
+			 if (!isLogin(request)){
+				 response.sendRedirect("/imark/welcome");
+				 return;
+			 }
+		 }   
+		
 
+		/**
 		String[] needFilter = new String[] { "/views/file/upload"};
-
 		for (String url : needFilter) {
 			// 需要过滤
 			if (servletPath.indexOf(url) > -1) {
@@ -41,7 +64,7 @@ public class AuthFilter implements Filter{
 				}
 				break;
 			}
-		}
+		}**/
 		chain.doFilter(request, response);
 	}
 		
@@ -64,17 +87,11 @@ public class AuthFilter implements Filter{
 	 * @author ：wuyechun
 	 */
 	public  boolean isLogin(HttpServletRequest request){
-		String name=(String) request.getSession().getAttribute("cas.login.user");
+		SysLoginUser sysLoginUser=(SysLoginUser) request.getSession().getAttribute(Constant.CURRENT_USER);
 		
 		boolean isLogin=false;
-		Cookie[] cookies = request.getCookies();
-		if (cookies != null) {
-			for (Cookie cookie : cookies) {
-				if (IUtil.equalsIgnoreCase("cas_cookie_auth_id", cookie.getName())) {
-					String authId = cookie.getValue();
-					isLogin= true;
-				}
-			}
+		if(sysLoginUser!=null){
+			isLogin=true;
 		}
 		return isLogin;
 	}

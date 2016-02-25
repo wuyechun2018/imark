@@ -9,6 +9,16 @@
 <link href="${ctx}/resources/styles/main.css" rel="stylesheet" media="screen">
 <title>IMark</title>
 
+<style type="text/css">
+.tabs li a.tabs-inner{
+	border-radius:0 0 0 0;
+}
+
+
+
+</style>
+
+
 <script type="text/javascript">
 function addTab(params) {
 	var iframe = '<iframe src="' + params.url + '" frameborder="0" style="border:0;width:100%;height:98%;"></iframe>';
@@ -49,10 +59,23 @@ function closeTab(menu, type) {
     }
 }
 
+//添加默认tab
+function addDefault(){
+	var param=new Object();
+  	 param.url=ctx+'/resources/data/_content.html?version='+Math.random();
+	 param.title='主页';
+	 addTab(param);
+}
+
 
 $(function(){
 	
 	   $('#mainTabs').tabs({
+		  	 onClose:function(title,index){
+		    	  if(index==0){
+		    		  addDefault();
+		    	  }
+		      },
 		      onContextMenu: function(e, title, index){
 		    	  e.preventDefault();
 
@@ -69,6 +92,7 @@ $(function(){
 		      }
 		     });
 	
+	   addDefault();  
 	
 	
 	//权限树
@@ -82,7 +106,21 @@ $(function(){
     	  addTab(param);
       }
 		      
-	});   	  
+	});
+	
+	$('#jk_tree').tree({      
+	      url: "${ctx}/resources/data/jk.json?date="+new Date().getTime(),  
+	      method:'get', 
+	      onClick:function(node){
+	    	  var param=new Object();
+	    	  param.url=ctx+node.attributes.url;
+	    	  param.title=node.text;
+	    	  addTab(param);
+	      }
+			      
+		}); 
+	
+	
 	
 })
 
@@ -106,7 +144,7 @@ $(function(){
                 <div class="top-bar-left">
                     <h1 style="margin-left: 10px; margin-top: 10px;color: #fff">
                     	<img src="${ctx}/resources/images/imark.png" style="vertical-align:middle">
-                    	<span style="vertical-align:middle;">IMark</span>
+                    	<span style="vertical-align:middle;font-family: STXingkai;font-size:30px;">IMark</span>
                     </h1>
                 </div>
                 
@@ -154,14 +192,14 @@ $(function(){
 					<ul id="permission_tree"></ul>
 				</div>
 				<div title="系统监控" style="padding:10px">
-					content3
+					<ul id="jk_tree"></ul>
 				</div>
 			</div>
 		</div>
 		<div data-options="region:'center',title:'工作区',iconCls:'icon-ok'">
 			<div id="mainTabs"  data-options="fit:true,border:false,plain:true">
 				
-				<div title="主页" data-options="href:'${ctx}/resources/data/_content.html'" style="padding:10px"></div>
+				<%-- <div title="主页" data-options="href:'${ctx}/resources/data/_content.html?version=133'" style="padding:10px"></div>
 				
 				<div title="我的轨迹" style="padding:5px">
 					<table class="easyui-datagrid"
@@ -177,7 +215,7 @@ $(function(){
 							</tr>
 						</thead>
 					</table>
-				</div>
+				</div> --%>
 				
 			</div>
 		</div>

@@ -105,7 +105,7 @@ function formSumbit(){
 								<select name="articleType" id="articleType">
 									 <option value="1" <c:if test="${article.articleType == '1'}">selected</c:if>>个人随想</option>  
 									 <option value="2" <c:if test="${article.articleType == '2'}">selected</c:if>>网上摘录</option> 
-									 <option value="3" <c:if test="${article.articleType == '2'}">selected</c:if>>我爱南陵</option> 
+									 <option value="3" <c:if test="${article.articleType == '3'}">selected</c:if>>我爱南陵</option> 
 								</select>
 							
 							</td>
