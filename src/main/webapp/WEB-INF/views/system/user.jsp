@@ -182,10 +182,10 @@ $(function(){
 				<tr>
 					<td>登录名:</td>
 					<td><input  id="account" name="loginAccount" style="width:150px"></td>
-					<td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+					<td>&nbsp;&nbsp;</td>
 					<td>性别:</td>
 					<td>
-						<select data-options="panelHeight:'auto'" class="easyui-combobox" id="sex" name="sex"  style="width:110px">
+						<select data-options="panelHeight:'auto'" class="easyui-combobox" id="sex" name="sex"  style="width:150px">
 							<option value="1">男</option>
 							<option value="0">女</option>
 							<option value="3" selected = "selected">全部</option>

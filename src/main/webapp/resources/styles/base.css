@@ -1,3 +1,10 @@
+a{
+	text-decoration: none;
+	color:RGB(133,191,167);
+	color:RGB(30,144,255);
+	
+}
+
 fieldset{
 	font-size:12px;
 	border-top:1px solid #95b8e7;

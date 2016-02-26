@@ -140,10 +140,10 @@ $(function(){
 		<div data-options="region:'north'" style="height:50px">
 			<div id="topbar" class="top-bar">
                 <div class="top-bar-left">
-                    <h1 style="margin-left: 10px; margin-top: 10px;color: #fff">
-                    	<img src="${ctx}/resources/images/imark.png" style="vertical-align:middle">
-                    	<span style="vertical-align:middle;font-family: STXingkai;font-size:30px;">IMark</span>
-                    </h1>
+                    <h1 style="margin-left: 5px; margin-top: 0px;color: #fff">
+                    	<img src="${ctx}/resources/images/imark002.png" style="vertical-align:middle">
+<!--                     	<span style="vertical-align:middle;font-family: STXingkai;font-size:30px;">IMark</span>
+ -->                    </h1>
                 </div>
                 
                 <div class="top-bar-right">

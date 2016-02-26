@@ -50,7 +50,8 @@ $(function(){
 		url:ctx+'/editor/list',
 		method:'post',
 		title:"管理",
-		height: 380,
+		//height: 380,
+		height: $(window).height()-100,
 		queryParams: {
 				articleType:'',
 				keyWord:'',
