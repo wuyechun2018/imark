@@ -17,10 +17,10 @@ body{
 </head>
 <body class="welcome_body">
 <div style="margin-left:20px;padding-bottom:50px;">
-<h4 class="text-info">IMark</h4>
 </div>
+<div style="margin-left:20px;font-family: STXingkai;font-size:50px;color:RGB(76,178,208)">IMark</div>
 
-<div style="margin-left:20px;"> 
+<div style="margin-left:20px;padding-top: 20px;"> 
 
 
 <form action="${ctx}/doLogin" method="post">

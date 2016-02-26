@@ -27,7 +27,7 @@ $(function(){
 		},
 		//title:"用户管理",
 		fit:false,
-		height: $(window).height()-85,
+		height: $(window).height()-80,
 		fitColumns:true,
 		striped: true,//奇偶行是否区分
 		singleSelect:true,
@@ -176,7 +176,7 @@ $(function(){
 <body>
 
 <div class="easyui-layout" fit="false">
-		<fieldset>
+		<fieldset style="margin: 0">
             <legend>信息查询</legend>
             <table>
 				<tr>
@@ -193,7 +193,7 @@ $(function(){
 					</td>
 					<td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
 					<td></td>
-					<td><a href="#" id="search" class="easyui-linkbutton" iconCls="icon-search">查询</a></td>
+					<td><a href="#" id="search" class="easyui-linkbutton" iconCls="Zoom">查询</a></td>
 					<%-- 
 					<td>&nbsp;&nbsp;</td>
 					<td><a href="#" id="add" class="easyui-linkbutton" iconCls="icon-add">添加</a></td>--%>
@@ -206,7 +206,7 @@ $(function(){
 </div>
 	
 	<div id="tb">
-	    <a href="#" id="add" class="easyui-linkbutton" plain="true"  iconCls="icon-add">添加</a>
+	    <a href="#" id="add" class="easyui-linkbutton" plain="true"  iconCls="Applicationadd">添加</a>
 	    <%-- 
 	    <a href="#" class="easyui-linkbutton" iconCls="icon-cut" plain="true" onclick="javascript:alert('Cut')">Cut</a>
 	    <a href="#" class="easyui-linkbutton" iconCls="icon-save" plain="true" onclick="javascript:alert('Save')">Save</a>

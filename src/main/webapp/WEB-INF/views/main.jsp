@@ -9,14 +9,7 @@
 <link href="${ctx}/resources/styles/main.css" rel="stylesheet" media="screen">
 <title>IMark</title>
 
-<style type="text/css">
-.tabs li a.tabs-inner{
-	border-radius:0 0 0 0;
-}
 
-
-
-</style>
 
 
 <script type="text/javascript">
@@ -65,6 +58,11 @@ function addDefault(){
   	 param.url=ctx+'/resources/data/_content.html?version='+Math.random();
 	 param.title='主页';
 	 addTab(param);
+	 
+	 param.url=ctx+'/sysinfo?version'+Math.random();
+	 param.title='系统信息';
+	 addTab(param);
+	 
 }
 
 
@@ -133,9 +131,9 @@ $(function(){
 
 
 <div id="mm" class="easyui-menu" style="display: none;">
-  <div id="mm-tabclose" data-options="iconCls:'icon_cancle'" name="cur">关闭当前</div>
-        <div id="mm-tabcloseall" data-options="iconCls:'icon_cross'" name="all">关闭全部</div>
-        <div id="mm-tabcloseother" data-options="iconCls:'icon_no'" name="oth">关闭其他</div>
+  <div id="mm-tabclose" data-options="iconCls:'Application'" name="cur">关闭当前</div>
+        <div id="mm-tabcloseall" data-options="iconCls:'Applicationcascade'" name="all">关闭全部</div>
+        <div id="mm-tabcloseother" data-options="iconCls:'Applicationdouble'" name="oth">关闭其他</div>
  </div>
 
 <div class="easyui-layout" fit="true">
@@ -149,7 +147,12 @@ $(function(){
                 </div>
                 
                 <div class="top-bar-right">
-                  	<span class="top-bar-user"> <strong>${CURRENT_USER.loginAccount}</strong>,欢迎您！</span>
+                  	<%-- <span class="top-bar-user"> <strong>${CURRENT_USER.loginAccount}</strong>,欢迎您！</span> --%>
+                  	<span class="top-bar-exit">
+                  		<%--${ctx}/resources/images/exit.png --%>
+                  		<img style="vertical-align:middle;" alt="退出" src="${ctx}/resources/aicons/icons/exit16.png">
+                  		<a style="vertical-align:middle;"  href="${ctx}/loginout" style="font-size:13px;">退出</a>
+                  	</span>
                 </div>
                 
             </div>
@@ -183,7 +186,8 @@ $(function(){
 			
 			
 		</div>
-		<div data-options="region:'west',split:true, border: true,iconCls: 'icon-hamburg-library'" title="导航" style="width:200px;font-family: Microsoft YaHei;" >
+		<!-- <div data-options="region:'west',split:true, border: true,iconCls: 'icon-hamburg-library'" title="导航" style="width:200px;font-family: Microsoft YaHei;" > -->
+		<div data-options="region:'west',split:true, border: true,iconCls: 'Userstar'" title="<span style='font-size:14px;'>&nbsp;${CURRENT_USER.loginAccount}</span>" style="width:200px;font-family: Microsoft YaHei;" >
 			<div class="easyui-accordion" data-options="fit:true,border:false">
 				<div title="我的年轮"  style="padding:10px;" >
 					<ul class="easyui-tree" data-options="url:'${ctx}/resources/data/tree_data.json',method:'get',animate:true,dnd:true"></ul>
@@ -196,7 +200,10 @@ $(function(){
 				</div>
 			</div>
 		</div>
-		<div data-options="region:'center',title:'工作区',iconCls:'icon-ok'">
+		
+		<!-- 去除 <div data-options="region:'center',title:'工作区',iconCls:'icon-ok'"> -->
+		<div data-options="region:'center'">
+		
 			<div id="mainTabs"  data-options="fit:true,border:false,plain:true">
 				
 				<%-- <div title="主页" data-options="href:'${ctx}/resources/data/_content.html?version=133'" style="padding:10px"></div>

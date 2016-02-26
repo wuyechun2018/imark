@@ -39,6 +39,23 @@ public class IndexController {
 	}
 	
 	
+	/***
+	 * 
+	 * 功能 :退出系统
+	 * 
+	 * 开发：wuyechun 2013-9-24
+	 * 
+	 * @param request
+	 * @return
+	 */
+	@RequestMapping(value = "/loginout")
+	public String doLoginOut(HttpServletRequest request) {
+		HttpSession session = request.getSession();
+		session.removeAttribute(Constant.CURRENT_USER);
+		session.invalidate();
+		return "login";
+	}
+	
 	/**
 	 * 
 	 * @Description：用户登录
@@ -68,7 +85,7 @@ public class IndexController {
 		}
 		if(isValid){
 			mv.addObject(Constant.CURRENT_USER, sysLoginUser);
-			mv.setViewName("welcome");
+			mv.setViewName("main");
 		}else{
 			mv.addObject(Constant.ERROR_MSG, "用户名或密码错误！");
 			mv.setViewName("login");

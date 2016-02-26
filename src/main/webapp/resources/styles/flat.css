@@ -1,0 +1,14 @@
+@CHARSET "UTF-8";
+
+
+.tabs li a.tabs-inner{
+	border-radius:0 0 0 0;
+}
+
+.l-btn{
+	border-radius:0 0 0 0;
+}
+
+.textbox{
+	border-radius:0 0 0 0;
+}

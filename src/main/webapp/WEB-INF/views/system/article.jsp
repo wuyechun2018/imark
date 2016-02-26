@@ -90,14 +90,16 @@ $(function(){
 		]],
 		toolbar:[{
 						text : '增加',
-						iconCls : 'icon-add',
+						//iconCls : 'icon-add',
+						iconCls : 'Applicationadd',
 						handler : function() {
 							//location.href=ctx+"/views/system/ckeditor";
 							location.href=ctx+"/editor/addArticle";
 						}
 					}, '-',{
 						text : '删除',
-						iconCls : 'icon-remove',
+						//iconCls : 'icon-remove',
+						iconCls : 'Applicationdelete',
 						handler : function() {
 							var rows = $("#grid").datagrid('getSelections');
 							if (rows.length > 0) {
@@ -140,6 +142,7 @@ $(function(){
 					},'-', {
 						text : '修改',
 						iconCls : 'icon-edit',
+						//iconCls : 'Applicationedit',
 						handler : function() {
 							var rows = $("#grid").datagrid('getSelections');
 							if (rows.length==1) {
@@ -176,7 +179,7 @@ $(function(){
 
  <div class="easyui-layout"  fit="false">
         <!-------------------------------搜索框----------------------------------->
-        <fieldset>
+        <fieldset style="margin: 0">
             <legend>信息查询</legend>
             <form id="ffSearch" method="post">
 		        <div style="margin-bottom:5px">

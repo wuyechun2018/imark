@@ -16,7 +16,7 @@
 .tree-folder-open{
 	background: url('../icons/ifolder_open_15_15.png') no-repeat;
 	 background-position: center;
-}***/
+}
 
 .itree-accept{
   background: url('../icons/iaccept.png') no-repeat;
@@ -26,7 +26,7 @@
 .itree-cancel{
   background: url('../icons/icancel.png') no-repeat;
   background-position: center;
-}
+}***/
 
 
 .Redo{background-image:url(../icons/redo.png)!important;}
