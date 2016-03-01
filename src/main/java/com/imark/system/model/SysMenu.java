@@ -33,7 +33,7 @@ public class SysMenu implements java.io.Serializable {
 	private String menuName;    //目录名称
 	private String menuAddr;    //地址
 	private String menuIconUrl; //url
-	private String menuType;	//目录类型  0：文件夹     1：菜单
+	private String menuType;	//目录类型  0：文件夹     1：菜单     2：按钮
 	private String isUse;		//是否在用
 	private String memo;        //说明
 	private Long orderNo;		//排序

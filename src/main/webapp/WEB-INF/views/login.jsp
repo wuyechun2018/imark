@@ -24,6 +24,7 @@ body{
 	-webkit-box-shadow:0 1px 3px rgba(0, 0, 0, .13);
 	background:rgba(255, 255, 255, 0.6);
 	border-radius:2px;
+	border: 1px solid #fff;
 }
 
 label{
@@ -62,8 +63,8 @@ label{
 
 
 <div style="margin:auto;width: 320px;padding:6% 0 0;"> 
-	<div style="margin-left:25px;font-family: STXingkai;font-size:50px;color:RGB(76,178,208)">IMark</div> 
-	<%-- <img src="${ctx}/resources/images/imark002.png" style="vertical-align:middle"> --%>
+	<!-- <div style="margin-left:25px;font-family: STXingkai;font-size:50px;color:RGB(76,178,208)">IMark</div>  -->
+	<img src="${ctx}/resources/images/blogo.png" style="vertical-align:middle">
 	<br>
 	<form action="${ctx}/doLogin" method="post" class="loginForm">
 		<label >用户名</label><input type="text" value="admin" name="loginAccount"/> <br>

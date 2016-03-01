@@ -10,7 +10,7 @@
         "iconCls": "itree-accept"
     },{
         "id": "2",
-        "text": "系统菜单",
+        "text": "权限菜单",
         "state": "open",
         "checked": null,
         "attributes": {

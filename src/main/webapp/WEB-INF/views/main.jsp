@@ -13,6 +13,54 @@
 
 
 <script type="text/javascript">
+
+$(function(){
+	//加载一级菜单
+	$.ajax({
+		cache: true,
+		type: "POST",
+		url : '${ctx}/sysMenu/getChildList?pid=1',
+		data:{
+			
+		},
+		async: false,
+	    error: function(request) {
+	       
+	    },
+	    success: function(data) {
+	    	var html="";
+	    	for(var i=0;i<data.length;i++){
+	    		var menuId=data[i].id;
+	    		html='<div style="padding:6px"><ul id="mtree'+menuId+'"></ul></div>';
+	    		$('#menuDiv').accordion('add', {
+		    		title: data[i].text,
+		    		content: html,
+		    		selected: i==0?true:false
+		    	});
+	    		
+	    		var id='mtree'+menuId
+	    		$('#'+id).tree({      
+	    		     url: "${ctx}/sysMenu/getChildList?pid="+menuId,
+	    		      //url:"${ctx}/resources/data/tree_data.json",
+	    		      method:'get', 
+	    		      onClick:function(node){
+	    		    	  var param=new Object();
+	    		    	  param.url=ctx+node.attributes.menuAddr;
+	    		    	  param.title=node.text;
+	    		    	  addTab(param);
+	    		      }
+	    				      
+	    			}); 
+	    		
+	    		
+	    	}
+	    }
+	})
+})
+
+
+
+
 function addTab(params) {
 	var iframe = '<iframe src="' + params.url + '" frameborder="0" style="border:0;width:100%;height:98%;"></iframe>';
 	var mainTab = $('#mainTabs');
@@ -188,16 +236,18 @@ $(function(){
 		</div>
 		<!-- <div data-options="region:'west',split:true, border: true,iconCls: 'icon-hamburg-library'" title="导航" style="width:200px;font-family: Microsoft YaHei;" > -->
 		<div data-options="region:'west',split:true, border: true,iconCls: 'Userstar'" title="<span style='font-size:14px;'>&nbsp;${CURRENT_USER.loginAccount}</span>" style="width:200px;font-family: Microsoft YaHei;" >
-			<div class="easyui-accordion" data-options="fit:true,border:false">
+			<div class="easyui-accordion" data-options="fit:true,border:false" id="menuDiv">
+				<%-- 
 				<div title="我的年轮"  style="padding:10px;" >
 					<ul class="easyui-tree" data-options="url:'${ctx}/resources/data/tree_data.json',method:'get',animate:true,dnd:true"></ul>
 				</div>
+				
 				<div title="权限管理"  data-options="selected:true" style="padding:10px;">
 					<ul id="permission_tree"></ul>
 				</div>
 				<div title="系统监控" style="padding:10px">
 					<ul id="jk_tree"></ul>
-				</div>
+				</div> --%>
 			</div>
 		</div>
 		
