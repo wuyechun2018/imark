@@ -11,7 +11,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.imark.system.service.MarkLogService;
+import com.imark.system.service.h2.MarkLogService;
 
 @Controller
 @RequestMapping("/markLog")

@@ -18,6 +18,8 @@ import org.springframework.web.servlet.ModelAndView;
 import com.imark.common.util.Constant;
 import com.imark.common.util.UserCredentialsMatcher;
 import com.imark.system.model.SysLoginUser;
+import com.imark.system.model.SysMarkLogs;
+import com.imark.system.service.h2.MarkLogService;
 import com.imark.system.service.h2.SysLoginUserService;
 
 
@@ -26,6 +28,10 @@ public class IndexController {
 	
 	@Autowired
 	private SysLoginUserService sysLoginUserService;
+	
+	@Autowired
+	private MarkLogService markLogService;
+	
 	
 	private Date serverStartTime = new Date();
 	
@@ -65,7 +71,7 @@ public class IndexController {
 	 * @author ：wuyechun
 	 */
 	@RequestMapping(value = "/doLogin")
-	public ModelAndView doLogin(String loginAccount,String loginPwd,HttpSession session){
+	public ModelAndView doLogin(String loginAccount,String loginPwd,HttpServletRequest request,HttpSession session){
 		
 		boolean isValid=false;
 		ModelAndView mv=new ModelAndView();
@@ -86,12 +92,48 @@ public class IndexController {
 		if(isValid){
 			mv.addObject(Constant.CURRENT_USER, sysLoginUser);
 			mv.setViewName("main");
+			
+			//记录登录日志
+			SysMarkLogs log=new SysMarkLogs();
+			//日志类型,系统日志
+			log.setMarkType("1");
+			//业务类型,登录日志1,退出日志 2
+			log.setBizType("1");
+			log.setOpDate(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date()));
+			log.setOpUser(loginAccount);
+			log.setBizParam(getIpAddr(request));
+			markLogService.save(log);
+			
 		}else{
 			mv.addObject(Constant.ERROR_MSG, "用户名或密码错误！");
 			mv.setViewName("login");
 		}
 		return mv;
 	}
+	
+	
+	/**
+	 * 
+	 * 功能 :获取Ip地址
+	
+	 * 开发：wuyechun 2016-3-1
+	
+	 * @param request
+	 * @return
+	 */
+	public String getIpAddr(HttpServletRequest request) {
+		String ip = request.getHeader("x-forwarded-for");
+		if (ip == null || ip.length() == 0 || "unknown".equalsIgnoreCase(ip)) {
+			ip = request.getHeader("Proxy-Client-IP");
+		}
+		if (ip == null || ip.length() == 0 || "unknown".equalsIgnoreCase(ip)) {
+			ip = request.getHeader("WL-Proxy-Client-IP");
+		}
+		if (ip == null || ip.length() == 0 || "unknown".equalsIgnoreCase(ip)) {
+			ip = request.getRemoteAddr();
+		}
+		return ip;
+	} 
 	
 	/**
 	 * 

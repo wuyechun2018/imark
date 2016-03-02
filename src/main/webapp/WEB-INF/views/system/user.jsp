@@ -42,7 +42,7 @@ $(function(){
 		        		  return "男";
 		        	  }
 		          }}, 
-		          {field:'userAlias',title: '昵称',align: 'center',width: 100}, 
+		          {field:'bizParam',title: '昵称',align: 'center',width: 100}, 
 		          {field:'userEmail',title: '邮箱地址',align: 'center',width: 100}, 
 		          {field:'userState',title: '用户状态',align: 'center',width: 50, formatter:function(val,rec){
 		        	  if(val=='U'){

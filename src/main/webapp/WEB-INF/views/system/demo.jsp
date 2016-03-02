@@ -13,10 +13,10 @@
 <script type="text/javascript">
 $(function(){
 	$('#grid').datagrid({  
-		url:ctx+'/resources/data/datagrid_data.json',
-		method:'get',
-		title:"用户管理",
-		height: 340,
+		url:ctx+'/markLog/list',
+		method:'post',
+		title:"系统日志",
+		height: $(window).height()-100,
         //width: function () { return document.body.clientWidth * 0.8 -50},
 		fit:false,
 		fitColumns:true,
@@ -27,12 +27,19 @@ $(function(){
 		pagination: true,  
 		rownumbers: true,  
 		columns:[[
-		          {field:'itemid',title: '来Item ID',align: 'center',width: 100},
-		          {field:'productid',title: 'productid',align: 'center',width: 100}, 
-		          {field:'listprice',title: 'listprice',align: 'center',width: 100}, 
-		          {field:'attr1',title: 'attr1',align: 'center',width: 100}, 
-		          {field:'status',title: 'status',align: 'center',width: 100}
-		]],
+		          {field:'OP_DATE',title: '访问时间',align: 'center',width: 100},
+		          {field:'OP_USER',title: '用户名',align: 'center',width: 100}, 
+		          {field:'BIZ_PARAM',title: 'IP地址',align: 'center',width: 100}, 
+		          {field:'BIZ_TYPE',title: '日志类型',align: 'center',width: 100, formatter:function(val,rec){
+		        	  if(val=='1'){
+		        		  return "登录";
+		        	  }else if(val=='2'){
+		        		  return "退出";
+		        	  }
+		          }}
+		]]
+        /**
+        ,
 		toolbar:[{
 						text : '增加',
 						iconCls : 'icon-add',
@@ -58,7 +65,7 @@ $(function(){
 
 						}
 					} ]
-			
+			**/
 
 		})
 
@@ -79,10 +86,11 @@ $(function(){
 
  <div class="easyui-layout"  fit="false">
         <!-------------------------------搜索框----------------------------------->
-        <fieldset>
+        <fieldset style="margin: 0">
             <legend>信息查询</legend>
             <form id="ffSearch" method="post">
-		        <div style="margin-bottom:5px">
+            
+		        <!-- <div style="margin-bottom:5px">
                     <label for="txtSystemType_ID">系统编号：</label>
                     <input class="easyui-combobox" type="text" ID="txtSystemType_ID" name="txtSystemType_ID" style="width:100px"  />&nbsp;&nbsp;&nbsp;
 
@@ -94,19 +102,20 @@ $(function(){
 
                     <label for="txtNote">日志描述：</label>
                     <input type="text" ID="txtNote" name="txtNote" style="width:100px"  />&nbsp;&nbsp;&nbsp;
-                </div>
+                </div> -->
+                
 		        <div>
-                    <label for="txtIPAddress"> I P 地 址：</label>
-                    <input type="text" ID="txtIPAddress" name="txtIPAddress" style="width:100px"  />&nbsp;&nbsp;&nbsp;
+                    <label for="txtIPAddress"> 用户名：</label>
+                    <input type="text" ID="txtIPAddress" name="txtIPAddress" style="width:110px"  />&nbsp;&nbsp;&nbsp;
 
-                    <label for="txtMacAddress">Mac地址：</label>
-                    <input type="text" ID="txtMacAddress" name="txtMacAddress" style="width:100px"  />&nbsp;&nbsp;&nbsp;
+                    <label for="txtMacAddress">IP地址：</label>
+                    <input type="text" ID="txtMacAddress" name="txtMacAddress" style="width:110px"  />&nbsp;&nbsp;&nbsp;
 
                     <label for="txtLastUpdated">开始时间：</label>
-                    <input class="easyui-datebox" type="text" ID="txtLastUpdated" name="txtLastUpdated" style="width:100px"  />&nbsp;&nbsp;&nbsp;
+                    <input class="easyui-datebox" type="text" ID="txtLastUpdated" name="txtLastUpdated" style="width:110px"  />&nbsp;&nbsp;&nbsp;
 
                     <label for="txtLastUpdated2">结束时间：</label>
-                    <input class="easyui-datebox" type="text" ID="txtLastUpdated2" name="txtLastUpdated2" style="width:100px"  />&nbsp;&nbsp;&nbsp;
+                    <input class="easyui-datebox" type="text" ID="txtLastUpdated2" name="txtLastUpdated2" style="width:110px"  />&nbsp;&nbsp;&nbsp;
 
                     <a href="#" class="easyui-linkbutton" iconcls="icon-search" id="btnSearch">查询</a>
                 </div>

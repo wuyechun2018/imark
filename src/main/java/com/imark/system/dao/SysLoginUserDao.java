@@ -94,7 +94,8 @@ public class SysLoginUserDao extends JdbcSupportDao{
 											 "       t.user_type,\n" + 
 											 "       t.user_theme,\n" + 
 											 "       t.memo\n" + 
-											 "  ,ROWNUM RN FROM SYS_LOGIN_USER t WHERE 1=1 AND t.USER_STATE<>'D' ");
+											 "  ,ROWNUM RN FROM SYS_LOGIN_USER t WHERE 1=1  ");
+		//AND t.USER_STATE<>'D'
 		
 		if(IUtil.isNotBlank(param.get("loginAccount"))){
 			sqlBuff.append(" AND LOGIN_ACCOUNT LIKE '%" + param.get("loginAccount") + "%'");
@@ -124,7 +125,8 @@ public class SysLoginUserDao extends JdbcSupportDao{
 	 * @author wuyechun
 	 */
 	public Long getCount(Map<String, String> param) {
-		StringBuffer sql=new StringBuffer("SELECT COUNT(1) FROM SYS_LOGIN_USER t WHERE 1=1 AND t.USER_STATE<>'D'\n");
+		//AND t.USER_STATE<>'D'
+		StringBuffer sql=new StringBuffer("SELECT COUNT(1) FROM SYS_LOGIN_USER t WHERE 1=1 \n");
 		
 		if(IUtil.isNotBlank(param.get("loginAccount"))){
 			sql.append(" AND LOGIN_ACCOUNT LIKE '%" + param.get("loginAccount") + "%'");

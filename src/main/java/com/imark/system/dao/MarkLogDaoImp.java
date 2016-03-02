@@ -57,6 +57,7 @@ public class MarkLogDaoImp extends JdbcSupportDao{
 	 * @author ：wuyechun
 	 */
 	public List getList(String bizId, String bizType) {
+		/**
 		String sql="select *\n" +
 			"  from SYS_MARK_LOGS t\n" + 
 			" WHERE t.mark_type = '1' AND t.logic_status='0'\n" + 
@@ -64,6 +65,12 @@ public class MarkLogDaoImp extends JdbcSupportDao{
 			"   AND t.biz_type =? ORDER BY t.OP_DATE DESC";
 		List<Map<String, Object>> userList = getJdbcTemplate().queryForList(sql,new Object[] {bizId,bizType});
 		return userList;
+		***/
+		
+		String sql="SELECT * FROM SYS_MARK_LOGS T ORDER BY t.OP_DATE DESC";
+		List<Map<String, Object>> userList = getJdbcTemplate().queryForList(sql);
+		return userList;
+		
 	}
 
 	
