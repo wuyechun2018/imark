@@ -5,3 +5,6 @@
 <hibernate-reverse-engineering>
 	<schema-selection match-schema="IMARK" />
 </hibernate-reverse-engineering>
+
+
+<!-- hibernate3:hbm2java -->

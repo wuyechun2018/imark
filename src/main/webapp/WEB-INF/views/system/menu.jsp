@@ -25,23 +25,24 @@ function submitForm(){
         	$.messager.alert('提示',obj.msg);
         }
       });**/
-	 $.ajax({
-         type: "POST",
-         url:'${ctx}/sysMenu/save',
-         data: $('#menuForm').serialize(),
-         success: function (data) {
-        	 //var obj=eval('('+ data+ ')');
-         	$.messager.alert('提示',data.msg);
-         	$("#menuTree").tree("options").url='${ctx}/sysMenu/getChildList?pid=0' 
-            $("#menuTree").tree("reload");
-         	
-         },
-         error: function(data) {
-             alert("error:"+data.responseText);
-          }
-
-     });
+      if($("#menuForm").form('validate')){  
+		 $.ajax({
+	         type: "POST",
+	         url:'${ctx}/sysMenu/save',
+	         data: $('#menuForm').serialize(),
+	         success: function (data) {
+	        	 //var obj=eval('('+ data+ ')');
+	         	$.messager.alert('提示',data.msg);
+	         	$("#menuTree").tree("options").url='${ctx}/sysMenu/getChildList?pid=0' 
+	            $("#menuTree").tree("reload");
+	         	
+	         },
+	         error: function(data) {
+	             alert("error:"+data.responseText);
+	          }
 	
+	     });
+     }
 	
 	
 }
