@@ -188,6 +188,7 @@ public class EditorController extends BaseController {
 		String keyWord=request.getParameter("keyWord");
 		String articleContent=request.getParameter("articleContent");
 		String articleType=request.getParameter("articleType");
+		String dispOrder=request.getParameter("dispOrder");
 		
 		article.setArticleId(articleId);
 		article.setArticleTitle(articleTitle);
@@ -195,6 +196,7 @@ public class EditorController extends BaseController {
 		article.setArticleContent(articleContent);
 		article.setArticleType(articleType);
 		article.setKeyWord(keyWord);
+		article.setDispOrder(dispOrder==null?0L:Long.valueOf(dispOrder));
 		
 		article.setCreateDate(new Date());
 		article.setUpdateDate(new Date());
@@ -224,6 +226,29 @@ public class EditorController extends BaseController {
 		mv.addObject("attachList",attachList);
 		return mv;
 	}
+	
+	
+	/**
+	 * 
+	 * 方法描述：显示
+	 * @param articleId
+	 * @return 
+	 * @exception 
+	 * @author wuyechun
+	 */
+	@RequestMapping("/showContent")
+	public Object showContent(String articleId){
+		Article article=articleService.getArticle(articleId);
+		
+		List<Attach> attachList=attachService.findByBizId(articleId);
+	    System.out.println("==============showContent=============="+attachList.size());
+		
+		ModelAndView mv=new ModelAndView("/showContent");
+		mv.addObject("article",article);
+		mv.addObject("attachList",attachList);
+		return mv;
+	}
+	
 	
 	
 	/**

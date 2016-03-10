@@ -119,6 +119,13 @@ function formSumbit(){
 						</tr>
 						
 						<tr>
+							<td class="l_td"><label>文章排序：</label></td>
+							<td class="w_td"><input name="dispOrder" value="${article.dispOrder}" /></td>
+							<td class="l_td">&nbsp;</td>
+							<td class="w_td">&nbsp;</td>
+						</tr>
+						
+						<tr>
 							<td colspan="4"></td>
 						</tr>
 						

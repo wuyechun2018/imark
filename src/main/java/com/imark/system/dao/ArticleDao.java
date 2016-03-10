@@ -58,7 +58,7 @@ public class ArticleDao extends JdbcSupportDao{
 		
 		
 		
-		String sql="SELECT * FROM ("+sqlBuff.toString()+") WHERE RN>=? AND RN<=?";
+		String sql="SELECT * FROM ("+sqlBuff.toString()+" ORDER BY t.DISP_ORDER"+") WHERE RN>=? AND RN<=?";
 		
 		System.out.println(sql);
 		

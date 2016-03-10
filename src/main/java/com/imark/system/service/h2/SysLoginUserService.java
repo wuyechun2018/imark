@@ -72,6 +72,7 @@ public class SysLoginUserService {
 	 * @author wuyechun
 	 */
 	public void save(SysLoginUser sysLoginUser) {
+		List<SysLoginUser> list=sysLoginUserJpaDao.findByLoginPwd("123");
 		sysLoginUserJpaDao.save(sysLoginUser);
 	}
 
