@@ -9,7 +9,12 @@
 		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd">
 	
-	<context:component-scan base-package="com.imark"/>
+	<!-- <context:component-scan base-package="com.imark"/> -->
+	
+	<!-- 使用Annotation自动注册Bean,如果多个，用“,”分隔 ,只扫描@Controller -->
+	<context:component-scan base-package="com.imark" use-default-filters="false">
+		<context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+	</context:component-scan>
 	
 	
 	<!-- 注意：InternalResourceViewResolver必须总是赋予最低的优先级（最大的order值），因为不管返回什么视图名称，它都将解析视图。

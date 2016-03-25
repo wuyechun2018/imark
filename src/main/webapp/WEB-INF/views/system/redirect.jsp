@@ -1,3 +1,3 @@
 <%
-response.sendRedirect("/imark/html/nanling");
+response.sendRedirect("/imark/html/index");
 %>

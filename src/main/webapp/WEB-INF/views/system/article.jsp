@@ -12,6 +12,8 @@
 
 <script type="text/javascript">
 
+var curNodeId;
+
 function showArticle(id){
 	location.href=ctx+"/editor/showArticle?articleId="+id;
 }
@@ -19,7 +21,8 @@ function showArticle(id){
 function doQuery(){
 	var options = $("#grid").datagrid("options");
 	//设置参数
-	options.queryParams.articleType=$('#articleType').combobox('getValue');
+	//options.queryParams.articleType=$('#articleType').combobox('getValue');
+	options.queryParams.articleType=curNodeId;
     options.queryParams.keyWord =$('#keyword').val();
     options.queryParams.startDate =$('#updateDate_start').datebox("getValue");
     options.queryParams.endDate =$('#updateDate_end').datebox("getValue");
@@ -27,6 +30,53 @@ function doQuery(){
 }
 
 $(function(){
+	
+	var rootId=0;
+	//根据字典类型,获取字典id
+	$.ajax({
+    type:"POST",
+    url:"${ctx}/sysDic/getDicByCode?dicCode=ARTICLE_TYPE",
+    beforeSend:function(XMLHttpRequest) {
+    	
+    },
+    success:function(data, textStatus) {
+    	rootId=data.id;
+    	
+    	//加载权限菜单树
+    	$('#leftTree').tree({
+    				checkbox : false,
+    				url : '${ctx}/sysDic/getChildList?pid='+rootId,
+    				method : 'post',
+    				onBeforeExpand : function(node, param) {
+    				   $('#leftTree').tree('options').url = ctx+ "/sysDic/getChildList?pid=" + node.id;
+    				},
+    				onClick : function(node) {
+    					curNodeId=node.id;
+    					
+    					doQuery();
+    					
+    				},
+    				onLoadSuccess : function(node, data) {
+    					//默认展开根节点
+    					var rooNode = $("#leftTree").tree('getRoot');
+    					//$("#leftTree").tree('expand',rooNode.target);
+    					$("#leftTree").tree('expandAll');
+
+    				}
+    			});
+    	
+    	
+    	
+    	
+    },
+    complete:function(XMLHttpRequest, textStatus) {
+    	
+    },
+    error:function() {
+    	
+    }
+	});
+	
 	//加载文章类型
 	$('#articleType').combobox({ 
 		url : '${ctx}/resources/data/article-type.json',
@@ -178,16 +228,24 @@ $(function(){
 </head>
 <body>
 
- <div class="easyui-layout"  fit="false">
+
+<div class="easyui-layout" style="width:700px;height:700px;" fit="true">
+        <div data-options="region:'west',split:true,title:'文章类型'" style="width: 240px; padding: 1px;">
+            <div>
+             <ul id="leftTree"></ul>
+            </div>
+        </div>
+        <div id="tb" data-options="region:'center',title:'文章列表'" style="padding:5px;height:auto">   
+
         <!-------------------------------搜索框----------------------------------->
         <fieldset style="margin: 0">
             <legend>信息查询</legend>
             <form id="ffSearch" method="post">
-		        <div style="margin-bottom:5px">
-                    <label for="txtSystemType_ID">文章类型：</label>
-                    <%--
+		        <%-- <div style="margin-bottom:5px">
+                    <label for="articleType">文章类型：</label>
+                    
                     <input class="easyui-combobox" type="text" ID="articleType" name="articleType" style="width:150px"  />&nbsp;&nbsp;&nbsp;
-					 --%>
+					
 					 
 					<input id="articleType" name="articleType" data-options="editable:false,panelHeight:'auto'"  > 
 
@@ -195,8 +253,16 @@ $(function(){
                     <input type="text" ID="keyword" name="keyword" style="width:150px"  />&nbsp;&nbsp;&nbsp;
 
                    
-                </div>
+                </div> --%>
 		        <div>
+		        
+		        	 <!-- <label for="articleType">文章类型：</label>
+					 
+					<input id="articleType" name="articleType" data-options="editable:false,panelHeight:'auto'"  >  -->
+
+                    <label for="txtLoginName">关键字：</label>
+                    <input type="text" ID="keyword" name="keyword" style="width:150px"  />&nbsp;&nbsp;&nbsp;
+		        
                     <label for="txtLastUpdated">开始时间：</label>
                     <input class="easyui-datebox" type="text" ID="updateDate_start" name="updateDate_start" style="width:150px"  />&nbsp;&nbsp;&nbsp;
 

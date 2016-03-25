@@ -15,7 +15,7 @@
 <script type="text/javascript">
 
 $(function(){
-	//加载一级菜单
+	
 	$.ajax({
 		cache: true,
 		type: "POST",
@@ -48,6 +48,8 @@ $(function(){
 	    		    	  param.url=ctx+node.attributes.menuAddr;
 	    		    	  param.title=node.text;
 	    		    	  addTab(param);
+	    		    	  //折叠右边内容
+	    		    	  $('#ilayout').layout('collapse','east');
 	    		      }
 	    				      
 	    			}); 
@@ -56,6 +58,12 @@ $(function(){
 	    	}
 	    }
 	})
+	
+	//600毫秒后关闭
+	setTimeout(function(){
+		//$('#ilayout').layout('collapse','east');
+	},600);
+	
 })
 
 
@@ -121,6 +129,11 @@ $(function(){
 		    	  if(index==0){
 		    		  addDefault();
 		    	  }
+		    	  if(index==2){
+		    		//展开右边
+		    		 $('#ilayout').layout('expand','east');
+		    	  }
+		    	  
 		      },
 		      onContextMenu: function(e, title, index){
 		    	  e.preventDefault();
@@ -146,6 +159,7 @@ $(function(){
       url: "${ctx}/resources/data/permission.json?date="+new Date().getTime(),  
       method:'get', 
       onClick:function(node){
+    	
     	  var param=new Object();
     	  param.url=ctx+node.attributes.url;
     	  param.title=node.text;
@@ -184,7 +198,7 @@ $(function(){
         <div id="mm-tabcloseother" data-options="iconCls:'Applicationdouble'" name="oth">关闭其他</div>
  </div>
 
-<div class="easyui-layout" fit="true">
+<div class="easyui-layout" fit="true"  id="ilayout">
 		<div data-options="region:'north'" style="height:50px">
 			<div id="topbar" class="top-bar">
                 <div class="top-bar-left">
@@ -222,7 +236,7 @@ $(function(){
 			<div class="south-bottom">Copyright © 2015 Imark. All Rights Reserved 京ICP备 0001XXX号     建议分辨率:1280*800 |关于我们</div>
 		</div>
 		
-		<div data-options="region:'east',split:true,border: true,iconCls: 'icon-standard-date'" title="日历" style="width:210px;">
+		<div id="east" data-options="region:'east',collapsed:false,split:true,border: true,iconCls: 'icon-standard-date'" title="日历" style="width:210px;">
 			<div id="eastLayout" class="easyui-layout" data-options="fit: true">
                 <div data-options="region: 'north', split: false, border: false" style="height: 220px;">
                     <div class="easyui-calendar" data-options="fit: true, border: false"></div>

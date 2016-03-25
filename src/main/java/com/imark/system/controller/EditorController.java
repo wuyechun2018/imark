@@ -230,7 +230,8 @@ public class EditorController extends BaseController {
 	
 	/**
 	 * 
-	 * 方法描述：显示
+	 * 方法描述：显示 
+	 * http://localhost:5678/imark/editor/showContent?articleId=40286f8151e8f03e0151eceb203a0003
 	 * @param articleId
 	 * @return 
 	 * @exception 
@@ -239,14 +240,10 @@ public class EditorController extends BaseController {
 	@RequestMapping("/showContent")
 	public Object showContent(String articleId){
 		Article article=articleService.getArticle(articleId);
-		
-		List<Attach> attachList=attachService.findByBizId(articleId);
-	    System.out.println("==============showContent=============="+attachList.size());
-		
 		ModelAndView mv=new ModelAndView("/showContent");
 		mv.addObject("article",article);
-		mv.addObject("attachList",attachList);
 		return mv;
+		
 	}
 	
 	

@@ -24,6 +24,16 @@ public class Constant {
 	 */
 	public static final String DATA_SOURCE_THREE="dsThree";
 	
+	/**
+	 * 数据字典-字典类别
+	 */
+	public static final String DIC_TYPE_ZDLB="1";
+	
+	/**
+	 * 数据字典-字典项
+	 */
+	public static final String DIC_TYPE_ITEM="2";
+	
 	
 	
 }

@@ -15,7 +15,6 @@ import javax.persistence.TemporalType;
  */
 @Entity
 @Table(name="SYS_USER_ROLE"
-    ,schema="IMARK"
 )
 public class SysUserRole  implements java.io.Serializable {
 

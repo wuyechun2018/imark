@@ -48,33 +48,64 @@ width:40%;
 
 $(function(){
 	$('#articleTitle').focus();
-	
-	
+	//根据字典类型,获取字典id
+	$.ajax({
+    type:"POST",
+    url:"${ctx}/sysDic/getDicByCode?dicCode=ARTICLE_TYPE",
+    beforeSend:function(XMLHttpRequest) {
+    	
+    },
+    success:function(data, textStatus) {
+    	$('#articleType').combotree({
+    		url : '${ctx}/sysDic/getChildList?pid='+data.id,
+    		onBeforeExpand : function(node, param) {
+    			   //$('#articleType').combotree('options').url = ctx+ "/sysDic/getChildList?pid=" + node.id;
+    			   $('#articleType').combotree("tree").tree("options").url =ctx+ "/sysDic/getChildList?pid=" + node.id;
+    			},
+    		width:docWidth*0.5-160,
+    	    required: true,
+    	    onLoadSuccess : function(node, data) {
+    	    	$('#articleType').combotree("tree").tree('expandAll');
+			}
+    	});
+    	
+    	$('#articleType').combotree('setValue', '${article.articleType}');  
+    	
+    },
+    complete:function(XMLHttpRequest, textStatus) {
+    	
+    },
+    error:function() {
+    	
+    }
+	});
 })
 
 
 
 function formSumbit(){
-	var data = CKEDITOR.instances.editor.getData();
-	$('#ckForm').submit();
-	
-	//设置值
-	//CKEDITOR.instances.editor.setData(data+"<h1>hello</h1>");
-	
-	//保存附件方法
-	/*****/
-	$('#attachForm').form('submit',{
-		url:'${ctx}/editor/saveAttach',
-        onSubmit:function(op){
-        	//return $(this).form('validate');
-        	return true;
-        },
-        success:function(data){
-        	var obj=eval('('+ data+ ')');
-        	$.messager.alert('提示',obj.msg);
-        }
-      });
-	
+	if($("#ckForm").form('validate')){ 
+		
+		var data = CKEDITOR.instances.editor.getData();
+		$('#ckForm').submit();
+		
+		//设置值
+		//CKEDITOR.instances.editor.setData(data+"<h1>hello</h1>");
+		
+		//保存附件方法
+		/*****/
+		$('#attachForm').form('submit',{
+			url:'${ctx}/editor/saveAttach',
+	        onSubmit:function(op){
+	        	//return $(this).form('validate');
+	        	return true;
+	        },
+	        success:function(data){
+	        	var obj=eval('('+ data+ ')');
+	        	$.messager.alert('提示',obj.msg);
+	        }
+	      });
+		}
 	
 }
 
@@ -102,12 +133,14 @@ function formSumbit(){
 							<td class="w_td"><input name="articleTitle" id="articleTitle" value="${article.articleTitle}"></td>
 							<td class="l_td"><label>类别：</label></td>
 							<td class="w_td">
+								<input name="articleType" id="articleType">
+								<%--
 								<select name="articleType" id="articleType">
-									 <option value="1" <c:if test="${article.articleType == '1'}">selected</c:if>>个人随想</option>  
+									  <option value="1" <c:if test="${article.articleType == '1'}">selected</c:if>>个人随想</option>  
 									 <option value="2" <c:if test="${article.articleType == '2'}">selected</c:if>>网上摘录</option> 
 									 <option value="3" <c:if test="${article.articleType == '3'}">selected</c:if>>我爱南陵</option> 
 								</select>
-							
+								 --%>
 							</td>
 						</tr>
 						
@@ -120,7 +153,7 @@ function formSumbit(){
 						
 						<tr>
 							<td class="l_td"><label>文章排序：</label></td>
-							<td class="w_td"><input name="dispOrder" value="${article.dispOrder}" /></td>
+							<td class="w_td"><input name="dispOrder" value="${article.dispOrder}" class="easyui-validatebox" data-options="required:true,validType:'integer'" /></td>
 							<td class="l_td">&nbsp;</td>
 							<td class="w_td">&nbsp;</td>
 						</tr>

@@ -23,6 +23,7 @@
 	<context:property-placeholder location="classpath:database/jdbc.properties" />
 
 	<!-- Activate Spring Data JPA repository support -->
+	<!-- 启用扫描并自动创建代理的功能 -->
 	<jpa:repositories base-package="com.imark.*.dao.jpa" />
  
  	<bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource"
@@ -46,21 +47,22 @@
 			value="20" />
 	</bean>
  	
-	
-	<bean id="entityManagerFactory"
-		class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+	<!--定义实体管理器工厂-->
+	<bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
 		<property name="dataSource" ref="dataSource" />
 		<property name="jpaVendorAdapter" ref="hibernateJpaVendorAdapter" />
+		<!-- 指定Entity实体类包路径 -->
 		<property name="packagesToScan" value="com.imark" />
 		<property name="jpaProperties">
 			<props>
 				<prop key="hibernate.ejb.naming_strategy">org.hibernate.cfg.ImprovedNamingStrategy</prop>
-				<prop key="hibernate.show_sql">false</prop>
+				<prop key="hibernate.show_sql">true</prop>
+				<prop key="hibernate.format_sql">true</prop>
 			</props>
 		</property>
 	</bean>
 
-	
+	<!-- Hibernate对Jpa的实现 -->
 	<bean id="hibernateJpaVendorAdapter" class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
 			<!-- <property name="databasePlatform" value="org.hibernate.dialect.Oracle10gDialect" /> -->
 	</bean>
@@ -69,6 +71,9 @@
 	<bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
 		<property name="entityManagerFactory" ref="entityManagerFactory" />
 	</bean>
+	
+	<!-- 使用annotation定义事务 -->
+	<tx:annotation-driven transaction-manager="transactionManager" proxy-target-class="true" />
 	
 	<!--JDBC 事务
 	<bean id="transactionManager"
@@ -82,7 +87,4 @@
 			<ref bean="dataSource" />
 		</property>
 	</bean>
-
-	<!-- 使用annotation定义事务 -->
-	<tx:annotation-driven transaction-manager="transactionManager" proxy-target-class="true" />
 </beans>

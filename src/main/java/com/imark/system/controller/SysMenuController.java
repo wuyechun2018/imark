@@ -24,7 +24,7 @@ public class SysMenuController {
 	
 	/***
 	 * 
-	 * 功能 :删除登录用户
+	 * 功能 :删除菜单
 	
 	 * 开发：wuyechun 2016-1-18
 	
