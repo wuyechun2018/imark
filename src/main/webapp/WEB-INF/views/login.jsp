@@ -67,8 +67,8 @@ label{
 	<img src="${ctx}/resources/images/blogo.png" style="vertical-align:middle">
 	<br>
 	<form action="${ctx}/doLogin" method="post" class="loginForm">
-		<label >用户名</label><input type="text" value="admin" name="loginAccount"/> <br>
-		<label >密码</label><input type="password" value="123" name="loginPwd" /><br>
+		<label >用户名</label><input type="text" value="wuyechun" name="loginAccount"/> <br>
+		<label >密码</label><input type="password" value="123456" name="loginPwd" /><br>
 		<!-- <label>
 			<input name="rememberme" id="rememberme" type="checkbox" value="forever"></input>
 			记住我的登录信息
