@@ -348,6 +348,140 @@ a:link, a:visited {
 	color:#f90;
 }
 
+.mainbar {
+    width: 643px;
+    padding: 15px 0;
+    margin-bottom: 20px;
+    overflow: hidden;
+    background: #fff;
+    border-radius: 3px;
+    border: 1px #eee solid;
+}
+
+.mainbar h2 {
+    width: 613px;
+    height: 20px;
+    padding: 0 15px 0 10px;
+    border-left: 5px #f90 solid;
+    line-height: 20px;
+    font-weight: normal;
+    font-size: 14px;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+}
+
+
+.post-comments {
+    width: 585px;
+    font-size: 14px;
+    padding: 15px;
+    background: #f6f6f6;
+    border-radius: 3px;
+    margin: 0 auto 15px;
+    font-family: Arial,Verdana,Helvetica,sans-serif;
+    overflow: hidden;
+}
+
+.post-comments input {
+    width: 120px;
+    height: 30px;
+    line-height: 26px;
+    font-size: 12px;
+    text-align: center;
+    background: #65b916;
+    border: 0;
+    color: #fff;
+}
+
+.post-comments textarea {
+    width: 563px;
+    height: 90px;
+    line-height: 22px;
+    font-size: 12px;
+    border: 1px #f9f9f9 solid;
+    overflow: auto;
+    padding: 5px 10px;
+}
+
+.comments {
+    width: 643px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+
+.comments ul {
+    width: 613px;
+    overflow: hidden;
+    padding: 25px 15px;
+    border-top: 1px solid #eee;
+}
+
+.comments ul li {
+    width: 613px;
+}
+
+
+.comments ul li .reply .operate a {
+    color: #999;
+}
+
+
+.comments ul li .reply .operate {
+    font-size: 12px;
+    margin-top: 15px;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    text-align: right;
+}
+
+
+.post-comments span {
+    font-size: 12px;
+    color: #bbb;
+    line-height: 26px;
+}
+
+
+.comments ul li .reply .comments-info {
+    font-size: 12px;
+    margin-bottom: 15px;
+    height: 20px;
+    line-height: 12px;
+    color: #999;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+}
+
+.comments ul li .reply {
+    float: right;
+    text-align: left;
+    width: 535px;
+    font-size: 14px;
+    line-height: 26px;
+    word-break: break-all;
+    word-wrap: break-word;
+}
+
+.comments ul li .reply span {
+    color: #999;
+    padding: 0 5px;
+}
+
+
+.comments ul li .user-avatar {
+    float: left;
+    width: 60px;
+    height: 60px;
+}
+
+
+
+.comments ul li .user-avatar img {
+    width: 60px;
+    height: 60px;
+}
+
+
+
 
 
 </style>
@@ -421,10 +555,66 @@ $(function(){
 				</div>
 				<div class="declare">欢迎同学们转载但请注明出处及链接，媒体、微信请获得授权，联系QQ：904261233。</div>
 				<div class="status"><span><a class="link4" id="btn_feedback" href="javascript:void(0)">举报&amp;反馈</a></span>2016-03-01 10:17:03 发布 丨 8722 人浏览</div>
-			</div>
+			
 				
+			
+			
+			
+			</div>
+				<div class="mainbar" id="floors">
+				<h2>本文评论</h2>
+				<div class="post-comments" id="review_post"><span id="article_review_touser"></span><textarea id="article_review_contents"></textarea><div align="right"><span>顶，让你眼中精彩的回复亮起来！</span> <input class="input_submit" id="btn_article_review_post" type="button" value="发表神回复"></div></div>
+				<div class="comments">
+					<ul id="floor_728276">
+						<li>
+							<div class="user-avatar">
+								<img class="uhead" src="${ctx}/resources/images/32.jpg">
+							</div>
+							<div class="reply">
+								<div class="comments-info">
+									<font>1#</font><a class="link4" href="/u/jane8627" target="_blank">岁月流年</a><span></span>2016-03-24 17:22<span>丨</span>60.216.*.*
+								</div>
+								<div id="review_contents_728276">很多事情，求而不得的爱情，反而是我们心底最心心念念的。及时各自有了家庭，可是有些感情依旧会埋在心底的某个角落，不轻易碰触，因为太疼……</div>
+								<div class="operate">
+									<font id="review_ctrl_728276">
+										<a name="btn_review_manage" style="display: none;" href="javascript:void(0)" target="_blank" data="id:728276">管理</a>　
+										<a name="btn_review_delete" style="display: none;" href="javascript:void(0)" data="id:728276" uid="377064">删除</a> <span>丨</span>
+										<a name="btn_review_ding" href="javascript:void(0)" data="id:728276">赞</a> <font name="review_support_728276">(0)</font><span>丨</span>
+										<a name="btn_review_citation" href="javascript:void(0)" data="id:728276,nickname:'岁月流年'">回复</a>
+									</font>
+								</div>
+							</div>
+						</li>
+					</ul>
+					<ul id="floor_728281">
+						<li>
+							<div class="user-avatar">
+								<img class="uhead" src="${ctx}/resources/images/12.jpg">
+							</div>
+							<div class="reply">
+								<div class="comments-info">
+									<font>2#</font><a class="link4" href="/u/178337" target="_blank">无缘</a><span></span>2016-03-25 00:54<span>丨</span>175.15.*.*丨来自Android客户端
+								</div>
+								<div id="review_contents_728281">断了线的风筝，总是令人怀念</div>
+								<div class="operate">
+									<font id="review_ctrl_728281">
+										<a name="btn_review_manage" style="display: none;" href="javascript:void(0)" target="_blank" data="id:728281">管理</a>　
+										<a name="btn_review_delete" style="display: none;" href="javascript:void(0)" data="id:728281" uid="178337">删除</a> <span>丨</span>
+										<a name="btn_review_ding" href="javascript:void(0)" data="id:728281">赞</a> <font name="review_support_728281">(0)</font><span>丨</span>
+										<a name="btn_review_citation" href="javascript:void(0)" data="id:728281,nickname:'无缘'">回复</a>
+									</font>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
 					
 			</div>
+			
+			
+			
+			
 			<div class="icenter-right">
 				<div class="imessage">
 					<h2 >月排行榜</h2>
