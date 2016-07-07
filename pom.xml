@@ -18,6 +18,8 @@
 		<jackson.version>1.9.3</jackson.version>
 		<log4j.version>1.2.14</log4j.version>
 		<slf4j.version>1.6.1</slf4j.version>
+		
+		<cxf.version>2.7.6</cxf.version>
 	</properties>
 
 	<repositories>
@@ -30,12 +32,15 @@
 
 
 	<dependencies>
+		
+		<!-- 
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 			<version>3.8.1</version>
 			<scope>test</scope>
 		</dependency>
+		 -->
 
 		<dependency>
 			<groupId>org.springframework</groupId>
@@ -70,12 +75,13 @@
 		</dependency>
 		
 		
-		<!-- Quartz framework 定时器-->
+		<!-- Quartz framework 定时器
 		<dependency>
 			<groupId>org.quartz-scheduler</groupId>
 			<artifactId>quartz</artifactId>
 			<version>2.2.1</version>
 		</dependency>
+		-->
 		<!-- Quartz framework END-->
 		
 
@@ -92,19 +98,21 @@
 			<version>1.4.190</version>
 		</dependency>
 
+		<!-- 
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
 			<version>5.1.36</version>
 		</dependency>
+		 -->
 
-
-		<!-- -->
+		<!--
 		<dependency>
 			<groupId>com.oracle</groupId>
 			<artifactId>ojdbc14</artifactId>
 			<version>10.2.0.10</version>
 		</dependency>
+		 -->
 
 
 		<dependency>
@@ -210,7 +218,7 @@
 			<version>${spring.version}</version>
 		</dependency>
 		
-		<!-- POI -->
+		<!-- POI 
 		<dependency>
 			<groupId>org.apache.poi</groupId>
 			<artifactId>poi</artifactId>
@@ -226,6 +234,7 @@
 			<artifactId>poi-ooxml-schemas</artifactId>
 			<version>3.13</version>
 		</dependency>
+		-->
 		
 		<!-- 加入freemarker -->
 		  <dependency>
@@ -272,12 +281,13 @@
 			<scope>compile</scope>
 		</dependency>
 		
-		<!-- commons-httpclient -->
+		<!-- commons-httpclient 
 		<dependency>
 			<groupId>commons-httpclient</groupId>
 			<artifactId>commons-httpclient.osgi</artifactId>
 			<version>3.1</version>
 		</dependency>
+		-->
 		
 		<dependency>
 			<groupId>net.sf.json-lib</groupId>
@@ -285,6 +295,19 @@
 			<version>2.4</version>
 			<classifier>jdk15</classifier>
 		</dependency>
+		
+		<!--WebService 框架 CXF-->
+		<dependency>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-rt-frontend-jaxws</artifactId>
+			<version>${cxf.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-rt-transports-http</artifactId>
+			<version>${cxf.version}</version>
+		</dependency>
+		
 
 
 	</dependencies>

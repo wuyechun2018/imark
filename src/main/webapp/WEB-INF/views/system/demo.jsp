@@ -6,17 +6,21 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <%--放置的位置要特别注意,不能放在第三行,否则会有一些样式问题 --%>
 <%@ include file="/WEB-INF/views/easyui.jsp" %>
+<link href="${ctx}/resources/styles/iflat.css" rel="stylesheet" media="screen">
 <%-- 
 <link href="${ctx}/resources/styles/easyui-flat.css" rel="stylesheet" media="screen">--%>
 <title>IMark</title>
 
 <script type="text/javascript">
 $(function(){
+	var searchHeight=$('.searchBox').height();
+	var dgTableHeight=$(window).height()-searchHeight-30;
+	
 	$('#grid').datagrid({  
 		url:ctx+'/markLog/list',
 		method:'post',
 		title:"系统日志",
-		height: $(window).height()-100,
+		height: dgTableHeight,
         //width: function () { return document.body.clientWidth * 0.8 -50},
 		fit:false,
 		fitColumns:true,
@@ -86,7 +90,7 @@ $(function(){
 
  <div class="easyui-layout"  fit="false">
         <!-------------------------------搜索框----------------------------------->
-        <fieldset style="margin: 0">
+        <fieldset style="margin: 0" class="searchBox">
             <legend>信息查询</legend>
             <form id="ffSearch" method="post">
             

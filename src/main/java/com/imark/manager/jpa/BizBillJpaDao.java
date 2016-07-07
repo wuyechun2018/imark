@@ -1,4 +1,4 @@
-package com.imark.manager.dao.jpa;
+package com.imark.manager.jpa;
 
 import org.springframework.data.repository.PagingAndSortingRepository;
 

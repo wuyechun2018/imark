@@ -11,7 +11,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.imark.common.vo.EasyTree;
 import com.imark.system.dao.SysMenuDao;
-import com.imark.system.dao.jpa.SysMenuJpaDao;
+import com.imark.system.jpa.SysMenuJpaDao;
 import com.imark.system.model.SysMenu;
 
 @Component

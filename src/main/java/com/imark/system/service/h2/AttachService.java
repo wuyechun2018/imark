@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import com.imark.system.dao.jpa.AttachJpaDao;
+import com.imark.system.jpa.AttachJpaDao;
 import com.imark.system.model.Attach;
 
 @Component

@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 import com.imark.common.util.IUtil;
 import com.imark.common.vo.EasyPager;
 import com.imark.system.dao.SysLoginUserDao;
-import com.imark.system.dao.jpa.SysLoginUserJpaDao;
+import com.imark.system.jpa.SysLoginUserJpaDao;
 import com.imark.system.model.SysLoginUser;
 
 @Component

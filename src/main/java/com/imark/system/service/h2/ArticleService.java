@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 import com.imark.common.util.IUtil;
 import com.imark.common.vo.EasyPager;
 import com.imark.system.dao.ArticleDao;
-import com.imark.system.dao.jpa.ArticleJpaDao;
+import com.imark.system.jpa.ArticleJpaDao;
 import com.imark.system.model.Article;
 
 @Component

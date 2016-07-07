@@ -1,19 +1,15 @@
-a{
-	text-decoration: none;
-	color:RGB(133,191,167);
-	color:RGB(30,144,255);
-	
-}
-
 fieldset{
 	font-size:12px;
-	border-top:1px solid #95b8e7;
+	/* border-top:1px solid #95b8e7;
 	border-left:1px solid #95b8e7;
-	border-right:1px solid #95b8e7;
+	border-right:1px solid #95b8e7; */
 	border-bottom:none;
 	padding-left:15px;
-	magin:0;
 	/**font-family: 'Microsoft YaHei';**/
+	
+	border-top:1px solid #d0d1d7;
+	border-left:1px solid #d0d1d7;
+	border-right:1px solid #d0d1d7;
 
 }
 
@@ -101,3 +97,9 @@ color:#0e2d5f;
 font-family: 'Microsoft YaHei';
 	
 }
+
+input{
+	border: 1px solid RGB(221,221,221);
+}
+
+

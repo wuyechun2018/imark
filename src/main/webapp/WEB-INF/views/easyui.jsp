@@ -10,7 +10,10 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <link href="${ctx}/resources/styles/base.css" rel="stylesheet" media="screen">
+<%--
 <link href="${ctx}/resources/jquery-easyui-1.4.3/themes/default/easyui.css" rel="stylesheet" media="screen">
+ --%>
+<link href="${ctx}/resources/jquery-easyui-1.4.3/themes/metro/easyui.css" rel="stylesheet" media="screen">
 <link href="${ctx}/resources/jquery-easyui-1.4.3/themes/icon.css" rel="stylesheet" media="screen">
 <link href="${ctx}/resources/icons/icon-all.css" rel="stylesheet" media="screen">
 <link href="${ctx}/resources/aicons/css/aicons.css" rel="stylesheet" media="screen">

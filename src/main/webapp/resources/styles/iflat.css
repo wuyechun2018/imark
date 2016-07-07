@@ -1,5 +1,12 @@
 body{
-	background-color: rgb(244, 251, 251);
+	/* background-color: rgb(244, 251, 251); */
+	
+	font: 12px/150% 'Î¢ÈíÑÅºÚ', 'simsun', 'ËÎÌå';
+    color: #464646;
+    background-color: #fff;
+    word-break: break-all;
+	
+	
 }
 
 

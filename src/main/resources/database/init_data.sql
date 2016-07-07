@@ -153,6 +153,56 @@ create table ATTACH
 )
 
 
+
+create table BIZ_BILL  (
+   ID                   VARCHAR2(32)                    not null,
+   BILL_DATE            DATE,
+   BILL_TYPE            VARCHAR2(10),
+   BILL_NAME            VARCHAR(200),
+   AMOUNT               NUMBER(10,2),
+   EARNINGS             NUMBER(10,2),
+   EARNINGS_RATIO       NUMBER(10,2),
+   UPDATE_USER_ID         VARCHAR2(32),
+   UPDATE_DATE          DATE,
+   DIS_ORDER            VARCHAR2(10),
+   constraint PK_BIZ_BILL primary key (ID)
+);
+
+comment on column BIZ_BILL.ID is
+'账单ID';
+
+comment on column BIZ_BILL.BILL_DATE is
+'入账时间';
+
+comment on column BIZ_BILL.BILL_TYPE is
+'账单类型,1,入账,2,出账
+根据账单类型，如果为1，则金额为正数，为2则为负数
+在保存时直接处理';
+
+comment on column BIZ_BILL.BILL_NAME is
+'账单名称';
+
+comment on column BIZ_BILL.AMOUNT is
+'金额';
+
+comment on column BIZ_BILL.EARNINGS is
+'收益';
+
+comment on column BIZ_BILL.EARNINGS_RATIO is
+'收益比例';
+
+comment on column BIZ_BILL.UPDATE_USER_ID is
+'更新人';
+
+comment on column BIZ_BILL.UPDATE_DATE is
+'更新时间';
+
+comment on column BIZ_BILL.DIS_ORDER is
+'排序';
+
+
+
+
 -----------------------------------------------------------------------------------
 ----3、初始化数据----
 -----------------------------------------------------------------------------------

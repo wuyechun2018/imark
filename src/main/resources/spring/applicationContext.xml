@@ -20,7 +20,11 @@
 	 -->
 	
 	<!-- Imports datasource configuration -->
-	<import resource="classpath:spring/spring-data-jpa.xml" />
+	 <import resource="classpath:spring/spring-data.xml" />
+	 <import resource="classpath:spring/spring-data-jdbc.xml" />
+	 <import resource="classpath:spring/spring-data-jpa.xml" />
+	
+	
 	
 	<import resource="classpath:cxf/cxf-server.xml" />
 	<import resource="classpath:cxf/cxf-client.xml" />

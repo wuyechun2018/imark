@@ -18,6 +18,9 @@
 <script type="text/javascript">
 var dgMenu;
 $(function(){
+	var searchHeight=$('.searchBox').height();
+	var dgTableHeight=$(window).height()-searchHeight-30;
+	
 	dgMenu=$('#dgMenu').datagrid({  
 		url:ctx+'/sysLoginUser/list',
 		method:'post',
@@ -27,7 +30,7 @@ $(function(){
 		},
 		//title:"用户管理",
 		fit:false,
-		height: $(window).height()-80,
+		height: dgTableHeight,
 		fitColumns:true,
 		striped: true,//奇偶行是否区分
 		singleSelect:true,
@@ -176,7 +179,7 @@ $(function(){
 <body>
 
 <div class="easyui-layout" fit="false">
-		<fieldset style="margin: 0">
+		<fieldset style="margin: 0" class="searchBox">
             <legend>信息查询</legend>
             <table>
 				<tr>

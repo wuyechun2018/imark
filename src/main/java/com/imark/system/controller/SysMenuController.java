@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.imark.common.vo.JsonMsg;
-import com.imark.system.dao.jpa.SysMenuJpaDao;
+import com.imark.system.jpa.SysMenuJpaDao;
 import com.imark.system.model.SysMenu;
 import com.imark.system.service.h2.SysMenuService;
 

@@ -12,7 +12,7 @@ import com.imark.common.util.Constant;
 import com.imark.common.util.IUtil;
 import com.imark.common.vo.EasyTree;
 import com.imark.system.dao.SysDicDao;
-import com.imark.system.dao.jpa.SysDicJpaDao;
+import com.imark.system.jpa.SysDicJpaDao;
 import com.imark.system.model.SysDic;
 
 @Transactional
