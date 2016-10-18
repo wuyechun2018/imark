@@ -4,3 +4,4 @@
 4. Ckeditor-4.5.6
 5. Echarts-2.2.7
 6. Ztree
+7. Bootstrap
