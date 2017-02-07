@@ -9,7 +9,7 @@
 <LINK href="${ctx}/resources/images/nl.ico" type="image/x-icon" rel="icon">                        
 <LINK href="${ctx}/imark/resources/images/nl.ico" type="image/x-icon" rel="shortcut icon">
 <script type="text/javascript" src="${ctx}/resources/jquery/jquery-1.9.1.js"></script>
-<title>故乡情,南陵源,有情怀的爱</title>
+<title>南陵520！南陵我爱你！芜湖~南陵</title>
 
 <style type="text/css">
 
