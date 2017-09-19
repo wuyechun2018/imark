@@ -30,8 +30,9 @@ public class HtmlController {
 	
 	
 	/**
-	 * 
-	 * 方法描述：显示
+	 * 主页面 http://localhost:5678/imark/html/ifly
+	 * 内容页面 http://localhost:5678/imark/html/content  演示了 ztree的使用
+	 * 方法描述：跳转到开放平台演示主页面
 	 * @param articleId
 	 * @return 
 	 * @exception 
@@ -61,7 +62,7 @@ public class HtmlController {
 	
 	/**
 	 * 
-	 * 方法描述：显示
+	 * 方法描述：网站主页面，样式参考 "有意思吧"
 	 * @param articleId
 	 * @return 
 	 * @exception 
