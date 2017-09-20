@@ -1,6 +1,6 @@
 #!/bin/sh
 
-git filter-branch --env-filter '
+git filter-branch -f --env-filter '
 OLD_EMAIL="ycwu3@iflytek.com"
 CORRECT_NAME="wuyechun"
 CORRECT_EMAIL="wuyechun2018@163.com"
