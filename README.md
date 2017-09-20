@@ -21,7 +21,7 @@ C:\Users\wyc\database\imark.mv.db
 2、若在 Linux操作系统下：  
 /home/wuyechun/database/imark.mv.db  
 
-_二、关于模板引擎：_
+_二、关于模板引擎：_  
 1、管理页面采用EasyUI; 如：http://localhost:5678/imark/views/system/user  
 2、网站页面使用Freemarker; 如：http://localhost:5678/imark/html/index  
 
