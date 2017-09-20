@@ -1,16 +1,15 @@
 package com.imark.system.service.h2;
 
-import java.util.List;
-import java.util.Map;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
-
-import com.imark.common.util.IUtil;
+import com.imark.common.util.SystemLog;
 import com.imark.common.vo.EasyPager;
 import com.imark.system.dao.ArticleDao;
 import com.imark.system.jpa.ArticleJpaDao;
 import com.imark.system.model.Article;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+import java.util.List;
+import java.util.Map;
 
 @Component
 public class ArticleService {
@@ -54,6 +53,7 @@ public class ArticleService {
 	 * @exception 
 	 * @author wuyechun
 	 */
+	//@SystemLog(module="主页面",methods="")
 	public List getList(EasyPager pager, Map param) {
 		return articleDaoImpl.getList(pager,param);
 	}

@@ -1,5 +1,6 @@
 package com.imark.common.util;
 
+import javax.servlet.http.HttpServletRequest;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -144,6 +145,30 @@ public class IUtil {
 	public static String handleDateStr(String src){
 		//转换成时间串 如： 20151010121212 == 2015-10-10 12:12:12
 		return src.replaceAll("-", "") + "000000";
+	}
+
+
+	/**
+	 *
+	 * 功能 :获取Ip地址
+
+	 * 开发：wuyechun 2016-3-1
+
+	 * @param request
+	 * @return
+	 */
+	public static String getIpAddr(HttpServletRequest request) {
+		String ip = request.getHeader("x-forwarded-for");
+		if (ip == null || ip.length() == 0 || "unknown".equalsIgnoreCase(ip)) {
+			ip = request.getHeader("Proxy-Client-IP");
+		}
+		if (ip == null || ip.length() == 0 || "unknown".equalsIgnoreCase(ip)) {
+			ip = request.getHeader("WL-Proxy-Client-IP");
+		}
+		if (ip == null || ip.length() == 0 || "unknown".equalsIgnoreCase(ip)) {
+			ip = request.getRemoteAddr();
+		}
+		return ip;
 	}
 
 }

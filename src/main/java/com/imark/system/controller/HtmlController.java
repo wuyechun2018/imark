@@ -1,22 +1,21 @@
 package com.imark.system.controller;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-import javax.servlet.http.HttpServletRequest;
-
+import com.imark.common.vo.EasyPager;
+import com.imark.common.vo.EasyTree;
+import com.imark.system.model.Article;
+import com.imark.system.service.h2.ArticleService;
+import com.imark.system.service.h2.MarkLogService;
+import com.imark.system.service.h2.SysDicService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.imark.common.vo.EasyPager;
-import com.imark.common.vo.EasyTree;
-import com.imark.system.model.Article;
-import com.imark.system.service.h2.ArticleService;
-import com.imark.system.service.h2.SysDicService;
+import javax.servlet.http.HttpServletRequest;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 @Controller
 @RequestMapping("/html")
@@ -27,6 +26,10 @@ public class HtmlController {
 	
 	@Autowired
 	private SysDicService sysDicService;
+
+
+	@Autowired
+	private MarkLogService markLogService;
 	
 	
 	/**
@@ -69,7 +72,11 @@ public class HtmlController {
 	 * @author wuyechun
 	 */
 	@RequestMapping("/index")
+	//@SystemLog(module="主页面",methods="")
 	public Object index(String articleId,HttpServletRequest request){
+
+		markLogService.doSomeThing();
+
 		
 		EasyPager pager=new EasyPager();
 		
