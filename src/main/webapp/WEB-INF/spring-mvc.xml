@@ -15,8 +15,8 @@
 	<context:component-scan base-package="com.imark" use-default-filters="false">
 		<context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
 	</context:component-scan>
-	
-	
+
+	<!--如果应用了多个视图解析器策略，那么就必须通过“order”属性来声明优先级，order值越低，则优先级越高。-->
 	<!-- 注意：InternalResourceViewResolver必须总是赋予最低的优先级（最大的order值），因为不管返回什么视图名称，它都将解析视图。
 	如果它的优先级高于其它解析器的优先级的话，它将使得其它具有较低优先级的解析器没有机会解析视图。 -->
 	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
@@ -28,13 +28,15 @@
 		<property name="order" value="1"></property> 
 	</bean>
 
+
+	<!-- 此处freeMarker的order 为0，jsp 的order 为1，视图解析时，先找 freemarker 再找 jsp-->
 	<!-- 配置freeMarker的模板路径 -->  
     <bean class="org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer">  
 	      <property name="templateLoaderPath" value="/WEB-INF/ftl/" />  
 	      <property name="defaultEncoding" value="UTF-8" />  
     </bean>  
 	
-	 <!-- freemarker视图解析器 -->  
+	 <!-- freemarker视图解析器 -->
      <bean class="org.springframework.web.servlet.view.freemarker.FreeMarkerViewResolver">  
         <property name="suffix" value=".ftl" />  
         <property name="viewClass" value="org.springframework.web.servlet.view.freemarker.FreeMarkerView"/>
@@ -78,7 +80,11 @@
 	<!--自定义统一异常处理 -->
 	<bean id="iExceptionHandler" class="com.imark.common.util.IExceptionHandler">
 	</bean>
-	
-	<aop:aspectj-autoproxy/>
+
+	<!-- 开启aop注解方式,默认为false
+	<aop:aspectj-autoproxy proxy-target-class="true" />-->
+	<!--
+	<import resource="classpath:spring/spring-aop.xml" />-->
+
 	
 </beans>

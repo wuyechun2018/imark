@@ -28,7 +28,7 @@ $(function(){
 		singleSelect:true,
 		pageSize: 10,
         pageList: [10,20,30],
-		pagination: true,  
+		pagination: false,
 		rownumbers: true,  
 		columns:[[
 		          {field:'OP_DATE',title: '访问时间',align: 'center',width: 100},

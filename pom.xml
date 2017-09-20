@@ -73,8 +73,14 @@
 			<artifactId>aspectjweaver</artifactId>
 			<version>1.8.4</version>
 		</dependency>
-		
-		
+
+
+		<dependency>
+			<groupId>org.aspectj</groupId>
+			<artifactId>aspectjrt</artifactId>
+			<version>1.8.4</version>
+		</dependency>
+
 		<!-- Quartz framework 定时器
 		<dependency>
 			<groupId>org.quartz-scheduler</groupId>

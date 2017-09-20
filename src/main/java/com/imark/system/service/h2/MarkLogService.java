@@ -1,14 +1,14 @@
 package com.imark.system.service.h2;
 
-import java.util.List;
-
+import com.imark.common.util.SystemLog;
+import com.imark.system.dao.MarkLogDaoImp;
+import com.imark.system.model.SysMarkLogs;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.imark.system.dao.MarkLogDaoImp;
-import com.imark.system.model.SysMarkLogs;
+import java.util.List;
 
 @Transactional
 @Component
@@ -40,6 +40,13 @@ public class MarkLogService {
 	public List getList(String bizId, String bizType) {
 		return markLogDaoImp.getList(bizId,bizType);
 	}
-	
 
+
+	/**
+	 * 记录用户访问主页面的日志，是访问日志，而非登录日志
+	 * 这里什么也不做，只是为了在切面中记录日志
+	 */
+	@SystemLog(module="主页面",methods="")
+	public void doSomeThing() {
+	}
 }
