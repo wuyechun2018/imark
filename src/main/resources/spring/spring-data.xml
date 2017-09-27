@@ -20,19 +20,20 @@
 			http://www.springframework.org/schema/jee
             http://www.springframework.org/schema/jee/spring-jee-4.0.xsd" >
         
-    <!-- 引入数据库配置文件   -->  
+    <!-- 引入数据库配置文件
 	<context:property-placeholder location="classpath:database/jdbc.properties" />
-	
-	
-	 <!-- <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
-		<property name="systemPropertiesModeName" value="SYSTEM_PROPERTIES_MODE_OVERRIDE" />
-		<property name="ignoreResourceNotFound" value="true" />
-		<property name="locations">
-			<list>
- 				<value>file:/serverdata/conf/dm/config.xml</value>
-			</list>
-		</property>
-	</bean>   -->
+	 -->
+
+	 <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+       <property name="systemPropertiesModeName" value="SYSTEM_PROPERTIES_MODE_OVERRIDE" />
+       <property name="ignoreResourceNotFound" value="true" />
+       <property name="locations">
+           <list>
+                <value>classpath:database/config.xml</value>
+			   <value>classpath:appConfig.xml</value>
+           </list>
+       </property>
+     </bean>
 	
  
  	<!--数据源配置 -->
@@ -56,5 +57,30 @@
 		<property name="maxPoolPreparedStatementPerConnectionSize"
 			value="20" />
 	</bean>
-	
+
+
+
+	<!--数据源配置2 -->
+	<bean id="dataSourceCenter" class="com.alibaba.druid.pool.DruidDataSource"
+		  init-method="init" destroy-method="close">
+		<property name="url" value="${jdbc.url}" />
+		<property name="username" value="${jdbc.username}" />
+		<property name="password" value="${jdbc.password}" />
+		<property name="filters" value="stat" />
+		<property name="maxActive" value="20" />
+		<property name="initialSize" value="1" />
+		<property name="maxWait" value="60000" />
+		<property name="minIdle" value="1" />
+		<property name="timeBetweenEvictionRunsMillis" value="3000" />
+		<property name="minEvictableIdleTimeMillis" value="300000" />
+		<property name="validationQuery" value="SELECT 'x'" />
+		<property name="testWhileIdle" value="true" />
+		<property name="testOnBorrow" value="false" />
+		<property name="testOnReturn" value="false" />
+		<property name="poolPreparedStatements" value="true" />
+		<property name="maxPoolPreparedStatementPerConnectionSize"
+				  value="20" />
+	</bean>
+
+
 </beans>

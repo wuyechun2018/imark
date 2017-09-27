@@ -27,6 +27,14 @@
 			<ref bean="dataSource" />
 		</property>
 	</bean>
+
+
+	<!--JdbcTemlate配置2 -->
+	<bean id="jdbcTemplateCenter" class="org.springframework.jdbc.core.JdbcTemplate">
+		<property name="dataSource">
+			<ref bean="dataSourceCenter" />
+		</property>
+	</bean>
 	
 	<!--JDBC 事务配置
 	<bean id="transactionManager"

@@ -6,10 +6,11 @@
 <head>
 <base id="base" href="${ctx}">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<LINK href="${ctx}/resources/images/nl.ico" type="image/x-icon" rel="icon">                        
-<LINK href="${ctx}/imark/resources/images/nl.ico" type="image/x-icon" rel="shortcut icon">
+<LINK href="${ctx}/resources/images/store.ico" type="image/x-icon" rel="icon">
+<LINK href="${ctx}/imark/resources/images/store.ico" type="image/x-icon" rel="shortcut icon">
 <script type="text/javascript" src="${ctx}/resources/jquery/jquery-1.9.1.js"></script>
-<title>南陵520！南陵我爱你！芜湖~南陵</title>
+
+<title>${appTitle}</title>
 
 <style type="text/css">
 
@@ -34,10 +35,15 @@ ul,li,div{
 }
 
 .ihead-content{
-	width:965px;
+	width:985px;
 	height:90px;
 	margin: 0 auto;
+    overflow: hidden;
+    position: relative;
 }
+
+
+
 
 .ilogo{
 	height: 60px;
@@ -273,12 +279,169 @@ a:link, a:visited {
 }
 
 
+.iwelcome {
+    position: absolute;
+    top: 33px;
+    right: 0;
+    width: 220px;
+    height: 32px;
+    border: 1px #eee solid;
+    border-radius: 3px;
+    overflow: hidden;
+    background: #f9f9f9;
+    color: #ccc;
+    font-family: Arial,Verdana,Helvetica,sans-serif;
+    font-size: 12px;
+}
+
+
+.iwelcome .isearch {
+    float: left;
+    width: 150px;
+    height: 24px;
+    margin: 4px 0 4px 4px;
+    background: #fff;
+    overflow: hidden;
+}
+
+.isearch .stext {
+    float: left;
+    width: 120px;
+    height: 24px;
+    line-height: 24px;
+    padding: 0 0 0 5px;
+    font-size: 12px;
+    border: 0;
+    color: #666;
+}
+
+.isearch .sbutton {
+    float: right;
+    width: 24px;
+    height: 24px;
+    background: url("${ctx}/resources/images/sbutton.png") center center no-repeat;
+    border: 0;
+    cursor: pointer;
+}
+
+.iwelcome .ihello {
+    float: right;
+    overflow: hidden;
+    padding: 0 10px;
+    width: 35px;
+    height: 22px;
+    line-height: 22px;
+    margin: 5px 0;
+    border-left: 1px #eee solid;
+    cursor: pointer;
+}
+
+.login-user {
+    width: 965px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.login {
+    width: 935px;
+    height: 26px;
+    padding: 15px 14px;
+    font-size: 12px;
+    margin: 0 auto 20px;
+    overflow: hidden;
+    background: #fff;
+    border-radius: 3px;
+    border: 1px #eee solid;
+}
+
+.login .login-email, .login .login-pass, .login .login-button, .login .login-remember, .login .lost-pass {
+    float: left;
+    margin-right: 15px;
+    height: 26px;
+    vertical-align: middle;
+}
+
+.login .login-others {
+    float: right;
+    height: 26px;
+}
+.login .lost-pass {
+    height: 26px;
+    line-height: 26px;
+}
+.login .login-remember {
+    height: 26px;
+    line-height: 26px;
+}
+.login .login-email input, .login .login-pass input {
+    width: 120px;
+    height: 24px;
+    line-height: 24px;
+    border: 1px #eee solid;
+    border-radius: 3px;
+    background-color: white;
+}
+
+input {
+    -webkit-appearance: textfield;
+    background-color: white;
+    -webkit-rtl-ordering: logical;
+    user-select: text;
+    cursor: auto;
+    padding: 1px;
+    border-width: 2px;
+    border-style: inset;
+    border-color: initial;
+    border-image: initial;
+
+}
+
+.login .login-button input {
+    width: 60px;
+    height: 26px;
+    line-height: 24px;
+    background: #3498db;
+    border: 0;
+    color: #fff;
+    border-radius: 3px;
+}
+
+input[type="checkbox" i] {
+    -webkit-appearance: checkbox;
+    box-sizing: border-box;
+}
+a:link,a:visited {color:#333;}
+a:active,a:hover {color:#3498db;}
+img {border:0;}
+::selection {color:#FFF;background:#3498db;}
+
+a.link4:link, a.link4:visited {
+    color: #3498db;
+}
+
+a.link5:link, a.link5:visited {
+    color: #f90;
+}
+
+.noback{
+    -webkit-box-shadow: 0 0 0px 1000px white inset
+}
 
 </style>
 
 
 
 <script type="text/javascript">
+ //显示登录窗口
+ function showLoginWin() {
+     if($('#div_status').is(":hidden")){
+         $('#div_status').show();
+
+     }else{
+         $('#div_status').hide();
+     }
+ }
+    
 function setBgColor(color){
 	document.bgColor=color;
 }
@@ -394,8 +557,8 @@ $(function(){
 		<div class="ihead-content">
 			<div class="ilogo">
 				<a>
-					<!-- <img alt="520" src="http://static.u148.net/images/logo.gif"> -->
-					<img alt="520" src="${ctx}/resources/images/inanling2.png">
+					<!-- <img alt="520" src="http://static.u148.net/images/logo.gif">-->
+					<img alt="520" src="${ctx}/resources/images/store.png">
 				</a>
 			</div>
 			
@@ -407,6 +570,10 @@ $(function(){
 						<a id='${item.id?if_exists}' href="javascript:void(0)" onclick="display(this,'${item.id?if_exists}')">${item.text?if_exists}</a>
 					 </#if>
 				</#list>
+
+
+
+
 			
 				<#-- 
 				<a href="javascript:void(0)" class="iselected">南陵印象</a>
@@ -417,9 +584,48 @@ $(function(){
 				 -->
 				
 			</div>
+
+            <div class="iwelcome">
+                <div class="isearch">
+                    <input id="search_tag" type="text" class="stext" placeholder="搜索内容" onclick="this.select();">
+                    <input id="search_btn" type="button" value="" class="sbutton" >
+                </div>
+                <div class="ihello" id="top_status" onclick="showLoginWin()"><img src="${ctx}/resources/images/hello-img.gif"><span class="caret"></span></div>
+            </div>
+
+
 		</div>
 	</div>
-	
+
+    <div id="div_status" class="login-user">
+        <form action="${ctx}/doLogin" method="post">
+            <div class="login">
+                <div class="login-email">
+                    登录手机：
+                    <input name="loginAccount" type="text" class="noback" />
+                </div>
+                <div class="login-pass">
+                    密码：
+                    <input name="loginPwd" type="password" class="noback"/>
+                </div>
+                <div class="login-button">
+                    <input id="btn_login" type="submit" value="登录" />
+                </div>
+                <div class="login-remember">
+                    <input id="login_exp" type="checkbox" value="0" /> 记住我
+                </div>
+                <div class="lost-pass">
+                    <a href="/user/register.html" class="link5">注册</a> /
+                    <a href="/user/getpassword.html" class="link4">忘记密码</a>
+                </div>
+                <div class="login-others">
+                    <a href="javascript:void(0)" target="_blank"> <img src="http://static.u148.net/images/sns_icons/sina.png" border="0" title="新浪微博登录" /></a>
+                    <a href="javascript:void(0)" target="_blank"> <img src="http://static.u148.net/images/sns_icons/qq.png" border="0" title="腾讯QQ登录" /></a>
+                </div>
+             </div>
+        </form>
+    </div>
+
 	<div class="icenter">
 			<div class="icenter-left" id="icenter-left">
 			<#--

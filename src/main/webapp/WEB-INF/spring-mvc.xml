@@ -86,5 +86,11 @@
 	<!--
 	<import resource="classpath:spring/spring-aop.xml" />-->
 
+	<mvc:interceptors>
+		<mvc:interceptor>
+			<mvc:mapping path="/**"/>
+			<bean class="com.imark.common.AppConfigInterceptor"/>
+		</mvc:interceptor>
+	</mvc:interceptors>
 	
 </beans>
