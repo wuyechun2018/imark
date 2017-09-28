@@ -427,6 +427,60 @@ a.link5:link, a.link5:visited {
     -webkit-box-shadow: 0 0 0px 1000px white inset
 }
 
+.iwelcome .ihello img {
+    width: 22px;
+    height: 22px;
+    border-radius: 11px;
+    background: #ddd;
+}
+
+.user-menu {
+    width: 935px;
+    height: 26px;
+    padding: 28px 14px 12px;
+    font-size: 14px;
+    margin: 0 auto 20px;
+    overflow: hidden;
+    background: #fff;
+    border-radius: 3px;
+    border: 1px #eee solid;
+    background: url("${ctx}/resources/images/user-menu.png") #fff center -16px no-repeat;
+}
+
+.user-menu .user-menu-left {
+    float: left;
+    height: 22px;
+    line-height: 22px;
+}
+
+.user-menu .user-menu-right {
+    float: right;
+    height: 26px;
+    line-height: 26px;
+}
+
+.user-menu .user-menu-left a, .user-menu .user-menu-left span {
+    display: inline-block;
+    margin-right: 15px;
+}
+
+a.link6:link, a.link6:visited {
+    color: #65b916;
+}
+
+.link5 {
+    color: #f90;
+}
+
+.user-menu .user-menu-right a {
+    display: inline-block;
+    margin-left: 15px;
+    height: 26px;
+    background: #65b916;
+    padding: 0 10px;
+    color: #fff;
+    border-radius: 3px;
+}
 </style>
 
 
@@ -590,7 +644,17 @@ $(function(){
                     <input id="search_tag" type="text" class="stext" placeholder="搜索内容" onclick="this.select();">
                     <input id="search_btn" type="button" value="" class="sbutton" >
                 </div>
-                <div class="ihello" id="top_status" onclick="showLoginWin()"><img src="${ctx}/resources/images/hello-img.gif"><span class="caret"></span></div>
+                <div class="ihello" id="top_status" onclick="showLoginWin()">
+
+
+                <#if CURRENT_USER?exists>
+                    <img src="${ctx}/resources/images/t_1.jpg">
+                <#else>
+                    <img src="${ctx}/resources/images/hello-img.gif">
+                </#if>
+
+                    <span class="caret"></span>
+                </div>
             </div>
 
 
@@ -598,7 +662,28 @@ $(function(){
 	</div>
 
     <div id="div_status" class="login-user">
-        <form action="${ctx}/doLogin" method="post">
+<#if CURRENT_USER?exists>
+    <div class="user-menu">
+        <div class="user-menu-left">
+            <span>你好，<font class="link5">${CURRENT_USER.loginAccount}</font></span>
+            <span>&middot;</span>
+            <a href="javascript:void(0)">铺子</a>
+            <a href="javascript:void(0)">动态</a>
+            <a href="javascript:void(0)">我的文章</a>
+            <a href="javascript:void(0)">收藏</a>
+            <a href="javascript:void(0)">私信</a>
+            <a href="javascript:void(0)">好友</a>
+            <a href="javascript:void(0)">设置</a>
+            <span>&middot;</span>
+            <a href="${ctx}/htmlLoginOut" class="link6">退出</a>
+        </div>
+        <div class="user-menu-right">
+            <a href="javascript:void(0)">草稿箱</a>
+            <a href="javascript:void(0)">发布文章</a>
+        </div>
+    </div>
+<#else>
+        <form action="${ctx}/htmlLogin" method="post">
             <div class="login">
                 <div class="login-email">
                     登录手机：
@@ -624,6 +709,7 @@ $(function(){
                 </div>
              </div>
         </form>
+</#if>
     </div>
 
 	<div class="icenter">

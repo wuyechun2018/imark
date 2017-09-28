@@ -1,14 +1,10 @@
 package com.imark.system.controller;
-import java.net.InetAddress;
-import java.net.UnknownHostException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.List;
-import java.util.Properties;
-
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
-
+import com.imark.common.util.Constant;
+import com.imark.common.util.UserCredentialsMatcher;
+import com.imark.system.model.SysLoginUser;
+import com.imark.system.model.SysMarkLogs;
+import com.imark.system.service.h2.MarkLogService;
+import com.imark.system.service.h2.SysLoginUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -17,12 +13,14 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.imark.common.util.Constant;
-import com.imark.common.util.UserCredentialsMatcher;
-import com.imark.system.model.SysLoginUser;
-import com.imark.system.model.SysMarkLogs;
-import com.imark.system.service.h2.MarkLogService;
-import com.imark.system.service.h2.SysLoginUserService;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+import java.net.InetAddress;
+import java.net.UnknownHostException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.List;
+import java.util.Properties;
 
 
 @Controller
@@ -62,6 +60,24 @@ public class IndexController {
 		session.removeAttribute(Constant.CURRENT_USER);
 		session.invalidate();
 		return "login";
+	}
+
+
+	/***
+	 *
+	 * 功能 :退出系统
+	 *
+	 * 开发：wuyechun 2013-9-24
+	 *
+	 * @param request
+	 * @return
+	 */
+	@RequestMapping(value = "/htmlLoginOut")
+	public String htmlLoginOut(HttpServletRequest request) {
+		HttpSession session = request.getSession();
+		session.removeAttribute(Constant.CURRENT_USER);
+		session.invalidate();
+		return "redirect:/html/index";
 	}
 	
 	/**
@@ -112,7 +128,58 @@ public class IndexController {
 		}
 		return mv;
 	}
-	
+
+
+
+	/**
+	 *
+	 * @Description：用户登录
+	 *
+	 * @date：2015-9-23 下午08:03:26
+	 *
+	 * @author ：wuyechun
+	 */
+	@RequestMapping(value = "/htmlLogin")
+	public ModelAndView htmlLogin(String loginAccount,String loginPwd,HttpServletRequest request,HttpSession session){
+
+		boolean isValid=false;
+		ModelAndView mv=new ModelAndView();
+		List<SysLoginUser> list=sysLoginUserService.findByLoginAccount(loginAccount);
+		SysLoginUser sysLoginUser=null;
+		if(list!=null&&!list.isEmpty()){
+			sysLoginUser=list.get(0);
+			if(sysLoginUser!=null){
+				//两次MD5加密
+				loginPwd=UserCredentialsMatcher.GetMD5Str32(UserCredentialsMatcher.GetMD5Str32(loginPwd));
+				if(loginPwd.equals(sysLoginUser.getLoginPwd())&&!"D".equals(sysLoginUser.getUserState())){
+					//将系统用户存入session
+					session.setAttribute(Constant.CURRENT_USER, sysLoginUser);
+					isValid=true;
+				}
+			}
+		}
+		if(isValid){
+			mv.addObject(Constant.CURRENT_USER, sysLoginUser);
+			mv.setViewName("redirect:/html/index");
+
+			//记录登录日志
+			SysMarkLogs log=new SysMarkLogs();
+			//日志类型,系统日志
+			log.setMarkType("1");
+			//业务类型,登录日志1,退出日志 2
+			log.setBizType("1");
+			log.setOpDate(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date()));
+			log.setOpUser(loginAccount);
+			log.setBizParam(getIpAddr(request));
+			markLogService.save(log);
+
+		}else{
+			mv.addObject(Constant.ERROR_MSG, "用户名或密码错误！");
+			mv.setViewName("redirect:/html/index");
+		}
+		return mv;
+	}
+
 	
 	/**
 	 * 
