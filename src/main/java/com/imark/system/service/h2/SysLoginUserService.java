@@ -1,16 +1,14 @@
 package com.imark.system.service.h2;
 
-import java.util.List;
-import java.util.Map;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
-
-import com.imark.common.util.IUtil;
 import com.imark.common.vo.EasyPager;
 import com.imark.system.dao.SysLoginUserDao;
 import com.imark.system.jpa.SysLoginUserJpaDao;
 import com.imark.system.model.SysLoginUser;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+import java.util.List;
+import java.util.Map;
 
 @Component
 public class SysLoginUserService {
@@ -36,6 +34,24 @@ public class SysLoginUserService {
 		//两个单引号表示一个单引号
 		//return baseDaoImpl.find(MessageFormat.format("FROM SysLoginUser WHERE loginAccount=''{0}''", loginAccount));
 		
+	}
+
+
+
+	/**
+	 * @author wuyechun
+	 * @param loginAccount
+	 * @return
+	 */
+	public List<SysLoginUser> findByMobilePhone(String mobilePhone) {
+
+		//JdbcTemplate 查询
+		return sysLoginUserJpaDao.findByMobilePhone(mobilePhone);
+
+		//1、hibernate查询
+		//两个单引号表示一个单引号
+		//return baseDaoImpl.find(MessageFormat.format("FROM SysLoginUser WHERE loginAccount=''{0}''", loginAccount));
+
 	}
 
 

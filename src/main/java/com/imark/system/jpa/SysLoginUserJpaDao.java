@@ -1,13 +1,14 @@
 package com.imark.system.jpa;
 
-import java.util.List;
-
+import com.imark.system.model.SysLoginUser;
 import org.springframework.data.repository.PagingAndSortingRepository;
 
-import com.imark.system.model.SysLoginUser;
+import java.util.List;
 
 public interface SysLoginUserJpaDao extends PagingAndSortingRepository<SysLoginUser, String> {
 
 	List<SysLoginUser> findByLoginPwd(String string);
 
+
+	List<SysLoginUser> findByMobilePhone(String mobilePhone);
 }

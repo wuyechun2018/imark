@@ -1,17 +1,16 @@
 package com.imark.system.dao;
 
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.List;
-import java.util.Map;
-
-import org.springframework.jdbc.core.RowMapper;
-import org.springframework.stereotype.Component;
-
 import com.imark.common.util.IUtil;
 import com.imark.common.util.JdbcSupportDao;
 import com.imark.common.vo.EasyPager;
 import com.imark.system.model.SysLoginUser;
+import org.springframework.jdbc.core.RowMapper;
+import org.springframework.stereotype.Component;
+
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.List;
+import java.util.Map;
 
 @Component
 public class SysLoginUserDao extends JdbcSupportDao{
@@ -51,8 +50,10 @@ public class SysLoginUserDao extends JdbcSupportDao{
 		        new LoginUserRowMapper());
 		return userList;
 	}
-	
-	class LoginUserRowMapper implements RowMapper<SysLoginUser>{
+
+
+
+    class LoginUserRowMapper implements RowMapper<SysLoginUser>{
 		@Override
 		public SysLoginUser mapRow(ResultSet rs, int rowNum)
 				throws SQLException {

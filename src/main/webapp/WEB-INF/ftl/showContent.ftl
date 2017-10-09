@@ -9,7 +9,7 @@
 <LINK href="${ctx}/resources/images/nl.ico" type="image/x-icon" rel="icon">                        
 <LINK href="${ctx}/imark/resources/images/nl.ico" type="image/x-icon" rel="shortcut icon">
 <script type="text/javascript" src="${ctx}/resources/jquery/jquery-1.9.1.js"></script>
-<title>故乡情,南陵源,有情怀的爱</title>
+<title>${appTitle}</title>
 
 <style type="text/css">
 
@@ -507,7 +507,7 @@ $(function(){
 			<div class="ilogo">
 				<a>
 					<!-- <img alt="520" src="http://static.u148.net/images/logo.gif"> -->
-					<img alt="520" src="${ctx}/resources/images/inanling2.png">
+					<img alt="520" src="${ctx}/resources/images/${appLogo}">
 				</a>
 			</div>
 			

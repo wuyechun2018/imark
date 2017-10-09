@@ -1,18 +1,11 @@
 package com.imark.common.util;
 
-import java.io.IOException;
+import com.imark.system.model.SysLoginUser;
 
-import javax.servlet.Filter;
-import javax.servlet.FilterChain;
-import javax.servlet.FilterConfig;
-import javax.servlet.ServletException;
-import javax.servlet.ServletRequest;
-import javax.servlet.ServletResponse;
-import javax.servlet.http.Cookie;
+import javax.servlet.*;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-import com.imark.system.model.SysLoginUser;
+import java.io.IOException;
 
 public class AuthFilter implements Filter{
 
@@ -34,7 +27,7 @@ public class AuthFilter implements Filter{
 		System.out.println("servletPath:"+servletPath);
 		System.out.println("uri:"+uri);
 		
-		 String[] notFilter = new String[] {"/login","/resources","/welcome","/doLogin","/CxfService","/html","/showContent","/upload","/redirect"};  
+		 String[] notFilter = new String[] {"/login","/resources","/welcome","/doLogin","/CxfService","/html","/showContent","/upload","/redirect","/sysLoginUser/save","/captcha/getKaptchaImage"};
 		 boolean doFilter=true;
 		 for (String s : notFilter) {  
 	        	if (servletPath.indexOf(s) != -1) {  

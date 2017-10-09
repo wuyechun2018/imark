@@ -22,6 +22,8 @@ public class AppConfigInterceptor implements  HandlerInterceptor {
         HttpSession session = request.getSession();
         //应用系统标题
         session.setAttribute("appTitle", appConfig.getAppTitle());
+        //应用图标
+        session.setAttribute("appLogo",appConfig.getAppLogo());
         return true;
     }
 

@@ -62,6 +62,64 @@ public class HtmlController {
 		ModelAndView mv=new ModelAndView("/content");
 		return mv;
 	}
+
+
+	/**
+	* 方法名称: 注册
+	* 参数: 
+	* 描述信息: TODO
+	* 创建人: ycwu3
+	* 创建时间: 2017/9/30 15:25
+	**/
+	@RequestMapping("/register")
+	public Object register(HttpServletRequest request){
+		EasyPager pager=new EasyPager();
+		String curType=request.getParameter("curType");
+		//获取要显示的文章类型
+		List<EasyTree> typeList=sysDicService.getChildByPCode("WANL");
+		Map param=new HashMap();
+		param.put("articleType", "3");
+		List list=articleService.getList(pager,param);
+
+		ModelAndView mv=new ModelAndView("/register");
+		//选中类型下的文章
+		mv.addObject("list", list);
+		//一级菜单数据
+		mv.addObject("typeList", typeList);
+		//当前选中的类型
+		mv.addObject("curType", curType==null?typeList.get(0).getId():curType);
+		return mv;
+	}
+
+
+	
+	/**
+	* 方法名称: 注册后登录
+	* 参数: 
+	* 描述信息: TODO
+	* 创建人: ycwu3
+	* 创建时间: 2017/9/30 15:25
+	**/
+	@RequestMapping("/regLogin")
+	public Object login(HttpServletRequest request){
+		EasyPager pager=new EasyPager();
+		String curType=request.getParameter("curType");
+		//获取要显示的文章类型
+		List<EasyTree> typeList=sysDicService.getChildByPCode("WANL");
+		Map param=new HashMap();
+		param.put("articleType", "3");
+		List list=articleService.getList(pager,param);
+
+		ModelAndView mv=new ModelAndView("/regLogin");
+		//选中类型下的文章
+		mv.addObject("list", list);
+		//一级菜单数据
+		mv.addObject("typeList", typeList);
+		//当前选中的类型
+		mv.addObject("curType", curType==null?typeList.get(0).getId():curType);
+		return mv;
+	}
+
 	
 	/**
 	 * 

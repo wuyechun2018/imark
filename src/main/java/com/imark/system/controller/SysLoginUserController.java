@@ -1,18 +1,21 @@
 package com.imark.system.controller;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import javax.servlet.http.HttpServletRequest;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import com.imark.common.sysdic.UserStateEnum;
+import com.imark.common.util.IUtil;
 import com.imark.common.util.UserCredentialsMatcher;
 import com.imark.common.vo.EasyGrid;
 import com.imark.common.vo.EasyPager;
 import com.imark.common.vo.JsonMsg;
 import com.imark.system.model.SysLoginUser;
 import com.imark.system.service.h2.SysLoginUserService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import javax.servlet.http.HttpServletRequest;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /*******************************************************************************
  *  功能说明: Imark-系统维护-用户管理 控制层
@@ -76,9 +79,22 @@ public class SysLoginUserController extends BaseController{
 	@RequestMapping("/save")
 	@ResponseBody
 	public Object save(SysLoginUser sysLoginUser){
-		if(sysLoginUser.getLoginPwd()==null){
-			//默认密码 123456
+
+		//第一次新增操作，默认用户为注册状态
+		if(IUtil.isBlank(sysLoginUser.getUserId())){
+			sysLoginUser.setUserState(UserStateEnum.REGISTER.getCode()+"");
+			//通过页面注册时，登录名为空，昵称有值，默认登录名和昵称保持一致
+			if(IUtil.isBlank(sysLoginUser.getLoginAccount())){
+				sysLoginUser.setLoginAccount(sysLoginUser.getUserAlias());
+			}
+		}
+
+		if(IUtil.isBlank(sysLoginUser.getLoginPwd())){
+			//默认密码 123
 			sysLoginUser.setLoginPwd(UserCredentialsMatcher.GetMD5Str32(UserCredentialsMatcher.GetMD5Str32("123")));
+		}else{
+			sysLoginUser.setLoginPwd(UserCredentialsMatcher.GetMD5Str32(UserCredentialsMatcher.GetMD5Str32(sysLoginUser.getLoginPwd())));
+
 		}
 		sysLoginUserService.save(sysLoginUser);
 		return new JsonMsg();

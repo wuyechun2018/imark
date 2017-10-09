@@ -1,10 +1,9 @@
 package com.imark.system.model;
 
-import java.io.Serializable;
-import javax.persistence.*;
-
 import org.hibernate.annotations.GenericGenerator;
 
+import javax.persistence.*;
+import java.io.Serializable;
 import java.math.BigDecimal;
 
 
@@ -64,6 +63,11 @@ public class SysLoginUser implements Serializable {
 	// 用户类型
 	@Column(name="USER_TYPE")
 	private String userType;
+
+    //手机号
+	@Column(name="MOBILE_PHONE")
+	private String mobilePhone;
+
 
     public SysLoginUser() {
     }
@@ -172,4 +176,11 @@ public class SysLoginUser implements Serializable {
 		this.userType = userType;
 	}
 
+	public String getMobilePhone() {
+		return mobilePhone;
+	}
+
+	public void setMobilePhone(String mobilePhone) {
+		this.mobilePhone = mobilePhone;
+	}
 }

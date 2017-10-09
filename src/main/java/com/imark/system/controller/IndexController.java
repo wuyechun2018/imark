@@ -140,11 +140,11 @@ public class IndexController {
 	 * @author ：wuyechun
 	 */
 	@RequestMapping(value = "/htmlLogin")
-	public ModelAndView htmlLogin(String loginAccount,String loginPwd,HttpServletRequest request,HttpSession session){
+	public ModelAndView htmlLogin(String mobilePhone,String loginPwd,String loginType,HttpServletRequest request,HttpSession session){
 
 		boolean isValid=false;
 		ModelAndView mv=new ModelAndView();
-		List<SysLoginUser> list=sysLoginUserService.findByLoginAccount(loginAccount);
+		List<SysLoginUser> list=sysLoginUserService.findByMobilePhone(mobilePhone);
 		SysLoginUser sysLoginUser=null;
 		if(list!=null&&!list.isEmpty()){
 			sysLoginUser=list.get(0);
@@ -169,13 +169,18 @@ public class IndexController {
 			//业务类型,登录日志1,退出日志 2
 			log.setBizType("1");
 			log.setOpDate(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date()));
-			log.setOpUser(loginAccount);
+			log.setOpUser(mobilePhone);
 			log.setBizParam(getIpAddr(request));
 			markLogService.save(log);
 
 		}else{
 			mv.addObject(Constant.ERROR_MSG, "用户名或密码错误！");
-			mv.setViewName("redirect:/html/index");
+			if("regLogin".equals(loginType)){
+				mv.setViewName("redirect:/html/regLogin");
+			}else {
+				mv.setViewName("redirect:/html/index");
+			}
+
 		}
 		return mv;
 	}

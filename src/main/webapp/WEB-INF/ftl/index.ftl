@@ -612,7 +612,7 @@ $(function(){
 			<div class="ilogo">
 				<a>
 					<!-- <img alt="520" src="http://static.u148.net/images/logo.gif">-->
-					<img alt="520" src="${ctx}/resources/images/store.png">
+					<img alt="520" src="${ctx}/resources/images/${appLogo}">
 				</a>
 			</div>
 			
@@ -687,7 +687,7 @@ $(function(){
             <div class="login">
                 <div class="login-email">
                     登录手机：
-                    <input name="loginAccount" type="text" class="noback" />
+                    <input name="mobilePhone" type="text" class="noback" />
                 </div>
                 <div class="login-pass">
                     密码：
@@ -700,16 +700,31 @@ $(function(){
                     <input id="login_exp" type="checkbox" value="0" /> 记住我
                 </div>
                 <div class="lost-pass">
-                    <a href="/user/register.html" class="link5">注册</a> /
-                    <a href="/user/getpassword.html" class="link4">忘记密码</a>
+                    <a href="${ctx}/html/register" class="link5">注册</a> /
+                    <a href="javascript:void(0)" class="link4">忘记密码</a>
                 </div>
                 <div class="login-others">
+
                     <a href="javascript:void(0)" target="_blank"> <img src="http://static.u148.net/images/sns_icons/sina.png" border="0" title="新浪微博登录" /></a>
                     <a href="javascript:void(0)" target="_blank"> <img src="http://static.u148.net/images/sns_icons/qq.png" border="0" title="腾讯QQ登录" /></a>
                 </div>
+
+                <!-- ${RequestParameters["ERROR_MSG"]!}-->
+
+
              </div>
+
+    <#if RequestParameters["ERROR_MSG"]?exists>
+            <div class="login">
+                ${RequestParameters["ERROR_MSG"]!}
+            </div>
+    </#if>
         </form>
+
+
+
 </#if>
+
     </div>
 
 	<div class="icenter">
