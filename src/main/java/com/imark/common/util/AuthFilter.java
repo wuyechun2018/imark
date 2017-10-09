@@ -27,7 +27,7 @@ public class AuthFilter implements Filter{
 		System.out.println("servletPath:"+servletPath);
 		System.out.println("uri:"+uri);
 		
-		 String[] notFilter = new String[] {"/login","/resources","/welcome","/doLogin","/CxfService","/html","/showContent","/upload","/redirect","/sysLoginUser/save","/captcha/getKaptchaImage"};
+		 String[] notFilter = new String[] {"/login","/resources","/welcome","/doLogin","/CxfService","/html","/showContent","/upload","/redirect","/sysLoginUser/save","/captcha"};
 		 boolean doFilter=true;
 		 for (String s : notFilter) {  
 	        	if (servletPath.indexOf(s) != -1) {  

@@ -572,6 +572,32 @@ $(function () {
     $("#btn_register").click(function(event){
         var loginPwd=$('#loginPwd').val();
         var configLoginPwd=$('#configLoginPwd').val();
+        var vcode=$('#vcode').val();
+
+        if(vcode){
+            $.ajax({
+                type: "POST",
+                url:'${ctx}/captcha/validate',
+                data: {
+                    vcode:vcode
+                },
+                success: function (data) {
+                    if(!data.success){
+                        $('#showMsg').html(data.msg);
+                        return;
+                    }
+                },
+                error: function(data) {
+                    alert("error:"+data.responseText);
+                }
+            });
+        }else {
+            $('#showMsg').html("请输入验证码");
+            return;
+        }
+
+
+
 
         if(loginPwd&&configLoginPwd){
             if(loginPwd==configLoginPwd){
@@ -603,6 +629,7 @@ $(function () {
 
     });
 
+    //点击验证码
     $("#vimg").click(function(event){
         $("#vimg").attr("src","${ctx}/captcha/getKaptchaImage");
     })
