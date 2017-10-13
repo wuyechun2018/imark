@@ -9,6 +9,7 @@
 <LINK href="${ctx}/resources/images/store.ico" type="image/x-icon" rel="icon">
 <LINK href="${ctx}/imark/resources/images/store.ico" type="image/x-icon" rel="shortcut icon">
 <script type="text/javascript" src="${ctx}/resources/jquery/jquery-1.9.1.js"></script>
+<script type="text/javascript" src="${ctx}/resources/jquery/jquery.SuperSlide.2.1.1.js"></script>
 
 <title>${appTitle}</title>
 
@@ -106,6 +107,28 @@ ul,li,div{
 	border:1px #eee solid;
 }
 
+.sidebar {
+    width: 298px;
+    padding: 15px 0;
+    border-radius: 3px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    background: #fff;
+    border: 1px #eee solid;
+}
+
+.sidebar h2 {
+    width: 270px;
+    height: 20px;
+    padding: 0 15px 0 10px;
+    border-left: 5px #f90 solid;
+    line-height: 20px;
+    font-weight: normal;
+    font-size: 14px;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+}
+
 .imessage h2{
 	 width: 270px;
     height: 20px;
@@ -118,7 +141,43 @@ ul,li,div{
     margin-bottom: 20px;
 
 }
+.comments-good {
+    width: 270px;
+    overflow: hidden;
+    margin: 0 auto;
+}
 
+.comments-good ul {
+    width: 270px;
+    max-height: 436px;
+    overflow: hidden;
+}
+.comments-good ul li .comment {
+    position: relative;
+    border-radius: 3px;
+    width: 246px;
+    max-height: 88px;
+    background: #f3f3f3;
+    padding: 6px 12px 8px;
+    font-size: 12px;
+    line-height: 22px;
+    word-break: break-all;
+    word-wrap: break-word;
+    font-family: Arial,Verdana,Helvetica,sans-serif;
+    color: #666;
+}
+
+.comments-good ul li h1 {
+    width: 270px;
+    height: 20px;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 20px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    margin-bottom: 15px;
+}
 
 
 .irank {
@@ -481,6 +540,114 @@ a.link6:link, a.link6:visited {
     color: #fff;
     border-radius: 3px;
 }
+/*以下轮播图*/
+.hotspot {
+    width: 615px;
+    padding: 15px 14px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    background: #fff;
+    border-radius: 3px;
+    border: 1px #eee solid;
+}
+
+.hotspot .primary {
+    width: 615px;
+    height: 250px;
+    margin-bottom: 15px;
+    position: relative;
+    overflow: hidden;
+}
+
+.hotspot .primary ul li .primary-img {
+    width: 615px;
+    height: 250px;
+    overflow: hidden;
+}
+.hotspot .primary ul li .belongs {
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: 5px 10px;
+    background: #000;
+    text-align: center;
+    color: #fff;
+    border-radius: 0 0 3px 0;
+    opacity: 0.35;
+}
+.hotspot .primary ul li .belongs {
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: 5px 10px;
+    background: #000;
+    text-align: center;
+    color: #fff;
+    border-radius: 0 0 3px 0;
+    opacity: 0.35;
+}
+.hotspot .primary ul li .primary-text {
+    position: absolute;
+    bottom: 0;
+    width: 615px;
+    height: 40px;
+    background: #000;
+    opacity: 0.5;
+    overflow: hidden;
+}
+
+.hotspot .primary .prev {
+    top: 93px;
+    left: 10px;
+}
+.hotspot .primary .prev, .hotspot .primary .next {
+    position: absolute;
+    z-index: 30;
+    display: block;
+}
+.hotspot .primary .next {
+    top: 93px;
+    right: 10px;
+}
+
+.hotspot .primary .prev, .hotspot .primary .next {
+    position: absolute;
+    z-index: 30;
+    display: block;
+}
+
+.hotspot .primary .prev a {
+    background-position: 0 0;
+}
+
+.hotspot .primary .prev a, .hotspot .primary .next a {
+    display: block;
+    width: 25px;
+    height: 32px;
+    overflow: hidden;
+    background: url("${ctx}/resources/images/prevnext.png") no-repeat scroll 0 0;
+
+}
+
+.hotspot .primary .next a {
+    background-position: 0 -80px;
+}
+.links {
+    width: 935px;
+    padding: 15px 14px;
+    font-size: 12px;
+    margin: 0 auto 20px;
+    overflow: hidden;
+    background: #fff;
+    border-radius: 3px;
+    border: 1px #eee solid;
+}
+
+.links a {
+    margin-right: 8px;
+    display: inline-block;
+}
+
 </style>
 
 
@@ -513,7 +680,7 @@ function display(obj,articleType){
     type:"POST",
     url:"${ctx}/html/getArticleListByType?articleType="+articleType,
     success:function(data, textStatus) {
-    		$('#icenter-left').html('');
+    		$('#articleList').html('');
     		var contentHTML='';
     	 	for(var i=0;i<data.length;i++){
     	 	contentHTML+=	'<div class="iarticle">'
@@ -538,7 +705,7 @@ function display(obj,articleType){
 			contentHTML+=			'</div>'
 			contentHTML+=		'</div>'
     	 }
-    	$('#icenter-left').append(contentHTML);
+    	$('#articleList').append(contentHTML);
     },
     error:function() {
     	
@@ -729,6 +896,40 @@ $(function(){
 
 	<div class="icenter">
 			<div class="icenter-left" id="icenter-left">
+                <div class="hotspot">
+                    <div class="primary">
+
+                            <ul >
+                                <li>
+                                    <div class="primary-img"><a href="/article/141458.html" target="_blank"><img src="${ctx}/resources/images/ban3.jpg" /></a></div>
+                                    <div class="belongs"><a href="/fair/1" class="link1">集市</a></div>
+                                    <div class="primary-icon"></div>
+                                    <div class="primary-text">
+                                        <h1><a href="/article/141458.html" target="_blank" class="link1">腕上有繁花似锦，只为你一眼钟情（2）</a></h1>
+                                        <div class="summary">认定了，就不要错过，对人对物，皆是如此。</div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="primary-img"><a href="/article/141128.html" target="_blank"><img src="${ctx}/resources/images/ban4.jpg" /></a></div>
+                                    <div class="belongs"><a href="/image/1" class="link1">图画</a></div>
+                                    <div class="primary-icon"></div>
+                                    <div class="primary-text">
+                                        <h1><a href="/article/141128.html" target="_blank" class="link1">套路男票新招数，你会选左边还是右边？</a></h1>
+                                        <div class="summary">可以两个都选吗？</div>
+                                    </div>
+                                </li>
+                            </ul>
+
+                        <div class="prev"><a href="javascript:void(0)"></a></div>
+                        <div class="next"><a href="javascript:void(0)"></a></div>
+                        <script type="text/javascript">	jQuery(".primary").slide({ mainCell:"ul",effect:"leftLoop", autoPlay:true, delayTime:500});	</script>
+                    </div>
+
+                </div>
+
+                <div id="articleList"></div>
+
+
 			<#--
 			<#list list as item>
 					<div class="iarticle">
@@ -793,6 +994,10 @@ $(function(){
 
     </div>
    -->
+
+    <div class="links">
+        <a href="http://www.wangxiaofeng.me" target="_blank" title="不许联想">不许联想</a> <a href="http://photo.poco.cn" target="_blank" title="POCO摄影">POCO摄影</a> <a href="http://www.17k.com" target="_blank" title="17K小说">17K小说</a> <a href="http://www.huobanyun.cn" target="_blank" title="伙伴">伙伴</a> <a href="http://www.xinli001.com" target="_blank" title="壹心理">壹心理</a> <a href="http://www.manmankan.com" target="_blank" title="火影忍者">火影忍者</a> <a href="http://www.mahua.com" target="_blank" title="快乐麻花">快乐麻花</a> <a href="http://www.zongheng.com" target="_blank" title="纵横小说网">纵横小说网</a> <a href="http://www.laifu.org" target="_blank" title="来福岛">来福岛</a> <a href="http://qd.ifeng.com" target="_blank" title="凤凰网青岛">凤凰网青岛</a> <a href="http://www.xilu.com" target="_blank" title="西陆军事">西陆军事</a> <a href="http://www.duomi.com" target="_blank" title="多米音乐">多米音乐</a> <a href="http://www.itouxian.com" target="_blank" title="爱偷闲">爱偷闲</a> <a href="http://www.fengniao.com" target="_blank" title="蜂鸟网">蜂鸟网</a> <a href="http://www.yidao.info" target="_blank" title="一道">一道</a> <a href="http://fm.qq.com" target="_blank" title="企鹅FM">企鹅FM</a> <a href="/links/" target="_blank">更多</a></div>
+
 	<#include "inc/page-bottom.ftl"/>
 
 

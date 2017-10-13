@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>iTab</title>
+	<link rel="stylesheet" type="text/css" href="./themes/bootstrap/easyui.css">
+	<link rel="stylesheet" type="text/css" href="./themes/icon.css">
+	
+	<script type="text/javascript" src="./jquery.min.js"></script>
+	<script type="text/javascript" src="./jquery.easyui.min.js"></script>
+	
+	<script type="text/javascript">
+	
+	$(function(){
+	
+		var menuArray= [{title:"Bing",url:"http://cn.bing.com/?intlF="},
+						{title:"InfoQ",url:"http://www.infoq.com/cn/"},
+					    {title:"51CTO",url:"http://www.51cto.com/"},
+            			{title:"鸟哥的私房菜",url:"http://cn.linux.vbird.org/linux_basic/linux_basic.php"}
+
+						];
+						
+		for(var i=0;i<menuArray.length;i++){
+			addTab(menuArray[i]);
+		}				
+	   
+	
+	})
+	
+	
+	function addTab(params) {
+		var iframe = '<iframe src="' + params.url + '" frameborder="0" style="border:0;width:100%;height:98%;"></iframe>';
+		var mainTab = $('#mainTabs');
+		var opts = {
+			title : params.title,
+			closable : true,
+			content : iframe,
+			border : false,
+			fit : true
+		};
+		if (mainTab.tabs('exists', opts.title)) {
+			mainTab.tabs('select', opts.title);
+		} else {
+			mainTab.tabs('add', opts);
+		}
+   }
+
+
+	</script>
+
+
+
+</head>
+<body>
+	<div class="easyui-tabs" data-options="fit:true,border:false,plain:true" id="mainTabs">
+		
+	</div>
+</body>
+</html>

@@ -6,8 +6,8 @@
 <head>
 <base id="base" href="${ctx}">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<LINK href="${ctx}/resources/images/nl.ico" type="image/x-icon" rel="icon">                        
-<LINK href="${ctx}/imark/resources/images/nl.ico" type="image/x-icon" rel="shortcut icon">
+<LINK href="${ctx}/resources/images/store.ico" type="image/x-icon" rel="icon">
+<LINK href="${ctx}/imark/resources/images/store.ico" type="image/x-icon" rel="shortcut icon">
 <script type="text/javascript" src="${ctx}/resources/jquery/jquery-1.9.1.js"></script>
 <title>${appTitle}</title>
 
